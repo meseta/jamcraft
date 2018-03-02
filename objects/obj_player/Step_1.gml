@@ -28,16 +28,16 @@ if(gamepad_is_connected(0)) {
 
 if(abs(axis_x) > 0 or abs(axis_y) > 0) {
 	if(abs(axis_x) > abs(axis_y)) {
-		if(axis_x > 0) move_next_dir = MOVEDIR.right
-		else move_next_dir = MOVEDIR.left
+		if(axis_x > 0) move_dir = MOVEDIR.right
+		else move_dir = MOVEDIR.left
 	}
 	else {
-		if(axis_y > 0) move_next_dir = MOVEDIR.down
-		else move_next_dir = MOVEDIR.up
+		if(axis_y > 0) move_dir = MOVEDIR.down
+		else move_dir = MOVEDIR.up
 	}
 }
 
-if(key_right) move_next_dir = MOVEDIR.right
-if(key_up) move_next_dir = MOVEDIR.up
-if(key_left) move_next_dir = MOVEDIR.left
-if(key_down) move_next_dir = MOVEDIR.down
+if(key_right) move_dir = MOVEDIR.right
+if(key_up) move_dir = MOVEDIR.up
+if(key_left) move_dir = MOVEDIR.left
+if(key_down) move_dir = MOVEDIR.down
