@@ -3,26 +3,37 @@
 
 if(move_is_moving == false) {
 	if(move_dir != MOVEDIR.undef) { // has a direction to move
+		var candidate_target_x = move_target_x;
+		var candidate_target_y = move_target_y;
 		switch(move_dir) { // set targets
 			case MOVEDIR.right:
 				sprite_index = right_sprite;
-				move_target_x = (floor(x/UNIT)+1) * UNIT;
+				candidate_target_x = (floor(x/UNIT)+1) * UNIT;
 				break;
 			case MOVEDIR.up:
 				sprite_index = up_sprite;
-				move_target_y = (floor(y/UNIT)-1) * UNIT;
+				candidate_target_y = (floor(y/UNIT)-1) * UNIT;
 				break;
 			case MOVEDIR.left:
 				sprite_index = left_sprite;
-				move_target_x = (floor(x/UNIT)-1) * UNIT;
+				candidate_target_x = (floor(x/UNIT)-1) * UNIT;
 				break;
 			case MOVEDIR.down:
 				sprite_index = down_sprite;
-				move_target_y = (floor(y/UNIT)+1) * UNIT;
+				candidate_target_y = (floor(y/UNIT)+1) * UNIT;
 				break;
 		}
-		image_speed = 1
-		move_is_moving = true;
+		
+		if(not place_meeting(candidate_target_x, candidate_target_y, obj_solid)) {
+			move_target_x = candidate_target_x
+			move_target_y = candidate_target_y
+			image_speed = 1
+			move_is_moving = true;	
+		}
+		else {
+			move_dir = MOVEDIR.undef;
+		}
+		
 	}
 	else { // no direction to move, stop animation
 		image_speed = 0;
