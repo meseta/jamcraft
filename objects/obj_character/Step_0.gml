@@ -23,6 +23,7 @@ if(move_is_moving == false) {
 				candidate_target_y = (floor(y/UNIT)+1) * UNIT;
 				break;
 		}
+		move_last_dir = move_dir;
 		
 		if(not place_meeting(candidate_target_x, candidate_target_y, obj_solid)) {
 			move_target_x = candidate_target_x
@@ -35,7 +36,7 @@ if(move_is_moving == false) {
 		}
 		
 	}
-	else { // no direction to move, stop animation
+	else { // no direction to move, stop animatio	n
 		image_speed = 0;
 		image_index = 0;
 	}
@@ -46,8 +47,6 @@ if(move_is_moving) { // currently moving
 		var xdiff = move_target_x - x;
 		var ydiff = move_target_y - y;
 		
-		scr_debug(x, " ", move_target_x);
-	
 		x += sign(xdiff) * min(move_speed, abs(xdiff)); // don't overshoot
 		y += sign(ydiff) * min(move_speed, abs(ydiff));
 	}

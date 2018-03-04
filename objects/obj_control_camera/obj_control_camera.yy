@@ -1,15 +1,24 @@
 {
-    "id": "49199642-6141-40e9-8c1b-0b84c81aea78",
+    "id": "bc037bf8-bcb9-4dcf-82c9-93f531fedae9",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_counter",
+    "name": "obj_control_camera",
     "eventList": [
-        
+        {
+            "id": "af1d6ed9-8f80-44b1-ab0d-d064559b2ab6",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 2,
+            "eventtype": 3,
+            "m_owner": "bc037bf8-bcb9-4dcf-82c9-93f531fedae9"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "04593ab1-58f5-4f4b-a8c9-65a2c095ae85",
-    "persistent": false,
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "persistent": true,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
     "physicsFriction": 0.2,
@@ -24,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "0feaedb9-99f6-4e7c-bf75-ce609fc8abb7",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

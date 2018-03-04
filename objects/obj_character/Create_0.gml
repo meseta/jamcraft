@@ -5,10 +5,12 @@ event_inherited();
 
 move_is_moving = false;
 move_dir = MOVEDIR.undef;
-move_next_dir = MOVEDIR.undef;
+move_last_dir = MOVEDIR.undef;
 
 move_target_x = x;
 move_target_y = y;
+
+interact = false;
 
 image_index = 0;
 image_speed = 0;
