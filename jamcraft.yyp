@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "948c8571-f5a9-4364-9c0d-5fd1895d9439",
+            "Value": {
+                "id": "53ac422e-2be7-4ba4-8f7a-ae6f534e83d9",
+                "resourcePath": "objects\\obj_carpet\\obj_carpet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "951e880f-fe0c-4089-b84b-a7fcfdc9744e",
             "Value": {
                 "id": "5b2a9a1f-3095-4ed1-b012-2aa1dfd74b23",
@@ -375,11 +383,27 @@
             }
         },
         {
+            "Key": "ab5d4db1-9ec3-4973-bee4-fee1ae13c576",
+            "Value": {
+                "id": "a6725136-5941-4584-8901-5e4761a20066",
+                "resourcePath": "views\\ab5d4db1-9ec3-4973-bee4-fee1ae13c576.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "b1fba798-7ba7-40c8-8c6b-733d2566f2d3",
             "Value": {
                 "id": "8be12df5-2179-422d-ba24-7a660b6c66d0",
                 "resourcePath": "objects\\obj_stove\\obj_stove.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b2e4baf7-99ce-448a-9937-389206a48434",
+            "Value": {
+                "id": "582b89fe-23a6-46b1-9df0-03e18b226fdb",
+                "resourcePath": "views\\b2e4baf7-99ce-448a-9937-389206a48434.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -399,11 +423,27 @@
             }
         },
         {
+            "Key": "c43ad6f6-c178-44ed-bb5b-a124a3b4b839",
+            "Value": {
+                "id": "c6f63d9f-f0eb-4700-b477-7384ad9af257",
+                "resourcePath": "objects\\obj_warp\\obj_warp.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c5e168f6-a498-49f3-97d9-be02183c38f6",
             "Value": {
                 "id": "43ffee20-224a-4b95-8900-81054621d9a0",
                 "resourcePath": "objects\\obj_solid\\obj_solid.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c67c3847-2d71-438b-9e31-93ed6907c5d4",
+            "Value": {
+                "id": "573878e4-f8e8-4ffe-8c4a-e3553ab309cd",
+                "resourcePath": "sprites\\spr_warp\\spr_warp.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -444,6 +484,14 @@
                 "id": "ae40cabd-9774-4953-8b8f-5ff7001b13d2",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d81de3b8-e340-4391-b932-3b7b80140b07",
+            "Value": {
+                "id": "6b29d6bd-d609-4eeb-af5c-9b25dfdbc0a3",
+                "resourcePath": "sprites\\spr_carpet_door\\spr_carpet_door.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
