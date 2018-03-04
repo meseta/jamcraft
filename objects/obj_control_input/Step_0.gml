@@ -5,9 +5,13 @@ var key_right = max(keyboard_check(vk_right), keyboard_check(ord("D")), 0);
 var key_left = max(keyboard_check(vk_left), keyboard_check(ord("A")), 0);
 var key_down = max(keyboard_check(vk_down), keyboard_check(ord("S")), 0);
 var key_up = max(keyboard_check(vk_up), keyboard_check(ord("W")), 0);
+var key_right_pressed = max(keyboard_check_pressed(vk_right), keyboard_check_pressed(ord("D")), 0);
+var key_left_pressed = max(keyboard_check_pressed(vk_left), keyboard_check_pressed(ord("A")), 0);
+var key_down_pressed = max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
+var key_up_pressed = max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
 	
-var key_primary = max(keyboard_check_pressed(vk_space), mouse_check_button_pressed(mb_left));
-var key_secondary = max(keyboard_check_pressed(vk_shift), mouse_check_button_pressed(mb_right));
+var key_primary = max(keyboard_check_pressed(vk_space), keyboard_check_pressed(vk_enter), mouse_check_button_pressed(mb_left));
+var key_secondary = max(keyboard_check_pressed(vk_shift), keyboard_check_pressed(vk_backspace),  mouse_check_button_pressed(mb_right));
 
 // Gamepad Input
 if(gamepad_is_connected(0)) {
@@ -16,6 +20,10 @@ if(gamepad_is_connected(0)) {
 	key_left = max(key_left, gamepad_button_check(0, gp_padl), 0);
 	key_down = max(key_down, gamepad_button_check(0, gp_padd), 0);
 	key_up = max(key_up, gamepad_button_check(0, gp_padu), 0);
+	key_right_pressed = max(key_right_pressed, gamepad_button_check_pressed(0, gp_padr), 0);
+	key_left_pressed = max(key_left_pressed, gamepad_button_check_pressed(0, gp_padl), 0);
+	key_down_pressed = max(key_down_pressed, gamepad_button_check_pressed(0, gp_padd), 0);
+	key_up_pressed = max(key_up_pressed, gamepad_button_check_pressed(0, gp_padu), 0);
 	
 	key_primary = max(key_primary, gamepad_button_check_pressed(0, gp_face1), gamepad_button_check_pressed(0, gp_shoulderr), 0);
 	key_secondary = max(key_secondary, gamepad_button_check_pressed(0, gp_face2), gamepad_button_check_pressed(0, gp_shoulderl), 0);
@@ -26,23 +34,25 @@ if(gamepad_is_connected(0)) {
 	else if(axis_x < 0) key_left = true;
 	if(axis_y > 0) key_down = true;
 	else if(axis_y < 0) key_up = true;
-	
 }
 
-if(menu_target == noone) { // player move
+if(ds_stack_empty(global.interact_stack)) { // player move
 	with(obj_player) {
 		if(key_right) move_dir = MOVEDIR.right
 		if(key_up) move_dir = MOVEDIR.up
 		if(key_left) move_dir = MOVEDIR.left
 		if(key_down) move_dir = MOVEDIR.down
-		interact = key_primary;
+		if(key_primary) interact = true;
+		if(key_secondary) cancel = true;
 	}
 }
 else {
-	with(menu_target) {
-		select_right = key_right
-		select_up = key_up
-		select_left = key_left
-		select_down = key_down
+	with(ds_stack_top(global.interact_stack)) {
+		select_right = key_right_pressed
+		select_up = key_up_pressed
+		select_left = key_left_pressed
+		select_down = key_down_pressed
+		interact = key_primary;
+		cancel = key_secondary;
 	}
 }

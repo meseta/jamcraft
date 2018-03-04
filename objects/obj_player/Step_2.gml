@@ -21,7 +21,7 @@ if(interact and not move_is_moving) {
 	
 	var int_inst = instance_place(check_x, check_y, obj_interactable);
 	with(int_inst) {
-		event_user(0);	
+		event_user(0);
 	}
-	interact = 0;
+	interact = false;
 }

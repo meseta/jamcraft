@@ -3,6 +3,8 @@ randomize();
 #macro GAMEDATA global.game_data
 #macro UNIT 16
 
+global.interact_stack = ds_stack_create();
+
 scr_newgame();
 
 enum CONTROLMODE {
