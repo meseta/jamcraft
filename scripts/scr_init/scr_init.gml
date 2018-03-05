@@ -6,6 +6,8 @@ randomize();
 global.interact_stack = ds_stack_create();
 global.item_library = ds_stack_create();
 
+global.small_digits = font_add_sprite_ext(spr_small_digits, "0123456789", true, 1);
+
 scr_newgame();
 
 enum CONTROLMODE {

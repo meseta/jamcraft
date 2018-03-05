@@ -11,8 +11,6 @@ inventory_offset = 0;
 inventory = ds_map_find_value(GAMEDATA, "inventory");
 inventory_size = ds_list_size(inventory);
 
-inv_end = inventory_offset + inventory_width * inventory_height 
-
 x_offset = 6;
 y_offset = 30;
 width = inventory_width * UNIT;
