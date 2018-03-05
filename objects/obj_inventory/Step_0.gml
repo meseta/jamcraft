@@ -27,9 +27,9 @@ if(selected >= inventory_offset + inventory_width * inventory_height) {
 }
 
 if(interact) {
-	scr_debug("Inventory menu")
 	// create inventory instance (create it offscreen)
 	select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+	scr_debug("Select menu ", select_inst)
 	// push inventory menu into interact stack
 	ds_stack_push(global.interact_stack, select_inst);
 
@@ -46,13 +46,17 @@ if(interact) {
 			var inv_index = ds_list_find_value(inventory_map, selected);
 		}
 		
-		var item = ds_map_create();
-		ds_map_add(item, "text", "Take");
-		ds_map_add(item, "script", scr_menu_take);
-		ds_map_add(item, "args", inv_index);
-		ds_list_insert(select_inst.menu_items, 0, item)
-		ds_list_mark_as_map(select_inst.menu_items, ds_list_size(select_inst.menu_items)-1);
-		select_inst.menu_size = ds_list_size(select_inst.menu_items);
+		if(instance_exists(obj_control_cooking)) {
+			if(is_undefined(obj_control_cooking.holding)) {
+				var item = ds_map_create();
+				ds_map_add(item, "text", "Take");
+				ds_map_add(item, "script", scr_menu_take);
+				ds_map_add(item, "args", inv_index);
+				ds_list_insert(select_inst.menu_items, 0, item)
+				ds_list_mark_as_map(select_inst.menu_items, ds_list_size(select_inst.menu_items)-1);
+				select_inst.menu_size = ds_list_size(select_inst.menu_items);
+			}
+		}
 	}
 	
 	interact = false;

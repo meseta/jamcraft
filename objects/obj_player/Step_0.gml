@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Inherit the parent event
+event_inherited();
+
 if(interact and not move_is_moving) {
 	var check_x = x;
 	var check_y = y;

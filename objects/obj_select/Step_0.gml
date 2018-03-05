@@ -26,7 +26,7 @@ else if(selected >= menu_size) selected = 0;
 height = menu_size * 10 - 3;
 
 if(interact) {
-	scr_debug("Menu select", selected);
+	scr_debug("Menu selected ", selected);
 	var item = ds_list_find_value(menu_items, selected);
 	var script = ds_map_find_value(item, "script");
 	if(script_exists(script)) {

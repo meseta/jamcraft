@@ -535,6 +535,14 @@
             }
         },
         {
+            "Key": "b3ba2f94-3bdf-4b03-a1ad-966762f147ae",
+            "Value": {
+                "id": "a552533c-8947-43f9-8fd5-fb2189b672a1",
+                "resourcePath": "objects\\obj_control_cooking\\obj_control_cooking.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b87c2035-6550-4454-853e-31013211cacd",
             "Value": {
                 "id": "19dd9899-2d64-4985-a519-2c2fd37b5240",
@@ -751,6 +759,14 @@
             }
         },
         {
+            "Key": "ef63f3a3-bead-47d9-bae0-0bf6cf25eb55",
+            "Value": {
+                "id": "c234f00d-7b0f-4389-ad6e-ce4c58b9bb14",
+                "resourcePath": "scripts\\scr_menu_clear\\scr_menu_clear.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f358aa67-a4bb-45f7-b174-62d8d14d20b7",
             "Value": {
                 "id": "7e8dd388-488b-446c-a2ce-b220b62e5e2e",
@@ -806,7 +822,8 @@
         "0a53d232-372b-45b0-bdc7-b41b46f3dd76",
         "6ae29028-d5ee-4520-87cc-38799e8eec43",
         "667ce9d7-5ba6-4001-95bf-9de5d1b8b349",
-        "257f9f9e-40b9-42e7-8e1d-06690da82852"
+        "257f9f9e-40b9-42e7-8e1d-06690da82852",
+        "ef63f3a3-bead-47d9-bae0-0bf6cf25eb55"
     ],
     "tutorial": ""
 }
