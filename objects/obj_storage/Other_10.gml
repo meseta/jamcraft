@@ -6,5 +6,6 @@ event_inherited();
 scr_debug("Open inventory")
 // create inventory instance (create it offscreen)
 menu_inst = instance_create_layer(x-200, y-200, "UI", obj_inventory);
+menu_inst.option_take = true;
 // push inventory menu into interact stack
 ds_stack_push(global.interact_stack, menu_inst);

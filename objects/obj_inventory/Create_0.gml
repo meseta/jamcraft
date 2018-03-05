@@ -22,3 +22,6 @@ inventory_map = undefined;
 
 selected_x = 0;
 selected_y = 0;
+
+option_take = false
+option_rearrange = false

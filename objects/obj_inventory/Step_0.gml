@@ -29,13 +29,31 @@ if(selected >= inventory_offset + inventory_width * inventory_height) {
 if(interact) {
 	scr_debug("Inventory menu")
 	// create inventory instance (create it offscreen)
-	menu_inst = instance_create_depth(x-200, y-200, depth-1, obj_menu_select);
+	select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
 	// push inventory menu into interact stack
-	ds_stack_push(global.interact_stack, menu_inst);
+	ds_stack_push(global.interact_stack, select_inst);
 
+	select_inst.x_offset = selected_x + UNIT + 4;
+	select_inst.y_offset = selected_y;
+	
 	// add items into menu
-	menu_inst.x_offset = selected_x + UNIT + 4;
-	menu_inst.y_offset = selected_y;
+	if(option_take) {
+		// select item
+		if(is_undefined(inventory_map)) {
+			var inv_index = selected
+		}
+		else {
+			var inv_index = ds_list_find_value(inventory_map, selected);
+		}
+		
+		var item = ds_map_create();
+		ds_map_add(item, "text", "Take");
+		ds_map_add(item, "script", scr_menu_take);
+		ds_map_add(item, "args", inv_index);
+		ds_list_insert(select_inst.menu_items, 0, item)
+		ds_list_mark_as_map(select_inst.menu_items, ds_list_size(select_inst.menu_items)-1);
+		select_inst.menu_size = ds_list_size(select_inst.menu_items);
+	}
 	
 	interact = false;
 }

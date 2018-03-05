@@ -12,12 +12,6 @@ ds_map_add(item, "script", scr_menu_back);
 ds_list_add(menu_items, item)
 ds_list_mark_as_map(menu_items, ds_list_size(menu_items)-1);
 
-var item = ds_map_create();
-ds_map_add(item, "text", "Testaoeuaouaoeaoeu");
-ds_map_add(item, "script", noone);
-ds_list_insert(menu_items, 0, item)
-ds_list_mark_as_map(menu_items, ds_list_size(menu_items)-1);
-
 menu_size = ds_list_size(menu_items);
 
 selected = 0;

@@ -85,7 +85,7 @@ else {
 		select_up = key_up_pressed
 		select_left = key_left_pressed
 		select_down = key_down_pressed
-		interact = key_primary;
-		cancel = key_secondary;
+		if(key_primary) interact = true;
+		if(key_secondary) cancel = true;
 	}
 }
