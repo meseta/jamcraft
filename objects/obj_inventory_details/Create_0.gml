@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-width = 5 * UNIT;
+width = 5 * UNIT -1;
 height = 26;
 
 text_name = "Test"

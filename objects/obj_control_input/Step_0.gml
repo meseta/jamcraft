@@ -36,6 +36,39 @@ if(gamepad_is_connected(0)) {
 	else if(axis_y < 0) key_up = true;
 }
 
+// handle keydown repeat
+if(key_right) {
+	key_right_repeat += 1;
+	if(key_right_repeat > key_repeat_start and key_right_repeat % key_repeat_rate == 0) {
+		key_right_pressed = true	
+	}
+}
+else key_right_repeat = 0;
+
+if(key_left) {
+	key_left_repeat += 1;
+	if(key_left_repeat > key_repeat_start and key_left_repeat % key_repeat_rate == 0) {
+		key_left_pressed = true	
+	}
+}
+else key_left_repeat = 0;
+
+if(key_down) {
+	key_down_repeat += 1;
+	if(key_down_repeat > key_repeat_start and key_down_repeat % key_repeat_rate == 0) {
+		key_down_pressed = true	
+	}
+}
+else key_down_repeat = 0;
+
+if(key_up) {
+	key_up_repeat += 1;
+	if(key_up_repeat > key_repeat_start and key_up_repeat % key_repeat_rate == 0) {
+		key_up_pressed = true	
+	}
+}
+else key_up_repeat = 0;
+
 if(ds_stack_empty(global.interact_stack)) { // player move
 	with(obj_player) {
 		if(key_right) move_dir = MOVEDIR.right

@@ -3,7 +3,7 @@
 
 event_inherited()
 
-var inv_end = inventory_offset + inventory_width * inventory_height 
+var inv_end = inventory_offset + inventory_width * inventory_height;
 
 // inventory contents
 for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
@@ -16,7 +16,6 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 	else {
 		var inv_index = ds_list_find_value(inventory_map, i);
 	}
-	
 	var item = ds_list_find_value(inventory, inv_index);
 	var item_type = ds_map_find_value(item, "type");
 	var library = ds_map_find_value(global.item_library, item_type)
@@ -39,7 +38,7 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 		draw_sprite(spr_inventory_slot, 1, xx, yy);
 		
 		// move inventory details
-		inventory_details.x_offset = xx + UNIT + 4;
+		inventory_details.x_offset = inventory_width * UNIT + x_offset + 5;
 		inventory_details.y_offset = yy;
 		inventory_details.text_name = library_name;
 		inventory_details.text_qtty = quantity;
