@@ -4,11 +4,20 @@
     "mvc": "1.0",
     "name": "obj_fridge",
     "eventList": [
-        
+        {
+            "id": "96821308-dc71-4045-9244-8f9bcafc5466",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 10,
+            "eventtype": 7,
+            "m_owner": "7deb27c9-abaf-4451-95b5-01d00363bd9f"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "04593ab1-58f5-4f4b-a8c9-65a2c095ae85",
+    "parentObjectId": "db2dd6f4-80a2-4ecf-a280-22480bdac519",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

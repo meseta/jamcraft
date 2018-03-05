@@ -11,9 +11,12 @@ for(var i=0; i<ds_list_size(inventory); i++) {
 	var item = ds_list_find_value(inventory, i);
 	
 	switch(ds_map_find_value(item, "subtype")) {
-		case SUBTYPE.equipment:
-		case SUBTYPE.ingredient:
-		case SUBTYPE.jam:
+		case SUBTYPE.whole:
+		case SUBTYPE.peeled:
+		case SUBTYPE.peel:
+		case SUBTYPE.chopped:
+		case SUBTYPE.pulp:
+		case SUBTYPE.juice:
 			ds_list_add(filtered_inventory, i);
 	}
 }

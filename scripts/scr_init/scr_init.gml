@@ -75,15 +75,16 @@ enum ITEM {
 }
 
 enum SUBTYPE {
-	normal,
+	undef,
 	equipment,
 	ingredient,
+	jam,
 	whole,
 	peeled,
 	peel,
 	chopped,
 	pulp,
-	juice
+	juice,
 }
 
 var item = ds_map_create();

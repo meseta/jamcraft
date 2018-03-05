@@ -6,11 +6,18 @@ event_inherited()
 var inv_end = inventory_offset + inventory_width * inventory_height 
 
 // inventory contents
-for(var i=inventory_offset; i<ds_list_size(inventory) and i<inv_end; i++) {
+for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 	draw_set_color(c_white)
 	
 	// select item
-	var item = ds_list_find_value(inventory, i);
+	if(is_undefined(inventory_map)) {
+		var inv_index = i
+	}
+	else {
+		var inv_index = ds_list_find_value(inventory_map, i);
+	}
+	
+	var item = ds_list_find_value(inventory, inv_index);
 	var item_type = ds_map_find_value(item, "type");
 	var library = ds_map_find_value(global.item_library, item_type)
 	if(not is_undefined(library)) {
@@ -54,13 +61,11 @@ for(var i=inventory_offset; i<ds_list_size(inventory) and i<inv_end; i++) {
 		draw_set_valign(fa_top);
 		draw_text(xx+2, yy-1, string(quantity))
 	}
-	
-	
 }
 
 if(inventory_offset > 0) {
 	draw_sprite(spr_up_arrow, 0, x_offset+inventory_width*UNIT-4, y_offset-UNIT);
 }
-if(inv_end < ds_list_size(inventory)) {
+if(inv_end < inventory_size) {
 	draw_sprite(spr_down_arrow, 0, x_offset+inventory_width*UNIT-4, y_offset+(inventory_height-1)*UNIT+1);
 }
