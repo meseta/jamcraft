@@ -1,5 +1,8 @@
 /// @description Insert description here
 
+// Inherit the parent event
+event_inherited();
+
 if(select_right) {
     selected += 1;
 }
@@ -23,6 +26,16 @@ if(selected >= inventory_offset + inventory_width * inventory_height) {
 	inventory_offset += inventory_width;	
 }
 
-// Inherit the parent event
-event_inherited();
+if(interact) {
+	scr_debug("Inventory menu")
+	// create inventory instance (create it offscreen)
+	menu_inst = instance_create_depth(x-200, y-200, depth-1, obj_menu_select);
+	// push inventory menu into interact stack
+	ds_stack_push(global.interact_stack, menu_inst);
 
+	// add items into menu
+	menu_inst.x_offset = selected_x + UNIT + 4;
+	menu_inst.y_offset = selected_y;
+	
+	interact = false;
+}

@@ -266,7 +266,7 @@
             "Key": "667ce9d7-5ba6-4001-95bf-9de5d1b8b349",
             "Value": {
                 "id": "e96a6ce0-3bad-4d79-a01e-649dcee020a5",
-                "resourcePath": "scripts\\src_menu_back\\src_menu_back.yy",
+                "resourcePath": "scripts\\scr_menu_back\\scr_menu_back.yy",
                 "resourceType": "GMScript"
             }
         },

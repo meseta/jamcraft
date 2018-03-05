@@ -44,6 +44,9 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 		inventory_details.text_qtty = quantity;
 		inventory_details.text_cond = ds_map_find_value(item, "condition");
 		inventory_details.text_qual = ds_map_find_value(item, "quality");
+		
+		selected_x = xx;
+		selected_y = yy;
 	}
 	else {
 		draw_sprite(spr_inventory_slot, 0, xx, yy);
