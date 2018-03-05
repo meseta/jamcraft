@@ -4,6 +4,7 @@ randomize();
 #macro UNIT 16
 
 global.interact_stack = ds_stack_create();
+global.item_library = ds_stack_create();
 
 scr_newgame();
 
@@ -82,3 +83,21 @@ enum SUBTYPE {
 	pulp,
 	juice
 }
+
+var item = ds_map_create();
+ds_map_add(item, "name", "Stockpot")
+ds_map_add(item, "sprite", spr_pot);
+ds_map_add(item, "subimage", 0);
+ds_map_add(global.item_library, ITEM.pot, item);
+
+var item = ds_map_create();
+ds_map_add(item, "name", "Empty Jar")
+ds_map_add(item, "sprite", spr_jar);
+ds_map_add(item, "subimage", 0);
+ds_map_add(global.item_library, ITEM.jar, item);
+
+var item = ds_map_create();
+ds_map_add(item, "name", "Sugar")
+ds_map_add(item, "sprite", spr_sugar);
+ds_map_add(item, "subimage", 0);
+ds_map_add(global.item_library, ITEM.sugar, item);

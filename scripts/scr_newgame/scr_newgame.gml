@@ -6,7 +6,7 @@ scr_inv_add_item(scr_inv_new_item(ITEM.pot, SUBTYPE.equipment, 1, 20, 100, false
 scr_inv_add_item(scr_inv_new_item(ITEM.jar, SUBTYPE.equipment, 4, 20, 100, false));
 scr_inv_add_item(scr_inv_new_item(ITEM.strawberry, SUBTYPE.whole, 3, 20, 100, true));
 scr_inv_add_item(scr_inv_new_item(ITEM.raspberry, SUBTYPE.whole, 3, 20, 100, true));
-scr_inv_add_item(scr_inv_new_item(ITEM.sugar, SUBTYPE.ingredient, 100, 20, 100, true));
+scr_inv_add_item(scr_inv_new_item(ITEM.sugar, SUBTYPE.ingredient, 100, 20, 100, false));
 scr_inv_add_item(scr_inv_new_item(ITEM.lemon, SUBTYPE.juice, 5, 20, 100, true));
 
 repeat(20) scr_inv_add_item(scr_inv_new_item(ITEM.lemon, SUBTYPE.juice, 5, 20, 100, true));
