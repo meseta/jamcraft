@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(cancel) exit
+
 // box
 var _col1 = 8, _col2 = 8, _col3 = 8;
 var _row1 = 8, _row2 = 8, _row3 = 8;

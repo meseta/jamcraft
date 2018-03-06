@@ -5,7 +5,7 @@ event_inherited();
 
 // create inventory instance (create it offscreen)
 menu_inst = instance_create_layer(x-300, y-300, "UI", obj_inventory);
-menu_inst.option_take = true;
+//menu_inst.option_take = true;
 
 scr_debug("Open inventory inst ", menu_inst)
 
@@ -26,4 +26,3 @@ for(var i=0; i<ds_list_size(inventory); i++) {
 }
 
 menu_inst.inventory_map = filtered_inventory
-menu_inst.inventory_size = ds_list_size(filtered_inventory);

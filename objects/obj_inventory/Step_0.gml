@@ -1,10 +1,18 @@
 /// @description Insert description here
 
-// Inherit the parent event
 event_inherited();
+if(cancel) exit
+
+// Inherit the parent event
+if(is_undefined(inventory_map)) {
+	var inventory_size = ds_list_size(inventory);
+}
+else {
+	var inventory_size = ds_list_size(inventory_map);
+}
 
 if(select_right) {
-    selected += 1;
+	selected += 1;
 }
 if(select_left) {
 	selected -= 1;
@@ -37,7 +45,7 @@ if(interact) {
 	select_inst.y_offset = selected_y;
 	
 	// add items into menu
-	if(option_take) {
+	//if(option_take) {
 		// select item
 		if(is_undefined(inventory_map)) {
 			var inv_index = selected
@@ -47,15 +55,9 @@ if(interact) {
 		}
 		
 		if(is_undefined(obj_player.holding)) {
-			var item = ds_map_create();
-			ds_map_add(item, "text", "Take");
-			ds_map_add(item, "script", scr_menu_take);
-			ds_map_add(item, "args", inv_index);
-			ds_list_insert(select_inst.menu_items, 0, item)
-			ds_list_mark_as_map(select_inst.menu_items, ds_list_size(select_inst.menu_items)-1);
-			select_inst.menu_size = ds_list_size(select_inst.menu_items);
+			scr_menu_add(select_inst.menu_items, 0, "Take", scr_inv_takeout, inv_index);
 		}
-	}
+	//}
 	
 	interact = false;
 }

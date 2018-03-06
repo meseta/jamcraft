@@ -3,8 +3,8 @@
 
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1.0);
 
-if(not is_undefined(holding) and not is_undefined(inventory)) {
-	var item = ds_list_find_value(inventory, holding);
+if(not is_undefined(holding)) {
+	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding);
 	var item_type = ds_map_find_value(item, "type");
 	var library = ds_map_find_value(global.item_library, item_type)
 	if(not is_undefined(library)) {

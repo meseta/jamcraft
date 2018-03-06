@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 
-event_inherited();
+var menu_size = ds_list_size(menu_items);
 
 // todo: submenu
 /*if(select_right) {
@@ -39,3 +39,6 @@ if(interact) {
 	}
 	interact = false;	
 }
+
+
+event_inherited();

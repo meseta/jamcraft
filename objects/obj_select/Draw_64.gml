@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+var menu_size = ds_list_size(menu_items);
+var text_maxlength = ceil(width/8);
+
 draw_set_color(c_black);
 draw_set_font(fnt_default);
 draw_set_halign(fa_left);

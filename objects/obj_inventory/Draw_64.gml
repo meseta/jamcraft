@@ -2,8 +2,16 @@
 // You can write your code in this editor
 
 event_inherited()
+if(cancel) exit;
+
 
 var inv_end = inventory_offset + inventory_width * inventory_height;
+if(is_undefined(inventory_map)) {
+	var inventory_size = ds_list_size(inventory);
+}
+else {
+	var inventory_size = ds_list_size(inventory_map);
+}
 
 // inventory contents
 for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {

@@ -19,7 +19,6 @@ inventory_details.x_offset = -300;
 inventory_details.y_offset = -300;
 
 inventory = ds_map_find_value(GAMEDATA, "inventory");
-inventory_size = ds_list_size(inventory);
 inventory_map = undefined;
 
 selected_x = 0;
