@@ -4,11 +4,20 @@
     "mvc": "1.0",
     "name": "obj_stove",
     "eventList": [
-        
+        {
+            "id": "e6f0aae0-3719-48b1-b402-aeea89b5a880",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 10,
+            "eventtype": 7,
+            "m_owner": "b1fba798-7ba7-40c8-8c6b-733d2566f2d3"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "04593ab1-58f5-4f4b-a8c9-65a2c095ae85",
+    "parentObjectId": "fcc09dd1-99d5-48de-9de1-b893021030be",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

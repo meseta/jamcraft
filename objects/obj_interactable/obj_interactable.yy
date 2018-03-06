@@ -5,16 +5,6 @@
     "name": "obj_interactable",
     "eventList": [
         {
-            "id": "dbe7e013-f75e-4417-ba3e-f2c5016ffa12",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 10,
-            "eventtype": 7,
-            "m_owner": "04593ab1-58f5-4f4b-a8c9-65a2c095ae85"
-        },
-        {
             "id": "8e88b1b5-5d36-46ae-b913-d84e68ddd934",
             "modelName": "GMEvent",
             "mvc": "1.0",

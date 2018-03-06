@@ -4,16 +4,7 @@
     "mvc": "1.0",
     "name": "obj_counter",
     "eventList": [
-        {
-            "id": "ecd7fd3e-82b6-48c1-acfc-4fc0f5c56134",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 10,
-            "eventtype": 7,
-            "m_owner": "49199642-6141-40e9-8c1b-0b84c81aea78"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

@@ -17,6 +17,20 @@ else {
 for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 	draw_set_color(c_white)
 	
+	// calculate position
+	var row = (i-inventory_offset) div inventory_width;
+	var col = (i-inventory_offset) mod inventory_width;;
+	var xx = col * UNIT + x_offset;
+	var yy = row * UNIT + y_offset;
+	
+	// draw inventory slot
+	if(i == selected) {
+		draw_sprite(spr_inventory_slot, 1, xx, yy);
+	}
+	else {
+		draw_sprite(spr_inventory_slot, 0, xx, yy);
+	}
+	
 	// select item
 	if(is_undefined(inventory_map)) {
 		var inv_index = i
@@ -25,29 +39,11 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 		var inv_index = ds_list_find_value(inventory_map, i);
 	}
 	var item = ds_list_find_value(inventory, inv_index);
-	var item_type = ds_map_find_value(item, "type");
-	var library = ds_map_find_value(global.item_library, item_type)
-	if(not is_undefined(library)) {
-		var sprite = ds_map_find_value(library, "sprite");
-		var library_name = ds_map_find_value(library, "name");
-		var sprite_subimage = ds_map_find_value(library, "subimage");
-	}
-	else {
-		var sprite = spr_item_undef;
-		var library_name = "UNDEF#" + string(item_type);
-		var sprite_subimage = 0;
-	}
 	var quantity = ds_map_find_value(item, "quantity");
+	var library_name = scr_inv_draw(item, xx, yy);
 	
-	// calculate position
-	var row = (i-inventory_offset) div inventory_width;
-	var col = (i-inventory_offset) mod inventory_width;;
-	var xx = col * UNIT + x_offset;
-	var yy = row * UNIT + y_offset;
+	// move inventory details
 	if(i == selected) {
-		draw_sprite(spr_inventory_slot, 1, xx, yy);
-		
-		// move inventory details
 		inventory_details.x_offset = inventory_width * UNIT + x_offset + 5;
 		inventory_details.y_offset = yy;
 		inventory_details.text_name = library_name;
@@ -58,12 +54,6 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 		selected_x = xx;
 		selected_y = yy;
 	}
-	else {
-		draw_sprite(spr_inventory_slot, 0, xx, yy);
-	}
-	
-	// draw sprite
-	draw_sprite(sprite, sprite_subimage, xx, yy);
 	
 	// draw quantity
 	if(quantity > 1) {

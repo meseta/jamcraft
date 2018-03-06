@@ -89,18 +89,30 @@ enum SUBTYPE {
 
 var item = ds_map_create();
 ds_map_add(item, "name", "Stockpot")
-ds_map_add(item, "sprite", spr_pot);
-ds_map_add(item, "subimage", 0);
+var subtypes = ds_map_create();
+var subtype = ds_map_create();
+ds_map_add(subtype, "sprite", spr_pot);
+ds_map_add(subtype, "subimage", 0);
+ds_map_add(subtypes, SUBTYPE.equipment, subtype)
+ds_map_add(item, "subtypes", subtypes);
 ds_map_add(global.item_library, ITEM.pot, item);
 
 var item = ds_map_create();
 ds_map_add(item, "name", "Empty Jar")
-ds_map_add(item, "sprite", spr_jar);
-ds_map_add(item, "subimage", 0);
+var subtypes = ds_map_create();
+var subtype = ds_map_create();
+ds_map_add(subtype, "sprite", spr_jar);
+ds_map_add(subtype, "subimage", 0);	
+ds_map_add(subtypes, SUBTYPE.equipment, subtype)
+ds_map_add(item, "subtypes", subtypes);
 ds_map_add(global.item_library, ITEM.jar, item);
 
 var item = ds_map_create();
 ds_map_add(item, "name", "Sugar")
-ds_map_add(item, "sprite", spr_sugar);
-ds_map_add(item, "subimage", 0);
+var subtypes = ds_map_create();
+var subtype = ds_map_create();
+ds_map_add(subtype, "sprite", spr_sugar);
+ds_map_add(subtype, "subimage", 0);
+ds_map_add(subtypes, SUBTYPE.ingredient, subtype)
+ds_map_add(item, "subtypes", subtypes);
 ds_map_add(global.item_library, ITEM.sugar, item);

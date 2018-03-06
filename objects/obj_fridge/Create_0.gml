@@ -5,10 +5,8 @@
 event_inherited();
 
 filter_list[0] = SUBTYPE.whole;
-filter_list[1] = SUBTYPE.juice;
-
-/*
 filter_list[1] = SUBTYPE.peeled;
 filter_list[2] = SUBTYPE.peel;
 filter_list[3] = SUBTYPE.chopped;
-filter_list[4] = SUBTYPE.pulp;*/
+filter_list[4] = SUBTYPE.pulp;
+filter_list[5] = SUBTYPE.juice; // needs a jar

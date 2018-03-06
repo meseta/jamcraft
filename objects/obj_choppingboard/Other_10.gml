@@ -1,8 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Inherit the parent event
-event_inherited();
+scr_debug("Interact with ", object_get_name(object_index))
 
 if(not is_undefined(obj_player.holding) and is_undefined(holding)) {
 	// player has item, counter empty: place item on counter
@@ -21,5 +20,4 @@ else if(not is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	var tmp_holding = holding;
 	holding = obj_player.holding
 	obj_player.holding = holding;
-	
 }

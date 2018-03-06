@@ -4,5 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
-holding = undefined;
-invisible = false;
+if(not is_undefined(obj_player.holding)) {
+	// todo: wash/fill
+	
+	
+}

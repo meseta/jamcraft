@@ -46,6 +46,8 @@ if(move_is_moving) { // currently moving
 		
 		x += sign(xdiff) * min(move_speed, abs(xdiff)); // don't overshoot
 		y += sign(ydiff) * min(move_speed, abs(ydiff));
+		
+		depth = -y;
 	}
 	
 	if(x == move_target_x and y == move_target_y) { // now at target, stop moving
