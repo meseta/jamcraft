@@ -23,6 +23,16 @@
             "enumb": 0,
             "eventtype": 0,
             "m_owner": "1a606f26-8f03-482d-a9b9-d0b86a27cb72"
+        },
+        {
+            "id": "a9620095-b982-4ea3-bb72-8e2534e24512",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "1a606f26-8f03-482d-a9b9-d0b86a27cb72"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -42,6 +52,20 @@
     "physicsShapePoints": null,
     "physicsStartAwake": true,
     "properties": [
+        {
+            "id": "45e4b753-1a54-48c1-ac94-4d76bc77fb0c",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1",
+            "varName": "move_speed",
+            "varType": 1
+        },
         {
             "id": "251ab26e-f726-4ca9-8219-7a3030a7dcc0",
             "modelName": "GMObjectProperty",
@@ -99,7 +123,7 @@
             "varType": 5
         },
         {
-            "id": "45e4b753-1a54-48c1-ac94-4d76bc77fb0c",
+            "id": "4008f82d-a03f-4595-87ab-b3a314c19ddd",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -108,9 +132,51 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "1",
-            "varName": "move_speed",
-            "varType": 1
+            "value": "noone",
+            "varName": "up_holding",
+            "varType": 5
+        },
+        {
+            "id": "ca799736-6986-4d29-90d9-53ae10d88965",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "down_holding",
+            "varType": 5
+        },
+        {
+            "id": "c486612e-d67d-4f80-89e8-20f73a0d53ad",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "left_holding",
+            "varType": 5
+        },
+        {
+            "id": "00a337fb-7890-4c53-94cf-3ed947c3d40a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "right_holding",
+            "varType": 5
         }
     ],
     "solid": false,

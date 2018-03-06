@@ -1,7 +1,7 @@
 var take_item = argument0;
 scr_debug("Take item ", take_item);
 
-with(obj_control_cooking) {
+with(obj_player) {
 	holding = take_item;
 }
 

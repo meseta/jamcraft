@@ -5,13 +5,13 @@
     "name": "obj_fridge",
     "eventList": [
         {
-            "id": "96821308-dc71-4045-9244-8f9bcafc5466",
+            "id": "727400b7-dd4e-4a1c-88ff-3765baa10b60",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 10,
-            "eventtype": 7,
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "7deb27c9-abaf-4451-95b5-01d00363bd9f"
         }
     ],

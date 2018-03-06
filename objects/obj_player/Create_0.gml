@@ -6,3 +6,5 @@ event_inherited();
 
 interact = false;
 cancel = false;
+
+inventory = ds_map_find_value(GAMEDATA, "inventory");

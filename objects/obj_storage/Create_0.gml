@@ -5,3 +5,4 @@
 event_inherited();
 
 menu_inst = noone;
+filter_list = undefined;

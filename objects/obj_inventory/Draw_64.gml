@@ -22,10 +22,12 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 	if(not is_undefined(library)) {
 		var sprite = ds_map_find_value(library, "sprite");
 		var library_name = ds_map_find_value(library, "name");
+		var sprite_subimage = ds_map_find_value(library, "subimage");
 	}
 	else {
 		var sprite = spr_item_undef;
 		var library_name = "UNDEF#" + string(item_type);
+		var sprite_subimage = 0;
 	}
 	var quantity = ds_map_find_value(item, "quantity");
 	
@@ -53,7 +55,7 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 	}
 	
 	// draw sprite
-	draw_sprite(sprite, 0, xx, yy);
+	draw_sprite(sprite, sprite_subimage, xx, yy);
 	
 	// draw quantity
 	if(quantity > 1) {

@@ -5,25 +5,22 @@ if(move_is_moving == false) {
 	if(move_dir != MOVEDIR.undef) { // has a direction to move
 		var candidate_target_x = move_target_x;
 		var candidate_target_y = move_target_y;
+		move_last_dir = move_dir;
+		
 		switch(move_dir) { // set targets
 			case MOVEDIR.right:
-				sprite_index = right_sprite;
 				candidate_target_x = (floor(x/UNIT)+1) * UNIT;
 				break;
 			case MOVEDIR.up:
-				sprite_index = up_sprite;
 				candidate_target_y = (floor(y/UNIT)-1) * UNIT;
 				break;
 			case MOVEDIR.left:
-				sprite_index = left_sprite;
 				candidate_target_x = (floor(x/UNIT)-1) * UNIT;
 				break;
 			case MOVEDIR.down:
-				sprite_index = down_sprite;
 				candidate_target_y = (floor(y/UNIT)+1) * UNIT;
 				break;
 		}
-		move_last_dir = move_dir;
 		
 		if(not place_meeting(candidate_target_x, candidate_target_y, obj_solid)) {
 			move_target_x = candidate_target_x
@@ -57,4 +54,24 @@ if(move_is_moving) { // currently moving
 		move_is_moving = false;
 		move_dir = MOVEDIR.undef;
 	}
+}
+
+
+switch(move_last_dir) { // set targets
+	case MOVEDIR.right:
+		if(not is_undefined(holding)) sprite_index = right_holding
+		else sprite_index = right_sprite;
+		break;
+	case MOVEDIR.up:
+		if(not is_undefined(holding)) sprite_index = up_holding
+		else sprite_index = up_sprite;
+		break;
+	case MOVEDIR.left:
+		if(not is_undefined(holding)) sprite_index = left_holding
+		else sprite_index = left_sprite;
+		break;
+	case MOVEDIR.down:
+		if(not is_undefined(holding)) sprite_index = down_holding
+		else sprite_index = down_sprite;
+		break;
 }

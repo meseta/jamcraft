@@ -5,13 +5,13 @@
     "name": "obj_cupboard",
     "eventList": [
         {
-            "id": "db21b384-b1d1-4e4d-83d9-e1db503d5ba8",
+            "id": "3e61bc3e-bed2-45fe-94ac-a314e5303a1c",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 10,
-            "eventtype": 7,
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "6a0c0f65-77a2-4de6-93d4-5ba576b37271"
         }
     ],
