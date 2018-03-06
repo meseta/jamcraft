@@ -40,6 +40,7 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 	}
 	var item = ds_list_find_value(inventory, inv_index);
 	var quantity = ds_map_find_value(item, "quantity");
+	var subtype = ds_map_find_value(item, "subtype");
 	var library_name = scr_inv_draw(item, xx, yy);
 	
 	// move inventory details
@@ -47,6 +48,7 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 		inventory_details.x_offset = inventory_width * UNIT + x_offset + 5;
 		inventory_details.y_offset = yy;
 		inventory_details.text_name = library_name;
+		inventory_details.text_subtype = global.subtype_name[subtype];
 		inventory_details.text_qtty = quantity;
 		inventory_details.text_cond = ds_map_find_value(item, "condition");
 		inventory_details.text_qual = ds_map_find_value(item, "quality");

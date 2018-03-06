@@ -87,32 +87,31 @@ enum SUBTYPE {
 	juice,
 }
 
-var item = ds_map_create();
-ds_map_add(item, "name", "Stockpot")
-var subtypes = ds_map_create();
-var subtype = ds_map_create();
-ds_map_add(subtype, "sprite", spr_pot);
-ds_map_add(subtype, "subimage", 0);
-ds_map_add(subtypes, SUBTYPE.equipment, subtype)
-ds_map_add(item, "subtypes", subtypes);
-ds_map_add(global.item_library, ITEM.pot, item);
+global.subtype_name = undefined;
+global.subtype_name[SUBTYPE.undef] = "UNDEF"
+global.subtype_name[SUBTYPE.equipment] = "Equipment"
+global.subtype_name[SUBTYPE.ingredient] = "Ingredient"
+global.subtype_name[SUBTYPE.jam] = "Jam"
+global.subtype_name[SUBTYPE.whole] = "Whole"
+global.subtype_name[SUBTYPE.peeled] = "Peeled"
+global.subtype_name[SUBTYPE.peel] = "Peel"
+global.subtype_name[SUBTYPE.chopped] = "Chopped"
+global.subtype_name[SUBTYPE.pulp] = "Pulp"
+global.subtype_name[SUBTYPE.juice] = "Juice"
 
-var item = ds_map_create();
-ds_map_add(item, "name", "Empty Jar")
-var subtypes = ds_map_create();
-var subtype = ds_map_create();
-ds_map_add(subtype, "sprite", spr_jar);
-ds_map_add(subtype, "subimage", 0);	
-ds_map_add(subtypes, SUBTYPE.equipment, subtype)
-ds_map_add(item, "subtypes", subtypes);
-ds_map_add(global.item_library, ITEM.jar, item);
 
-var item = ds_map_create();
-ds_map_add(item, "name", "Sugar")
-var subtypes = ds_map_create();
-var subtype = ds_map_create();
-ds_map_add(subtype, "sprite", spr_sugar);
-ds_map_add(subtype, "subimage", 0);
-ds_map_add(subtypes, SUBTYPE.ingredient, subtype)
-ds_map_add(item, "subtypes", subtypes);
-ds_map_add(global.item_library, ITEM.sugar, item);
+var item = scr_inv_create_item("Stockpot", ITEM.pot);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0);
+
+var item = scr_inv_create_item("Empty Jar", ITEM.jar);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0);
+
+var item = scr_inv_create_item("Sugar", ITEM.sugar);
+scr_inv_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0);
+
+var item = scr_inv_create_item("Strawberry", ITEM.strawberry);
+scr_inv_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0);
+
+var item = scr_inv_create_item("Lemon", ITEM.lemon);
+scr_inv_create_subtype(item, SUBTYPE.whole, spr_lemon, 0);
+scr_inv_create_subtype(item, SUBTYPE.juice, spr_lemon, 1);

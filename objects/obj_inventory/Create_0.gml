@@ -6,7 +6,7 @@ event_inherited();
 
 selected = 0;
 inventory_width = 4;
-inventory_height = 7;
+inventory_height = 6;
 inventory_offset = 0;
 
 x_offset = 6;
