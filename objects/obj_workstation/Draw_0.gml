@@ -5,5 +5,5 @@ draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, ima
 
 if(not is_undefined(holding)) {
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding);
-	scr_inv_draw(item, x, y-13);
+	scr_inv_draw(item, x, y-8);
 }
