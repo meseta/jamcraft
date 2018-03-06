@@ -26,4 +26,12 @@ if(not is_undefined(obj_player.holding)) {
 	else {
 		scr_menu_add(select_inst.menu_items, 0, "Trash item", scr_inv_delete, obj_player.holding)
 	}
+	
+	// creat icon
+	icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon);
+	icon_inst.item_idx = obj_player.holding;
+	icon_inst.x_offset = 4.5 * UNIT;
+	icon_inst.y_offset = 4.5 * UNIT;
+	
+	select_inst.additional_display = icon_inst;
 }

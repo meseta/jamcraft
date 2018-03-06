@@ -9,14 +9,21 @@ if(not is_undefined(obj_player.holding) and is_undefined(holding)) {
 	obj_player.holding = undefined;	
 }
 else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
-	// counter has item, player empty: take item from counter
-	obj_player.holding = holding;
-	holding = undefined
+	// counter has item, player empty
+	// chop?
+	if(0) { // check if choppable
+		
+		
+	}
+	else {
+		// take
+		obj_player.holding = holding;
+		holding = undefined
+	}
 
 }
 else if(not is_undefined(obj_player.holding) and not is_undefined(holding)) {
-	// interactions!
-	// TODO: interaction types
+	// counter has item, player has item: swap items
 	var tmp_holding = holding;
 	holding = obj_player.holding
 	obj_player.holding = tmp_holding;

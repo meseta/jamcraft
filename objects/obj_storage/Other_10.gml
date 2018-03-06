@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-event_inherited();
-
 // create inventory instance (create it offscreen)
 menu_inst = instance_create_layer(x-300, y-300, "UI", obj_inventory);
 //menu_inst.option_take = true;
