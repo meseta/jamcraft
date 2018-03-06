@@ -39,6 +39,7 @@ with(obj_player) {
 
 // remove from inventory
 ds_map_destroy(room_item);
-ds_list_delete(room_inventory, take_item_idx)
+//ds_list_delete(room_inventory, take_item_idx)
+ds_list_set(room_inventory, take_item_idx, undefined);
 
 scr_menu_clear();

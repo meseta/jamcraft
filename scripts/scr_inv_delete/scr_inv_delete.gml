@@ -7,7 +7,8 @@ scr_debug("Delete item ", take_item_idx);
 var room_inventory = obj_control_room_inventory.inventory;
 var room_item = ds_list_find_value(room_inventory, take_item_idx);
 ds_map_destroy(room_item);
-ds_list_delete(room_inventory, take_item_idx)
+//ds_list_delete(room_inventory, take_item_idx)
+ds_list_set(room_inventory, take_item_idx, undefined);
 
 // remove from player
 with(obj_player) {

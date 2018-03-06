@@ -20,5 +20,5 @@ else if(not is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	// TODO: interaction types
 	var tmp_holding = holding;
 	holding = obj_player.holding
-	obj_player.holding = holding;
+	obj_player.holding = tmp_holding;
 }
