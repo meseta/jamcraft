@@ -1,8 +1,8 @@
 {
-    "id": "1d0d3096-c519-40fd-8d42-13df84c23948",
+    "id": "7217a456-7051-4d73-add5-07aa08e48d44",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_inv_delete",
+    "name": "scr_draw_bar",
     "IsCompatibility": false,
     "IsDnD": false
 }

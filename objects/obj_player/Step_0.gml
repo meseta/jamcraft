@@ -29,7 +29,7 @@ if(interact and not move_is_moving) {
 			var item = ds_list_find_value(obj_control_room_inventory.inventory, other.holding);
 			var item_subtype = ds_map_find_value(item, "subtype");
 			if(scr_inv_in_filter(item_subtype, filter_list)) { // check if right storage type
-				scr_inv_putback(other.holding);
+				scr_app_putback(other.holding);
 			}
 		}
 		else {

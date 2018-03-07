@@ -5,33 +5,20 @@
 event_inherited();
 
 if(not is_undefined(obj_player.holding)) {
-	// create confirmation menu instance (create it offscreen)
-	select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
-	scr_debug("Trash menu ", select_inst)
+// create confirmation menu instance (create it offscreen)
+	menu_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+	scr_debug("Trash menu ", menu_inst)
 	// push inventory menu into interact stack
-	ds_stack_push(global.interact_stack, select_inst);
+	ds_stack_push(global.interact_stack, menu_inst);
 
-	select_inst.x_offset = 2 * UNIT;
-	select_inst.y_offset = 6.5 * UNIT;
-	select_inst.width = 6 * UNIT;
+	menu_inst.x_offset = 2 * UNIT;
+	menu_inst.y_offset = 6.5 * UNIT;
+	menu_inst.width = 6 * UNIT;
 	
 	// check plurality
-	var room_inventory = obj_control_room_inventory.inventory;
-	var room_item = ds_list_find_value(room_inventory, obj_player.holding);
-	var qty = ds_map_find_value(room_item, "quantity")
+	scr_menu_add(menu_inst.menu_items, 0, "Trash item", scr_app_trash, obj_player.holding)
 	
-	if(qty > 1) {
-		scr_menu_add(select_inst.menu_items, 0, "Trash items", scr_inv_delete, obj_player.holding)
-	}
-	else {
-		scr_menu_add(select_inst.menu_items, 0, "Trash item", scr_inv_delete, obj_player.holding)
-	}
-	
-	// creat icon
-	icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon);
-	icon_inst.item_idx = obj_player.holding;
-	icon_inst.x_offset = 4.5 * UNIT;
-	icon_inst.y_offset = 4.5 * UNIT;
-	
-	select_inst.additional_display = icon_inst;
+	disp_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_trash);
+	disp_inst.item_idx = obj_player.holding;
+	menu_inst.additional_display = disp_inst;
 }

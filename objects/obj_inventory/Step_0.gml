@@ -55,7 +55,7 @@ if(interact) {
 		}
 		
 		if(is_undefined(obj_player.holding)) {
-			scr_menu_add(select_inst.menu_items, 0, "Take", scr_inv_takeout, inv_index);
+			scr_menu_add(select_inst.menu_items, 0, "Take", scr_app_takeout, inv_index);
 		}
 	//}
 	

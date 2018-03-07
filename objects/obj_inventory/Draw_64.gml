@@ -41,7 +41,7 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 	var item = ds_list_find_value(inventory, inv_index);
 	var quantity = ds_map_find_value(item, "quantity");
 	var subtype = ds_map_find_value(item, "subtype");
-	var library_name = scr_inv_draw(item, xx, yy);
+	var library_name = scr_item_draw(item, xx, yy);
 	
 	// move inventory details
 	if(i == selected) {

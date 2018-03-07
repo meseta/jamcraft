@@ -99,19 +99,25 @@ global.subtype_name[SUBTYPE.chopped] = "Chopped"
 global.subtype_name[SUBTYPE.pulp] = "Pulp"
 global.subtype_name[SUBTYPE.juice] = "Juice"
 
+enum PROPS {
+	none = 0,
+	choppable = 1,
+	peelable = 2,
+	cookable = 4
+}
 
 var item = scr_inv_create_item("Stockpot", ITEM.pot);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.none);
 
 var item = scr_inv_create_item("Empty Jar", ITEM.jar);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.none);
 
 var item = scr_inv_create_item("Sugar", ITEM.sugar);
-scr_inv_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0);
+scr_inv_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.none);
 
 var item = scr_inv_create_item("Strawberry", ITEM.strawberry);
-scr_inv_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0);
+scr_inv_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
 
 var item = scr_inv_create_item("Lemon", ITEM.lemon);
-scr_inv_create_subtype(item, SUBTYPE.whole, spr_lemon, 0);
-scr_inv_create_subtype(item, SUBTYPE.juice, spr_lemon, 1);
+scr_inv_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.peelable);
+scr_inv_create_subtype(item, SUBTYPE.juice, spr_lemon, 1, PROPS.cookable);

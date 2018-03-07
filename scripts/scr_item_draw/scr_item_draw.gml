@@ -7,7 +7,6 @@ if(not is_undefined(item)) {
 	var item_subtype = ds_map_find_value(item, "subtype");
 	var library = ds_map_find_value(global.item_library, item_type)
 	
-	
 	var sprite = spr_item_undef;
 	var sprite_subimage = 0;
 	var library_name = "UNDEF#" + string(item_type);

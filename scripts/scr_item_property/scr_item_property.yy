@@ -1,8 +1,8 @@
 {
-    "id": "b1595748-3e82-4ff3-bade-af0e83169f79",
+    "id": "00b88008-bec3-4bff-a476-b8861294c2f3",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_inv_draw",
+    "name": "scr_item_property",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,9 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Inherit the parent event
-event_inherited();
+event_inherited()
 
 item_idx = undefined;
-width = UNIT;
-height = UNIT;
+width = UNIT*2;
+height = UNIT*2;
+
+x_offset = 4 * UNIT;
+y_offset = 3.5 * UNIT;

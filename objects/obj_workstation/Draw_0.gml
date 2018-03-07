@@ -7,5 +7,5 @@ if(not invisible) {
 
 if(not is_undefined(holding)) {
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding);
-	scr_inv_draw(item, x, y-9);
+	scr_item_draw(item, x, y-9);
 }
