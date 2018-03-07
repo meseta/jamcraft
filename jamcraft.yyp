@@ -367,6 +367,14 @@
             }
         },
         {
+            "Key": "6748b232-e170-4673-a3c0-fee230b8a870",
+            "Value": {
+                "id": "2dff15c0-4d78-41eb-8663-13f404151322",
+                "resourcePath": "sprites\\spr_timing_buttons\\spr_timing_buttons.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "69a2f904-70f9-4719-a007-36a6dd2fb2b5",
             "Value": {
                 "id": "b216605d-4dc1-4e66-9b47-fb4656bb571c",
