@@ -903,6 +903,14 @@
             }
         },
         {
+            "Key": "d3ff5457-3926-4a39-b8f1-6c024270f062",
+            "Value": {
+                "id": "83b59ed6-640a-406e-9962-ea0db9ae6df5",
+                "resourcePath": "sprites\\spr_slash\\spr_slash.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d81de3b8-e340-4391-b932-3b7b80140b07",
             "Value": {
                 "id": "6b29d6bd-d609-4eeb-af5c-9b25dfdbc0a3",

@@ -4,11 +4,12 @@
 // Inherit the parent event
 event_inherited();
 
-item = undefined;
+item_idx = undefined;
 display = noone;
 
 start_animation = 0;
 start_animation_speed = 30;
+end_condition = false;
 
 buttons = ds_list_create();
 
@@ -21,3 +22,28 @@ goodness = 0;
 goodness_position = 67;
 
 randval = 0;
+shake = 0;
+
+partexplode_sys = part_system_create();
+part_system_automatic_draw(partexplode_sys, false);
+partexplode = part_type_create();
+part_type_shape(partexplode, pt_shape_pixel);
+part_type_size(partexplode, 1, 1, 0, 0);
+//part_type_alpha3(partexplode, 1.0, 1.0, 0.0);
+part_type_color1(partexplode, $F0AE00);
+part_type_speed(partexplode, 0.4, 0.6, 0, 0);
+part_type_direction(partexplode, 0, 359, 0, 0);
+part_type_gravity(partexplode, 0, 270);
+part_type_life(partexplode, 10, 20);
+//part_type_blend(partexplode, true);
+
+partstars_sys = part_system_create();
+part_system_automatic_draw(partstars_sys, false);
+partstars = part_type_create();
+part_type_shape(partstars, pt_shape_pixel);
+part_type_size(partstars, 1, 1, 0, 0);
+part_type_color1(partstars, $ececec);
+part_type_speed(partstars, 1, 1, 0, 0);
+part_type_direction(partstars, 180, 180, 0, 0);
+part_type_gravity(partstars, 0, 270);
+part_type_life(partstars, 75, 75);

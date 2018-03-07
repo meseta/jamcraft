@@ -17,7 +17,7 @@ if(is_undefined(ds_map_find_value(item, "chop"))) {
 
 // create chopping app
 var app = instance_create_depth(x-200, y-200, depth-1, obj_app_chop);
-app.item = item_select;
+app.item_idx = item_select;
 app.display = display;
 app.x_offset = 2 * UNIT;
 app.y_offset = 6.5 * UNIT;
