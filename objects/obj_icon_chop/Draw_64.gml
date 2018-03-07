@@ -17,7 +17,40 @@ if(not is_undefined(item_idx)) {
 		mode = "PEEL";
 	}
 	
-	scr_item_draw(item, x_offset+UNIT/2, y_offset+UNIT/2);
+	var xx = x_offset+UNIT/2;
+	var yy = y_offset+UNIT/2;
+	if(shake > 0) {
+		shake -= 1;
+		xx += choose(-1, 0, 1);
+		yy += choose(-1, 0, 1);
+	}
+	scr_item_draw(item, xx, yy);
+		
+	part_system_drawit(partexplode_sys);
+	
+	// slashes
+	if(not is_undefined(slash)) {
+		switch(slash) {
+			case 0:
+				draw_sprite_ext(spr_slash, floor(slash_frame), x_offset+UNIT, y_offset, 1, -1, 0, c_white, 1.0);
+				break;
+			case 1:
+				draw_sprite_ext(spr_slash, floor(slash_frame), x_offset+UNIT, y_offset, -1, 1, 0, c_white, 1.0);
+				break;
+			case 2:
+				draw_sprite_ext(spr_slash, floor(slash_frame), x_offset+UNIT, y_offset, -1, -1, 0, c_white, 1.0);
+				break;
+			case 3:
+				draw_sprite_ext(spr_slash, floor(slash_frame), x_offset+UNIT, y_offset, 1, 1, 0, c_white, 1.0);
+				break;
+			case 4:
+			case 5:
+				draw_sprite_ext(spr_slash, floor(slash_frame), x_offset+UNIT, y_offset, 1, 1, 0, c_white, 1.0);
+				draw_sprite_ext(spr_slash, floor(slash_frame), x_offset+UNIT, y_offset, 1, 1, 180, c_white, 1.0);
+				break;
+		}
+		scr_debug(floor(slash_frame))
+	}
 	
 	draw_set_color(c_gray);
 	draw_text(x_offset+2*UNIT, y_offset-UNIT+3, "QUAL")

@@ -76,7 +76,7 @@ else if(not end_condition) {
 		}
 		
 		if(miss or goodness == 0) {
-			shake = 5
+			shake = 5;
 			cond = clamp(cond-5, 0, 100);
 			ds_map_set(item, "condition", cond);
 		}
@@ -97,6 +97,9 @@ else if(not end_condition) {
 				cond = clamp(cond+5, 0, 100);
 				ds_map_set(item, "condition", cond);
 			}
+			
+			display.shake = 5;
+			display.slash = best_type;
 		}
 		select_up = false;
 		select_right = false;

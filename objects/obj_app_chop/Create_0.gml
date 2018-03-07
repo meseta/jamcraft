@@ -29,7 +29,6 @@ part_system_automatic_draw(partexplode_sys, false);
 partexplode = part_type_create();
 part_type_shape(partexplode, pt_shape_pixel);
 part_type_size(partexplode, 1, 1, 0, 0);
-//part_type_alpha3(partexplode, 1.0, 1.0, 0.0);
 part_type_color1(partexplode, $F0AE00);
 part_type_speed(partexplode, 0.4, 0.6, 0, 0);
 part_type_direction(partexplode, 0, 359, 0, 0);
