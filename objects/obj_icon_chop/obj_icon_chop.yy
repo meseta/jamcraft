@@ -2,7 +2,7 @@
     "id": "28d6aac1-2a6d-4718-bf01-11a21b0df75e",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_icon_choppingboard",
+    "name": "obj_icon_chop",
     "eventList": [
         {
             "id": "046107ac-65e1-4110-971e-bd3354f649b1",

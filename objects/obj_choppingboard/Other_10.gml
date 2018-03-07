@@ -26,14 +26,12 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 			scr_menu_add(select_inst.menu_items, 0, "Chop", scr_app_chop, holding)
 		}
 		if(scr_item_property(item, PROPS.peelable)) {
-			scr_menu_add(select_inst.menu_items, 0, "Peel", scr_app_peel, holding)
+			scr_menu_add(select_inst.menu_items, 0, "Peel", scr_app_chop, holding)
 		}
 		
 		// creat icon
-		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_choppingboard);
+		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_chop);
 		icon_inst.item_idx = holding;
-		icon_inst.x_offset = 4 * UNIT;
-		icon_inst.y_offset = 3.5 * UNIT;
 	
 		select_inst.additional_display = icon_inst;
 	}

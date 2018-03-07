@@ -4,8 +4,8 @@
 event_inherited()
 
 item_idx = undefined;
-width = UNIT*2;
+width = UNIT*7;
 height = UNIT*2;
 
-x_offset = 4 * UNIT;
+x_offset = 1.5 * UNIT;
 y_offset = 3.5 * UNIT;
