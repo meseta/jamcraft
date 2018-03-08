@@ -8,7 +8,10 @@ if(not is_undefined(slash)) {
 	
 	if(not slash_emit) {
 		slash_emit = true
-		part_particles_create_color(partexplode_sys, x_offset+UNIT, y_offset, partexplode, c_red, 15)	
+		
+		if(not is_undefined(part_color)) { // get particle color
+			part_particles_create_color(partexplode_sys, x_offset+UNIT, y_offset, partexplode, part_color, 15);
+		}
 	}
 	
 	if(slash_frame >= sprite_get_number(spr_slash)) {

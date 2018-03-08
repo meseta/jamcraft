@@ -15,6 +15,7 @@ slash = undefined
 slash_frame = 0;
 
 slash_emit = false;
+part_color = undefined;
 
 partexplode_sys = part_system_create();
 part_system_automatic_draw(partexplode_sys, false);

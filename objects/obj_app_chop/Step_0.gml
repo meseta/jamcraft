@@ -98,6 +98,13 @@ else if(not end_condition) {
 				ds_map_set(item, "condition", cond);
 			}
 			
+			// get particle color
+			var item_type = ds_map_find_value(item, "type");
+			var library = ds_map_find_value(global.item_library, item_type)
+
+			if(not is_undefined(library)) {
+				display.part_color = ds_map_find_value(library, "color"); // undef is allowed
+			}
 			display.shake = 5;
 			display.slash = best_type;
 		}

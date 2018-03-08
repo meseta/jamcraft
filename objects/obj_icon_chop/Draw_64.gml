@@ -49,7 +49,6 @@ if(not is_undefined(item_idx)) {
 				draw_sprite_ext(spr_slash, floor(slash_frame), x_offset+UNIT, y_offset, 1, 1, 180, c_white, 1.0);
 				break;
 		}
-		scr_debug(floor(slash_frame))
 	}
 	
 	draw_set_color(c_gray);

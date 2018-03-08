@@ -106,18 +106,18 @@ enum PROPS {
 	cookable = 4
 }
 
-var item = scr_inv_create_item("Stockpot", ITEM.pot);
+var item = scr_inv_create_item("Stockpot", ITEM.pot, c_gray);
 scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.none);
 
-var item = scr_inv_create_item("Empty Jar", ITEM.jar);
+var item = scr_inv_create_item("Empty Jar", ITEM.jar, c_ltgray);
 scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.none);
 
-var item = scr_inv_create_item("Sugar", ITEM.sugar);
+var item = scr_inv_create_item("Sugar", ITEM.sugar, c_ltgray);
 scr_inv_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.none);
 
-var item = scr_inv_create_item("Strawberry", ITEM.strawberry);
+var item = scr_inv_create_item("Strawberry", ITEM.strawberry, c_red);
 scr_inv_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
 
-var item = scr_inv_create_item("Lemon", ITEM.lemon);
+var item = scr_inv_create_item("Lemon", ITEM.lemon, c_yellow);
 scr_inv_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.peelable);
 scr_inv_create_subtype(item, SUBTYPE.juice, spr_lemon, 1, PROPS.cookable);
