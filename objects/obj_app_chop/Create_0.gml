@@ -24,6 +24,12 @@ goodness_position = 67;
 randval = 0;
 shake = 0;
 
+stats_buttons = 0;
+stats_hits = 0;
+stats_perfect = 0;
+stats_good = 0;
+stats_ok = 0;
+
 partexplode_sys = part_system_create();
 part_system_automatic_draw(partexplode_sys, false);
 partexplode = part_type_create();

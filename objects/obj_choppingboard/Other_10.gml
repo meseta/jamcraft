@@ -11,10 +11,11 @@ if(not is_undefined(obj_player.holding) and is_undefined(holding)) {
 else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	// counter has item, player empty
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding)
-	if(scr_item_property(item, PROPS.peelable | PROPS.choppable)) { // check if choppable
+	if(scr_item_property(item, PROPS.choppable)) { // check if choppable
 		// create confirmation menu instance (create it offscreen)
 	
 		select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+		select_inst.parent = id;
 		ds_stack_push(global.interact_stack, select_inst);
 
 		select_inst.x_offset = 2 * UNIT;
@@ -22,12 +23,7 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 		select_inst.width = 6 * UNIT;
 		
 		scr_menu_add(select_inst.menu_items, 0, "Take", scr_room_inv_take, id)
-		if(scr_item_property(item, PROPS.choppable)) {
-			scr_menu_add(select_inst.menu_items, 0, "Chop", scr_app_chop, holding)
-		}
-		if(scr_item_property(item, PROPS.peelable)) {
-			scr_menu_add(select_inst.menu_items, 0, "Peel", scr_app_chop, holding)
-		}
+		scr_menu_add(select_inst.menu_items, 0, "Chop", scr_app_chop, holding)
 		
 		// creat icon
 		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_chop);

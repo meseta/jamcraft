@@ -20,3 +20,12 @@ if(not is_undefined(slash)) {
 		slash_emit = false;
 	}
 }
+
+if(explode) {
+	explode_frame += 0.5;
+	if(explode_frame >= sprite_get_number(spr_explosion)) {
+		explode_frame = 0;
+		explode = false;
+	}	
+	
+}

@@ -72,6 +72,9 @@ enum ITEM {
 	garlic,
 	coconut,
 	fig,
+	
+	// misc.
+	mush,
 }
 
 enum SUBTYPE {
@@ -80,11 +83,10 @@ enum SUBTYPE {
 	ingredient,
 	jam,
 	whole,
-	peeled,
 	peel,
 	chopped,
 	pulp,
-	juice,
+	trash,
 }
 
 global.subtype_name = undefined;
@@ -93,31 +95,37 @@ global.subtype_name[SUBTYPE.equipment] = "Equipment"
 global.subtype_name[SUBTYPE.ingredient] = "Ingredient"
 global.subtype_name[SUBTYPE.jam] = "Jam"
 global.subtype_name[SUBTYPE.whole] = "Whole"
-global.subtype_name[SUBTYPE.peeled] = "Peeled"
 global.subtype_name[SUBTYPE.peel] = "Peel"
 global.subtype_name[SUBTYPE.chopped] = "Chopped"
 global.subtype_name[SUBTYPE.pulp] = "Pulp"
-global.subtype_name[SUBTYPE.juice] = "Juice"
+global.subtype_name[SUBTYPE.trash] = "Trash"
 
 enum PROPS {
 	none = 0,
 	choppable = 1,
 	peelable = 2,
-	cookable = 4
+	cookable = 4,
+	container = 8,
+	cookware = 16,
 }
 
 var item = scr_inv_create_item("Stockpot", ITEM.pot, c_gray);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.none);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.cookware | PROPS.container);
 
 var item = scr_inv_create_item("Empty Jar", ITEM.jar, c_ltgray);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.none);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.container);
 
 var item = scr_inv_create_item("Sugar", ITEM.sugar, c_ltgray);
-scr_inv_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.none);
+scr_inv_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.cookable);
 
 var item = scr_inv_create_item("Strawberry", ITEM.strawberry, c_red);
 scr_inv_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
+scr_inv_create_subtype(item, SUBTYPE.chopped, spr_strawberry, 1, PROPS.cookable);
 
 var item = scr_inv_create_item("Lemon", ITEM.lemon, c_yellow);
-scr_inv_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.peelable);
-scr_inv_create_subtype(item, SUBTYPE.juice, spr_lemon, 1, PROPS.cookable);
+scr_inv_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.choppable | PROPS.peelable);
+scr_inv_create_subtype(item, SUBTYPE.peel, spr_lemon, 1, PROPS.cookable);
+scr_inv_create_subtype(item, SUBTYPE.chopped, spr_lemon, 2, PROPS.cookable);
+
+var item = scr_inv_create_item("Mush", ITEM.mush, c_olive);
+scr_inv_create_subtype(item, SUBTYPE.trash, spr_mush, 0, PROPS.none);

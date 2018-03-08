@@ -14,6 +14,9 @@ y_offset = 3.5 * UNIT;
 slash = undefined
 slash_frame = 0;
 
+explode = false;
+explode_frame = 0;
+
 slash_emit = false;
 part_color = undefined;
 

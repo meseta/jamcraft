@@ -7,7 +7,10 @@
         "1d0d3096-c519-40fd-8d42-13df84c23948",
         "257f9f9e-40b9-42e7-8e1d-06690da82852",
         "d16230c0-3fd2-41e4-988e-ee5a735f7a51",
-        "a8354962-4f71-4983-897b-65a007c4196a"
+        "a8354962-4f71-4983-897b-65a007c4196a",
+        "8e3fbed7-3f5e-48cc-86f9-bae2f71af28d",
+        "d54c53ce-49c4-49b4-81f7-45ae24f6e387",
+        "2347af8d-0e6e-493c-aa6a-ca03dbcb4423"
     ],
     "filterType": "GMScript",
     "folderName": "appliances",

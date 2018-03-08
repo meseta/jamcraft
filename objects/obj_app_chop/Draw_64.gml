@@ -16,6 +16,9 @@ if(start_animation < 4*start_animation_speed) {
 	draw_sprite_ext(spr_start_animation, frame, x_offset + width/2, y_offset, scale, scale, 0, c_white, 1.0);
 }
 else if(not end_condition) {
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	
 	part_system_drawit(partstars_sys);
 	
 	// draw buttons
@@ -40,4 +43,17 @@ else if(not end_condition) {
 		yy += choose(-1, 0, 1);
 	}
 	draw_sprite(spr_timing_bar, goodness, xx, yy)
+}
+else {
+	draw_set_color(c_gray);
+	draw_set_font(fnt_default);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_top);
+	
+	var accuracy = round(100*(stats_perfect + stats_good/2 + stats_ok/4)/stats_buttons)
+	draw_text(x_offset+width/2, y_offset-UNIT+2, "ACCURACY:");
+	draw_text(x_offset+width/2, y_offset-UNIT+12, string(accuracy) + "%")
+	
+	draw_set_color(c_black);
+	draw_text(x_offset+width/2, y_offset-UNIT+22, ">BACK ");
 }

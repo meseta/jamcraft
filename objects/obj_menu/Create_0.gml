@@ -16,3 +16,5 @@ y_offset = 0;
 
 scroll_up = false;
 scroll_down = false;
+
+parent = noone;

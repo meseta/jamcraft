@@ -27,9 +27,10 @@ else if(not end_condition) {
 		var button = ds_list_find_value(buttons, i);
 		var position = ds_map_find_value(button, "position") + scroll_speed;
 		
-		if(position > 76) {
+		if(position > 76) { // button goes off screen
 			ds_map_destroy(button);
 			ds_list_delete(buttons, i);
+			stats_buttons += 1;
 			
 			cond = clamp(cond-1, 0, 100);
 			ds_map_set(item, "condition", cond);
@@ -52,6 +53,7 @@ else if(not end_condition) {
 	else goodness = 3-clamp(floor(best_goodness/2), 0, 3);
 	
 	if(select_up or select_right or select_down or select_left or interact) {
+		stats_hits += 1;
 		var hit = false;
 		var miss = false;
 		if(select_up) {
@@ -81,6 +83,13 @@ else if(not end_condition) {
 			ds_map_set(item, "condition", cond);
 		}
 		else if(hit and goodness > 0) {
+			stats_buttons += 1;
+			switch(goodness) {
+				case 1: stats_ok += 1; break
+				case 2: stats_good += 1; break
+				case 3: stats_perfect += 1; break
+			}
+			
 			var button = ds_list_find_value(buttons, best_idx);
 			var position = ds_map_find_value(button, "position")
 			ds_map_destroy(button);
@@ -133,17 +142,29 @@ else if(not end_condition) {
 	part_particles_create(partstars_sys, xx, yy+irandom_range(-7, 7), partstars, 1)	
 	
 	// end condition test
-	if(cond == 0) end_condition = true;
-	if(chop >= 100) end_condition = true;
-}
-
-if(end_condition) {
-	// process objects
-	
-	if(cancel) {
-		scr_menu_clear();
+	if(cond == 0) {
+		ds_map_set(item, "type", ITEM.mush)
+		ds_map_set(item, "subtype", SUBTYPE.trash);
+		end_condition = true;
+		display.explode = true;
 	}
-}
-else {
+	else if(chop >= 100) {
+		// make player hold peel
+		if(scr_item_property(item, PROPS.peelable)) {
+			var type = ds_map_find_value(item, "type")
+			var qual = ds_map_find_value(item, "quality")
+			obj_player.holding = scr_room_inv_create(type, SUBTYPE.peel, qual, cond)
+		}
+		ds_map_set(item, "subtype", SUBTYPE.chopped);
+		end_condition = true;
+		display.explode = true;
+	}
+	
 	event_inherited();	
+}
+else { // end condition
+	if(cancel or interact) {
+		scr_menu_clear();
+		instance_destroy();
+	}
 }

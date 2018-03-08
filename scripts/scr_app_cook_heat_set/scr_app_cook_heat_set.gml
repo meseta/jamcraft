@@ -1,0 +1,1 @@
+parent.heat_level = argument0;

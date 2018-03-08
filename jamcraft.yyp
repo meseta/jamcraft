@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "2347af8d-0e6e-493c-aa6a-ca03dbcb4423",
+            "Value": {
+                "id": "c2f75b1a-eb1c-4b3a-a873-a407d19a8b89",
+                "resourcePath": "scripts\\scr_app_cook_heat_set\\scr_app_cook_heat_set.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "23725699-6819-4ad5-a38c-a3ebcd34320d",
             "Value": {
                 "id": "f0b24edb-bd9e-49e3-acf1-22256ed8e51d",
@@ -271,6 +279,14 @@
             }
         },
         {
+            "Key": "476da625-1831-4cf6-a6ad-6ff0b8423141",
+            "Value": {
+                "id": "75f5f6c5-13bb-4638-bfae-05bc003a5ebb",
+                "resourcePath": "sprites\\spr_mush\\spr_mush.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "487c38af-5d67-4290-9cf0-91df3e198cba",
             "Value": {
                 "id": "22a281a4-710c-44b8-aced-3292f23d1ab3",
@@ -340,6 +356,14 @@
                 "id": "a0051ec3-d2de-4bec-92b6-26e2b03a1b88",
                 "resourcePath": "views\\617e6c59-a782-4231-833b-e1939166426c.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6280a414-d8a7-4e70-a617-f04fa000fa50",
+            "Value": {
+                "id": "3c5b709f-d410-48cc-ad07-11995fac147f",
+                "resourcePath": "scripts\\scr_room_inv_place\\scr_room_inv_place.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -548,6 +572,14 @@
                 "id": "46f2b625-2cfd-4285-9abc-079baaf48228",
                 "resourcePath": "objects\\obj_player\\obj_player.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "8e3fbed7-3f5e-48cc-86f9-bae2f71af28d",
+            "Value": {
+                "id": "84b8721f-2490-4e64-b25c-029f0cf1d391",
+                "resourcePath": "scripts\\scr_app_sink_empty\\scr_app_sink_empty.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -839,6 +871,14 @@
             }
         },
         {
+            "Key": "c713e3b5-01b3-48d2-9ccd-a838f0d6999e",
+            "Value": {
+                "id": "f6bc913f-c21b-4b06-b109-3fb5c01cf625",
+                "resourcePath": "scripts\\scr_room_inv_create\\scr_room_inv_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c7357200-1502-45e9-a008-57d7768bb49a",
             "Value": {
                 "id": "b5f0ffa6-0337-4524-91c2-239ade651352",
@@ -908,6 +948,14 @@
                 "id": "83b59ed6-640a-406e-9962-ea0db9ae6df5",
                 "resourcePath": "sprites\\spr_slash\\spr_slash.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d54c53ce-49c4-49b4-81f7-45ae24f6e387",
+            "Value": {
+                "id": "84383d53-b5bc-4656-83d2-a5fe4386e1b8",
+                "resourcePath": "scripts\\scr_app_cook_heat\\scr_app_cook_heat.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1081,6 +1129,8 @@
         "9b87b497-d0d9-42d9-bbe5-13f2ce3eef33",
         "1d042395-2549-46c2-8209-986b8b93d3e9",
         "a9f9f811-cbe5-489b-901b-f67d7a62dfdd",
+        "6280a414-d8a7-4e70-a617-f04fa000fa50",
+        "c713e3b5-01b3-48d2-9ccd-a838f0d6999e",
         "7217a456-7051-4d73-add5-07aa08e48d44",
         "7eddaa30-efa8-4141-9df0-3d03533549f0",
         "b1595748-3e82-4ff3-bade-af0e83169f79",
@@ -1091,7 +1141,10 @@
         "1d0d3096-c519-40fd-8d42-13df84c23948",
         "257f9f9e-40b9-42e7-8e1d-06690da82852",
         "d16230c0-3fd2-41e4-988e-ee5a735f7a51",
-        "a8354962-4f71-4983-897b-65a007c4196a"
+        "a8354962-4f71-4983-897b-65a007c4196a",
+        "8e3fbed7-3f5e-48cc-86f9-bae2f71af28d",
+        "d54c53ce-49c4-49b4-81f7-45ae24f6e387",
+        "2347af8d-0e6e-493c-aa6a-ca03dbcb4423"
     ],
     "tutorial": ""
 }
