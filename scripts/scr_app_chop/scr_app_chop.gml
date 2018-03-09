@@ -1,14 +1,5 @@
 var item_select = argument0;
 
-// acquire display
-/*var display = noone
-with(obj_icon_chop) {
-	if(item_idx == item_select) {
-		display = id;
-		break;
-	}
-}*/
-
 // add chop to item
 var item = ds_list_find_value(obj_control_room_inventory.inventory, item_select);
 if(is_undefined(ds_map_find_value(item, "chop"))) {

@@ -18,16 +18,16 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 		ds_stack_push(global.interact_stack, select_inst);
 
 		select_inst.x_offset = 2 * UNIT;
-		select_inst.y_offset = 6.5 * UNIT;
+		select_inst.y_offset = 7 * UNIT+2;
 		select_inst.width = 6 * UNIT;
 		
 		scr_menu_add(select_inst.menu_items, 0, "Take", scr_room_inv_take, id)
+		scr_menu_add(select_inst.menu_items, 0, "Stir", scr_app_cook_stir, holding)
 		scr_menu_add(select_inst.menu_items, 0, "Set Heat", scr_app_cook_heat, heat_type)
-		scr_menu_add(select_inst.menu_items, 0, "Stir", noone, noone)
 		
 		// creat icon
-		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_trash);
-		icon_inst.item_idx = obj_player.holding;
+		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_cook);
+		icon_inst.item_idx = holding;
 	
 		select_inst.additional_display = icon_inst;
 	}
@@ -40,15 +40,29 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	
 }
 else if(not is_undefined(obj_player.holding) and not is_undefined(holding)) {
-	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding)
-	if(scr_item_property(item, PROPS.cookware)) {
+	var item_player = ds_list_find_value(obj_control_room_inventory.inventory, obj_player.holding)
+	var item_counter = ds_list_find_value(obj_control_room_inventory.inventory, holding)
+	if(scr_item_property(item_counter, PROPS.cookware) and scr_item_property(item_player, PROPS.cookable)) {
+		select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+		select_inst.parent = id
+		ds_stack_push(global.interact_stack, select_inst);
+
+		select_inst.x_offset = 2 * UNIT;
+		select_inst.y_offset = 7 * UNIT;
+		select_inst.width = 6 * UNIT;
 		
+		scr_menu_add(select_inst.menu_items, 0, "Add to pot", scr_app_cook_add, obj_player.holding)
 		
-		
+		// creat icon
+		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_trash);
+		icon_inst.item_idx = obj_player.holding;
+	
+		select_inst.additional_display = icon_inst;
 	}
 	else {
 		var tmp_holding = holding;
 		holding = obj_player.holding
-		obj_player.holding = tmp_holding;	
+		obj_player.holding = tmp_holding;
+		heat_level = 0;
 	}
 }

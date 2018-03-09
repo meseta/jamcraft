@@ -5,7 +5,7 @@ scr_debug("Put item ", take_item_idx);
 
 // get item from room inventory
 var room_inventory = obj_control_room_inventory.inventory;
-var room_item = ds_list_find_value(room_inventory, take_item_idx);
+var room_item = ds_list_find_value(room_inventory, take_item_idx);	
 
 // scan for existing item in inventory
 var inventory = ds_map_find_value(GAMEDATA, "inventory")

@@ -319,6 +319,14 @@
             }
         },
         {
+            "Key": "4c17efd7-88b7-4e12-907a-18553de2ff76",
+            "Value": {
+                "id": "a502fa84-83b2-4675-9014-f126fb145ff1",
+                "resourcePath": "scripts\\scr_draw_2bar\\scr_draw_2bar.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4c85569a-9636-43f2-8705-18b9c386f643",
             "Value": {
                 "id": "6ec8c289-fb6c-40ca-8a53-9df0a2e7c5b5",
@@ -395,6 +403,14 @@
             "Value": {
                 "id": "2dff15c0-4d78-41eb-8663-13f404151322",
                 "resourcePath": "sprites\\spr_timing_buttons\\spr_timing_buttons.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "67d053aa-7bed-4af0-810b-d8d757d0fc7f",
+            "Value": {
+                "id": "f6901f42-da80-48f6-94f5-a91b6fc71613",
+                "resourcePath": "sprites\\spr_stir_bar\\spr_stir_bar.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -623,6 +639,14 @@
             }
         },
         {
+            "Key": "92ffe839-6941-4707-8c4e-8bc08fcee776",
+            "Value": {
+                "id": "2e0d0285-22e6-46ec-80a1-a9bcd6e8a655",
+                "resourcePath": "scripts\\scr_app_cook_stir\\scr_app_cook_stir.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "941072b3-6387-47e0-b516-1b46700b2ecc",
             "Value": {
                 "id": "bc76695d-fb43-4b1d-b3e5-033c06cb466e",
@@ -839,6 +863,14 @@
             }
         },
         {
+            "Key": "c47a470b-3e61-43f4-a237-82d7aea69faa",
+            "Value": {
+                "id": "7fe1d99f-badd-4334-bbd2-1554b341f5d9",
+                "resourcePath": "scripts\\scr_app_cook_add\\scr_app_cook_add.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c4edbe05-93ce-4a09-bdb6-2a6da9e33e50",
             "Value": {
                 "id": "5c85cff2-8de9-4162-bfeb-5378db98f533",
@@ -991,6 +1023,14 @@
             }
         },
         {
+            "Key": "dde32b92-777c-485f-8350-efb6a54474b8",
+            "Value": {
+                "id": "59625330-d658-4b9e-a370-d53ee94f0503",
+                "resourcePath": "sprites\\spr_done_2bar\\spr_done_2bar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e0d1bac6-5767-4a2e-89bc-a1a3841b61c9",
             "Value": {
                 "id": "939ac655-5344-4a38-852e-b1585927a945",
@@ -1087,6 +1127,14 @@
             }
         },
         {
+            "Key": "f6684af2-5ecf-4cb3-95b0-6ca9d056ebb0",
+            "Value": {
+                "id": "b08bd6d3-0526-4bda-9225-0d085da846c4",
+                "resourcePath": "objects\\obj_icon_cook\\obj_icon_cook.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fb4f27d6-7115-4d69-a3fc-3b624bd9301d",
             "Value": {
                 "id": "e728eaed-4963-4e4b-b815-d8a9030c85df",
@@ -1132,19 +1180,22 @@
         "6280a414-d8a7-4e70-a617-f04fa000fa50",
         "c713e3b5-01b3-48d2-9ccd-a838f0d6999e",
         "7217a456-7051-4d73-add5-07aa08e48d44",
+        "4c17efd7-88b7-4e12-907a-18553de2ff76",
         "7eddaa30-efa8-4141-9df0-3d03533549f0",
         "b1595748-3e82-4ff3-bade-af0e83169f79",
         "00b88008-bec3-4bff-a476-b8861294c2f3",
-        "667ce9d7-5ba6-4001-95bf-9de5d1b8b349",
-        "ef63f3a3-bead-47d9-bae0-0bf6cf25eb55",
-        "e77c4968-e66a-4a2e-a995-0387b5eca29a",
         "1d0d3096-c519-40fd-8d42-13df84c23948",
         "257f9f9e-40b9-42e7-8e1d-06690da82852",
         "d16230c0-3fd2-41e4-988e-ee5a735f7a51",
         "a8354962-4f71-4983-897b-65a007c4196a",
         "8e3fbed7-3f5e-48cc-86f9-bae2f71af28d",
         "d54c53ce-49c4-49b4-81f7-45ae24f6e387",
-        "2347af8d-0e6e-493c-aa6a-ca03dbcb4423"
+        "2347af8d-0e6e-493c-aa6a-ca03dbcb4423",
+        "c47a470b-3e61-43f4-a237-82d7aea69faa",
+        "92ffe839-6941-4707-8c4e-8bc08fcee776",
+        "667ce9d7-5ba6-4001-95bf-9de5d1b8b349",
+        "ef63f3a3-bead-47d9-bae0-0bf6cf25eb55",
+        "e77c4968-e66a-4a2e-a995-0387b5eca29a"
     ],
     "tutorial": ""
 }
