@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "289de76a-0950-4cb4-b31b-f88bc4d1ecce",
+            "Value": {
+                "id": "643ccd61-4814-4200-bb65-aa08fcfef27f",
+                "resourcePath": "scripts\\scr_app_cook_combine\\scr_app_cook_combine.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "28d6aac1-2a6d-4718-bf01-11a21b0df75e",
             "Value": {
                 "id": "176d6833-6004-46dd-ad5f-77154a108ecb",
@@ -1233,6 +1241,7 @@
         "2347af8d-0e6e-493c-aa6a-ca03dbcb4423",
         "c47a470b-3e61-43f4-a237-82d7aea69faa",
         "92ffe839-6941-4707-8c4e-8bc08fcee776",
+        "289de76a-0950-4cb4-b31b-f88bc4d1ecce",
         "667ce9d7-5ba6-4001-95bf-9de5d1b8b349",
         "ef63f3a3-bead-47d9-bae0-0bf6cf25eb55",
         "e77c4968-e66a-4a2e-a995-0387b5eca29a",

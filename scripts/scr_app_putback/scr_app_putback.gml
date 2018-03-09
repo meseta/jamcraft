@@ -5,20 +5,24 @@ scr_debug("Put item ", take_item_idx);
 
 // get item from room inventory
 var room_inventory = obj_control_room_inventory.inventory;
-var room_item = ds_list_find_value(room_inventory, take_item_idx);	
+var room_item = ds_list_find_value(room_inventory, take_item_idx);
+var inventory = ds_map_find_value(GAMEDATA, "inventory")
 
 // scan for existing item in inventory
-var inventory = ds_map_find_value(GAMEDATA, "inventory")
 var item = undefined;
 
-for(var i=0; i<ds_list_size(inventory); i++) {
-	var test_item = ds_list_find_value(inventory, i);
-	if(test_item[? "type"] != room_item[? "type"]) continue;
-	if(test_item[? "subtype"] != room_item[? "subtype"]) continue;
-	if(test_item[? "quality"] != room_item[? "quality"]) continue;
-	if(test_item[? "condition"] != room_item[? "condition"]) continue;
-	item = test_item;
-	break;
+var contents = ds_map_find_value(room_item, "contents");
+if(is_undefined(contents) or ds_list_size(contents) == 0) { // is not a container with contents}
+
+	for(var i=0; i<ds_list_size(inventory); i++) {
+		var test_item = ds_list_find_value(inventory, i);
+		if(test_item[? "type"] != room_item[? "type"]) continue;
+		if(test_item[? "subtype"] != room_item[? "subtype"]) continue;
+		if(test_item[? "quality"] != room_item[? "quality"]) continue;
+		if(test_item[? "condition"] != room_item[? "condition"]) continue;
+		item = test_item;
+		break;
+	}
 }
 
 if(is_undefined(item)) { // new item, create new

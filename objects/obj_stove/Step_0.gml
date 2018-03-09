@@ -42,13 +42,13 @@ if(not is_undefined(holding)) {
 			if(is_undefined(min_done) or doneness < min_done) min_done = doneness;
 			if(is_undefined(max_done) or doneness > max_done) max_done = doneness;
 			
-			if(doneness > 150) {
+			if(doneness > 133) {
 				var library = ds_map_find_value(global.item_library, item_type)
 				if(not is_undefined(library)) {
 					var library_name = ds_map_find_value(library, "name");
 					scr_alert(library_name + " overcooked!");
 				}
-					
+				
 				ds_map_set(content, "type", ITEM.mush)
 				ds_map_set(content, "subtype", SUBTYPE.trash);
 				ds_map_set(content, "doneness", 100);
