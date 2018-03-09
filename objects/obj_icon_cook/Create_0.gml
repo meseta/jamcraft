@@ -8,6 +8,9 @@ width = UNIT*7;
 height = UNIT*5;
 shake = 0;
 
+swish = undefined;
+swish_frame = 0;
+
 x_offset = 1.5 * UNIT-1;
 y_offset = 1.5 * UNIT;
 

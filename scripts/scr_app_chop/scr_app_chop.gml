@@ -13,6 +13,6 @@ app.display = additional_display;
 app.x_offset = 2 * UNIT;
 app.y_offset = 6.5 * UNIT;
 app.width = 6 * UNIT;
-app.height = 2 * UNIT;
+app.height = 28;
 
 ds_stack_push(global.interact_stack, app);

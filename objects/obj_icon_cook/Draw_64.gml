@@ -50,7 +50,15 @@ if(not is_undefined(item_idx)) {
 	min_done = min(100, min_done);
 	max_done = min(100, max_done);
 	
-	scr_item_draw(item_pot, x_offset+UNIT/2, y_offset+UNIT/4);
+	// draw pot
+	var xx = x_offset+UNIT/2;
+	var yy = y_offset+UNIT/4;
+	if(shake > 0) {
+		shake -= 1;
+		xx += choose(-1, 0, 1);
+		yy += choose(-1, 0, 1);
+	}
+	scr_item_draw(item_pot, xx, yy);
 	var stir_level = ds_map_find_value(item_pot, "stir")
 	
 	draw_set_color(c_gray);
@@ -64,5 +72,17 @@ if(not is_undefined(item_idx)) {
 	
 	if(max_done < 90 or floor(flasher/15) % 3 != 0) {
 		scr_draw_2bar(x_offset+2*UNIT+38, y_offset-UNIT+13, 40, min_done*40/100, max_done*40/100, spr_done_2bar);
+	}
+	
+	// swish
+	if(not is_undefined(swish)) {
+		switch(swish) {
+			case 0:
+				draw_sprite_ext(spr_swish, floor(swish_frame), x_offset+UNIT, y_offset-UNIT/4, -1, 1, 0, c_white, 1.0);
+				break;
+			case 1:
+				draw_sprite_ext(spr_swish, floor(swish_frame), x_offset+UNIT, y_offset-UNIT/4, 1, 1, 0, c_white, 1.0);
+				break;
+		}
 	}
 }

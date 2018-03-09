@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "06ab8cc6-c124-44c1-8f19-2f0a9b7f16e5",
+            "Value": {
+                "id": "b1b43d50-d987-4b0e-be5b-b4e23e060982",
+                "resourcePath": "objects\\obj_app_cook\\obj_app_cook.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "09b49afe-4424-405f-8c49-6538b0702540",
             "Value": {
                 "id": "29a40182-89bd-4aa6-8bb6-458dbc844975",
@@ -380,6 +388,14 @@
                 "id": "8e8cbea3-5bfd-4961-a92e-cad47d6cfaf4",
                 "resourcePath": "views\\62a17063-f92d-4d45-9fe6-43011cc9b796.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "65a81aef-9690-4869-975e-69c1ff96e3bd",
+            "Value": {
+                "id": "63b29544-e398-4141-a1e7-9e0818c4a600",
+                "resourcePath": "sprites\\spr_swish\\spr_swish.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -748,6 +764,14 @@
                 "id": "50d0d9d5-bd29-4e99-bf7b-e5bd27337082",
                 "resourcePath": "scripts\\scr_room_inv_take\\scr_room_inv_take.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "aabcea64-24da-49bd-a0d5-9e6a69933b65",
+            "Value": {
+                "id": "3b28b880-22e5-4363-bbe8-73842141f490",
+                "resourcePath": "sprites\\spr_radial_bar\\spr_radial_bar.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

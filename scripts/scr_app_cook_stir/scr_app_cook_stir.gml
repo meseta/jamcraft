@@ -1,6 +1,7 @@
-var item_idx = argument0
+var item_select = argument0
 
-var item = ds_list_find_value(obj_control_room_inventory.inventory, item_idx)
+// add stri to item
+var item = ds_list_find_value(obj_control_room_inventory.inventory, item_select);
 
 var stir_level = ds_map_find_value(item, "stir")
 if(is_undefined(stir_level)) {
@@ -8,5 +9,13 @@ if(is_undefined(stir_level)) {
 	ds_map_add(item, "stir", 0);
 }
 
-stir_level = clamp(stir_level-10, 0, 100);
-ds_map_set(item, "stir", stir_level);
+// create chopping app
+var app = instance_create_depth(x-200, y-200, depth-1, obj_app_cook);
+app.item_idx = item_select;
+app.display = additional_display;
+app.x_offset = 2 * UNIT;
+app.y_offset = 7 * UNIT+2;
+app.width = 6 * UNIT;
+app.height = 37;
+
+ds_stack_push(global.interact_stack, app);

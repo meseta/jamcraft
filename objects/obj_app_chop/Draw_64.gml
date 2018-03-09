@@ -13,7 +13,7 @@ if(start_animation < 4*start_animation_speed) {
 	if(sub > start_animation_speed/2) {
 		scale = 2*(1-(sub/start_animation_speed));
 	}
-	draw_sprite_ext(spr_start_animation, frame, x_offset + width/2, y_offset, scale, scale, 0, c_white, 1.0);
+	draw_sprite_ext(spr_start_animation, frame, x_offset + width/2, y_offset-UNIT+height/2, scale, scale, 0, c_white, 1.0);
 }
 else if(not end_condition) {
 	draw_set_halign(fa_left);

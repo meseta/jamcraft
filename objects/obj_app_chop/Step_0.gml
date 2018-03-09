@@ -12,7 +12,6 @@ if(start_animation < 4*start_animation_speed) {
 }
 else if(not end_condition) {
 	scroll_timer += 1;
-	randval = irandom(1000);
 	goodness = 0;
 	var best_goodness = undefined;
 	var best_idx = undefined;
