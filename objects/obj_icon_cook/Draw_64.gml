@@ -32,11 +32,12 @@ if(not is_undefined(item_idx)) {
 		// select item
 		var item = ds_list_find_value(contents, i);
 		if(not is_undefined(item)) {
-			var doneness = ds_map_find_value(item, "doneness");
-			if(is_undefined(doneness)) doneness = 0;
 			scr_item_draw(item, xx, yy);
 			
-			if(doneness < 90 or floor(flasher/15) % 3 != 2) {
+			var item_type = ds_map_find_value(item, "type");
+			var doneness = ds_map_find_value(item, "doneness");
+			if(is_undefined(doneness)) doneness = 0;
+			if(item_type != ITEM.mush and (doneness < 90 or floor(flasher/15) % 3 != 2)) {
 				scr_draw_2bar(xx+3, yy-1, UNIT-5, doneness*(UNIT-5)/100, doneness*(UNIT-5)/100, spr_done_2bar);
 			}
 			

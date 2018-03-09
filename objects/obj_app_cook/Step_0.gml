@@ -48,9 +48,13 @@ else if(not end_condition) {
 		part_particles_create(partexplode_sys, xx, yy, partexplode, 15)	
 		button += rotate_dir;
 		
-		if(stats_hits % 3 == 0) {
+		if(stats_hits % 4 == 0) {
 			display.shake = 5;
 			display.swish = clamp(rotate_dir, 0, 1);
+			var item = ds_list_find_value(obj_control_room_inventory.inventory, item_idx	);
+			var stir_level = ds_map_find_value(item, "stir")
+			stir_level = clamp(stir_level-5, 0, 100);
+			ds_map_set(item, "stir", stir_level);
 		}
 	}
 	if(button >= 4) button -= 4;

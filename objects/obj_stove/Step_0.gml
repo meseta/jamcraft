@@ -11,7 +11,7 @@ if(not is_undefined(holding)) {
 		}
 		
 		// add to stir depending on heat level
-		stir_level = clamp(stir_level+heat_level/30, 0, 100);
+		stir_level = clamp(stir_level+heat_level/50, 0, 100);
 		ds_map_set(item, "stir", stir_level);
 		
 		// get doneness
@@ -26,6 +26,9 @@ if(not is_undefined(holding)) {
 		
 		for(var i=0; i<ds_list_size(contents); i++) {
 			var content = ds_list_find_value(contents, i);
+			var item_type = ds_map_find_value(content, "type");	
+			if(item_type == ITEM.mush) continue;
+				
 			var doneness = ds_map_find_value(content, "doneness");
 			if(is_undefined(doneness)) {
 				ds_map_add(content, "doneness", 0);
@@ -39,12 +42,39 @@ if(not is_undefined(holding)) {
 			if(is_undefined(min_done) or doneness < min_done) min_done = doneness;
 			if(is_undefined(max_done) or doneness > max_done) max_done = doneness;
 			
-			if(stir_level == 100) {
-				var condition = ds_map_find_value(content, "condition");
+			if(doneness > 150) {
+				var library = ds_map_find_value(global.item_library, item_type)
+				if(not is_undefined(library)) {
+					var library_name = ds_map_find_value(library, "name");
+					scr_alert(library_name + " overcooked!");
+				}
+					
+				ds_map_set(content, "type", ITEM.mush)
+				ds_map_set(content, "subtype", SUBTYPE.trash);
+				ds_map_set(content, "doneness", 100);
+			}
+			
+			
+			var condition = ds_map_find_value(content, "condition");
+			
+			if(stir_level >= 99) {
 				condition = clamp(condition-heat_level/30, 0, 100);
 				ds_map_set(content, "condition", condition);
 				
-				// TODO turn to mush
+				
+				if(condition <= 0) {
+					var item_type = ds_map_find_value(content, "type");	
+					var library = ds_map_find_value(global.item_library, item_type)
+					if(not is_undefined(library)) {
+						var library_name = ds_map_find_value(library, "name");
+						scr_alert(library_name + " burned!");
+					}
+					
+					ds_map_set(content, "type", ITEM.mush)
+					ds_map_set(content, "subtype", SUBTYPE.trash);
+					ds_map_set(content, "doneness", 100);
+									
+				}
 			}
 		}
 		
