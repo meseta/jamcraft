@@ -16,13 +16,19 @@ if(not is_undefined(item_idx)) {
 	var min_done = undefined;
 	var max_done = undefined;
 	
+	var capacity = scr_pot_get_capacity(item_pot);
+	var i_offset = 0;
+	if(capacity <= inventory_width) {
+		i_offset = inventory_width + floor((inventory_width-capacity)/2);
+	}
+	
 	// inventory contents
-	for(var i=0; i<inventory_width*inventory_height; i++) {
+	for(var i=0; i<i_offset+inventory_width*inventory_height and i<capacity; i++) {
 		draw_set_color(c_white)
 	
 		// calculate position
-		var row = i div inventory_width;
-		var col = i mod inventory_width;
+		var row = (i+i_offset) div inventory_width;
+		var col = (i+i_offset) mod inventory_width;
 		var xx = col * UNIT + x_offset;
 		var yy = row * (UNIT + 4) + y_offset + UNIT + 6;
 	

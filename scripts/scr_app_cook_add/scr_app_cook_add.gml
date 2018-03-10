@@ -10,7 +10,7 @@ if(is_undefined(contents)) {
 	contents = ds_map_find_value(container, "contents");
 }
 
-if(ds_list_size(contents) < 21) {
+if(ds_list_size(contents) < scr_pot_get_capacity(container)) {
 
 	// copy across
 	var new_content = ds_map_create();

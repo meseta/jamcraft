@@ -23,7 +23,10 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 		
 		scr_menu_add(select_inst.menu_items, 0, "Take", scr_room_inv_take, id)
 		scr_menu_add(select_inst.menu_items, 0, "Stir", scr_app_cook_stir, holding)
-		scr_menu_add(select_inst.menu_items, 0, "Set Heat", scr_app_cook_heat, heat_type)
+		
+		if(heat_type != 0) {
+			scr_menu_add(select_inst.menu_items, 0, "Set Heat", scr_app_cook_heat, heat_type)
+		}
 		
 		// creat icon
 		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_cook);

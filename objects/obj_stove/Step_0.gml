@@ -3,6 +3,12 @@
 if(not is_undefined(holding)) {
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding)
 	if(scr_item_property(item, PROPS.cookware)) {
+		
+		// set auto-heat
+		if(heat_type == 0) {
+			heat_level = 2;		
+		}
+		
 		// get stir
 		stir_level = ds_map_find_value(item, "stir")
 		if(is_undefined(stir_level)) {

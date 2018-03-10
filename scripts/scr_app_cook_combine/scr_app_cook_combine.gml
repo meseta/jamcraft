@@ -19,7 +19,7 @@ if(is_undefined(contents)) {
 var size_add = ds_list_size(contents_add)
 var size = ds_list_size(contents);
 
-if(size + size_add <= 21) {
+if(size + size_add <= scr_pot_get_capacity(container)) {
 	for(var i=0; i<size_add; i++) {
 		var content_add = ds_list_find_value(contents_add, i);
 		

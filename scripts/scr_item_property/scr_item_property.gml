@@ -12,7 +12,7 @@ if(not is_undefined(item)) {
 			var subtype = ds_map_find_value(library_subtypes, item_subtype);
 			var properties = ds_map_find_value(subtype, "properties");
 			if(properties & check_property > 0) {
-				return true;	
+				return true;
 			}
 		}
 	}

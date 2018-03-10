@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "19f59c45-edd9-42fc-aa9f-0cd02c40dcb9",
+            "Value": {
+                "id": "4d44aa7e-1ca8-4d6d-8be2-71bed11bcb91",
+                "resourcePath": "scripts\\scr_pot_get_capacity\\scr_pot_get_capacity.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1a606f26-8f03-482d-a9b9-d0b86a27cb72",
             "Value": {
                 "id": "7e7a687f-6923-47fa-a375-00fb9e7c269e",
@@ -1232,6 +1240,7 @@
         "7eddaa30-efa8-4141-9df0-3d03533549f0",
         "b1595748-3e82-4ff3-bade-af0e83169f79",
         "00b88008-bec3-4bff-a476-b8861294c2f3",
+        "19f59c45-edd9-42fc-aa9f-0cd02c40dcb9",
         "1d0d3096-c519-40fd-8d42-13df84c23948",
         "257f9f9e-40b9-42e7-8e1d-06690da82852",
         "d16230c0-3fd2-41e4-988e-ee5a735f7a51",

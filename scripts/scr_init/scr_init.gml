@@ -27,7 +27,10 @@ enum ITEM {
 	empty,
 	
 	// equipment
-	pot,
+	pot_tiny,
+	pot_small,
+	pot_medium,
+	pot_large,
 	jar,
 	
 	// ingredients
@@ -107,11 +110,24 @@ enum PROPS {
 	cookable = 4,
 	container = 8,
 	cookware = 16,
+	capacity_A = 32,
+	capacity_B = 64,
 }
 
-var item = scr_inv_create_item("Stockpot", ITEM.pot, c_gray);
+
+
+var item = scr_inv_create_item("Tiny Pan", ITEM.pot_tiny, c_gray);
 scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.cookware | PROPS.container);
 
+var item = scr_inv_create_item("Saucepan", ITEM.pot_small, c_gray);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 1, PROPS.cookware | PROPS.container | PROPS.capacity_A);
+
+var item = scr_inv_create_item("Jam Pan", ITEM.pot_medium, c_gray);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 2, PROPS.cookware | PROPS.container | PROPS.capacity_B);
+
+var item = scr_inv_create_item("Stockpot", ITEM.pot_large, c_gray);
+scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 3, PROPS.cookware | PROPS.container | PROPS.capacity_A | PROPS.capacity_B);
+	
 var item = scr_inv_create_item("Empty Jar", ITEM.jar, c_ltgray);
 scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.container);
 
