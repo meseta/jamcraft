@@ -26,7 +26,7 @@ else if(not is_undefined(obj_player.holding) and not is_undefined(holding)) {
 		scr_menu_add(select_inst.menu_items, 0, "Fill jar", scr_app_cook_combine, obj_player.holding)
 		
 		// creat icon
-		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_cook);
+		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_trash);
 		icon_inst.item_idx = holding;
 	
 		select_inst.additional_display = icon_inst;

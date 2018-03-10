@@ -10,5 +10,5 @@ if(not is_undefined(item_idx)) {
 }
 
 if(delete_animate) {
-	draw_sprite(sprite_index, image_index, x_offset+UNIT/2, y_offset+UNIT/2	);	
+	draw_sprite(spr_explosion, delete_frame, x_offset+UNIT/2, y_offset+UNIT/2);	
 }

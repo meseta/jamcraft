@@ -19,7 +19,7 @@ if(ds_list_size(contents) < scr_pot_get_capacity(container)) {
 
 	// remove from player
 	ds_map_destroy(item_to_add);
-	ds_list_delete(obj_control_room_inventory.inventory, item_to_add_idx);
+	ds_list_set(obj_control_room_inventory.inventory, item_to_add_idx, undefined);
 	obj_player.holding = undefined;
 	
 	// recalculate content color

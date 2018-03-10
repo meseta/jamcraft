@@ -11,4 +11,4 @@ x_offset = 4 * UNIT;
 y_offset = 3.5 * UNIT;
 
 delete_animate = false;
-image_speed = 0;
+delete_frame = 0;

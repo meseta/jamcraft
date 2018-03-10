@@ -9,7 +9,6 @@ var room_item = ds_list_find_value(room_inventory, take_item_idx);
 var item_name = scr_lib_name(room_item);
 ds_map_destroy(room_item);
 
-//ds_list_delete(room_inventory, take_item_idx)
 ds_list_set(room_inventory, take_item_idx, undefined);
 
 // remove from player

@@ -2,8 +2,8 @@
 // You can write your code in this editor
 
 if(delete_animate) {
-	image_speed = 1;
-	if(image_index >= image_number-1) {
+	delete_frame += 0.5;
+	if(delete_frame >= sprite_get_number(spr_explosion)) {
 		instance_destroy();
 	}	
 }
