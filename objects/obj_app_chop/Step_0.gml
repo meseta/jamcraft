@@ -21,6 +21,9 @@ else if(not end_condition) {
 	var cond = ds_map_find_value(item, "condition")
 	var chop = ds_map_find_value(item, "chop")
 	
+	var item_type = ds_map_find_value(item, "type");
+	var library = ds_map_find_value(global.item_library, item_type)
+	
 	// move items and calculate best goodness
 	for(var i=ds_list_size(buttons)-1; i>=0; i-=1) { // must run backward to avoid messing with unscanned indexes on delete
 		var button = ds_list_find_value(buttons, i);
@@ -107,9 +110,6 @@ else if(not end_condition) {
 			}
 			
 			// get particle color
-			var item_type = ds_map_find_value(item, "type");
-			var library = ds_map_find_value(global.item_library, item_type)
-
 			if(not is_undefined(library)) {
 				display.part_color = ds_map_find_value(library, "color"); // undef is allowed
 			}
@@ -146,14 +146,26 @@ else if(not end_condition) {
 		ds_map_set(item, "subtype", SUBTYPE.trash);
 		end_condition = true;
 		display.explode = true;
+		
+		scr_alert(item_name + " turned to mush!");
 	}
 	else if(chop >= 100) {
+		var item_name = undefined;
+		if(not is_undefined(library)) {
+			item_name = ds_map_find_value(library, "name"); // undef is allowed
+		}
+		
 		// make player hold peel
 		if(scr_item_property(item, PROPS.peelable)) {
 			var type = ds_map_find_value(item, "type")
 			var qual = ds_map_find_value(item, "quality")
 			obj_player.holding = scr_room_inv_create(type, SUBTYPE.peel, qual, cond)
+			
+			// get particle color
+			if(not is_undefined(item_name)) scr_alert(item_name + " peel was produced!");
 		}
+		
+		if(not is_undefined(item_name)) scr_alert(item_name + " was chopped!");
 		ds_map_set(item, "subtype", SUBTYPE.chopped);
 		end_condition = true;
 		display.explode = true;

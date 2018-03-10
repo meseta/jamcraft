@@ -1,11 +1,8 @@
 var heat_type = argument0;
 
-
-var menu_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+var menu_inst = scr_menu_create(obj_select);
 menu_inst.parent = parent;
 scr_debug("Heat menu ", menu_inst)
-// push inventory menu into interact stack
-ds_stack_push(global.interact_stack, menu_inst);
 
 menu_inst.x_offset = 6.5 * UNIT;
 menu_inst.width = 3 * UNIT;

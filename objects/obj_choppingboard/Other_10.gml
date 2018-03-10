@@ -14,10 +14,8 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	if(scr_item_property(item, PROPS.choppable)) { // check if choppable
 		// create confirmation menu instance (create it offscreen)
 	
-		select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+		select_inst = scr_menu_create(obj_select);
 		select_inst.parent = id;
-		ds_stack_push(global.interact_stack, select_inst);
-
 		select_inst.x_offset = 2 * UNIT;
 		select_inst.y_offset = 6.5 * UNIT;
 		select_inst.width = 6 * UNIT;

@@ -10,12 +10,10 @@ if(is_undefined(stir_level)) {
 }
 
 // create chopping app
-var app = instance_create_depth(x-200, y-200, depth-1, obj_app_cook);
+var app = scr_menu_create(obj_app_cook);
 app.item_idx = item_select;
 app.display = additional_display;
 app.x_offset = 2 * UNIT;
 app.y_offset = 7 * UNIT+2;
 app.width = 6 * UNIT;
 app.height = 37;
-
-ds_stack_push(global.interact_stack, app);

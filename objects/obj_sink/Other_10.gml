@@ -10,9 +10,7 @@ if(not is_undefined(obj_player.holding) and is_undefined(holding)) {
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, obj_player.holding)
 	if(scr_item_property(item, PROPS.container)) { // check if pot
 		// create confirmation menu instance (create it offscreen)
-		select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
-		ds_stack_push(global.interact_stack, select_inst);
-
+		select_inst = scr_menu_create(obj_select);
 		select_inst.x_offset = 2 * UNIT;
 		select_inst.y_offset = 6.5 * UNIT;
 		select_inst.width = 6 * UNIT;

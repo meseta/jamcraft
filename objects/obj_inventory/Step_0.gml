@@ -36,11 +36,8 @@ if(selected >= inventory_offset + inventory_width * inventory_height) {
 
 if(interact) {
 	// create inventory instance (create it offscreen)
-	select_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+	select_inst = scr_menu_create(obj_select);
 	scr_debug("Select menu ", select_inst)
-	// push inventory menu into interact stack
-	ds_stack_push(global.interact_stack, select_inst);
-
 	select_inst.x_offset = selected_x + UNIT + 4;
 	select_inst.y_offset = selected_y;
 	

@@ -6,11 +6,8 @@ event_inherited();
 
 if(not is_undefined(obj_player.holding)) {
 // create confirmation menu instance (create it offscreen)
-	menu_inst = instance_create_depth(x-200, y-200, depth-1, obj_select);
+	menu_inst = scr_menu_create(obj_select);
 	scr_debug("Trash menu ", menu_inst)
-	// push inventory menu into interact stack
-	ds_stack_push(global.interact_stack, menu_inst);
-
 	menu_inst.x_offset = 2 * UNIT;
 	menu_inst.y_offset = 6.5 * UNIT;
 	menu_inst.width = 6 * UNIT;
