@@ -11,7 +11,7 @@ if(not is_undefined(obj_player.holding) and is_undefined(holding)) {
 else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	// counter has item, player empty:
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding)
-	if(scr_item_property(item, PROPS.cookware)) { // check if pot
+	if(scr_lib_property(item, PROPS.cookware)) { // check if pot
 		// create confirmation menu instance (create it offscreen)
 		select_inst = scr_menu_create(obj_select);
 		select_inst.parent = id
@@ -43,7 +43,7 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 else if(not is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	var item_player = ds_list_find_value(obj_control_room_inventory.inventory, obj_player.holding)
 	var item_counter = ds_list_find_value(obj_control_room_inventory.inventory, holding)
-	if(scr_item_property(item_counter, PROPS.cookware) and scr_item_property(item_player, PROPS.cookware)) {
+	if(scr_lib_property(item_counter, PROPS.cookware) and scr_lib_property(item_player, PROPS.cookware)) {
 		select_inst = scr_menu_create(obj_select);
 		select_inst.parent = id
 		select_inst.x_offset = 2 * UNIT;
@@ -58,7 +58,7 @@ else if(not is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	
 		select_inst.additional_display = icon_inst;
 	}
-	else if(scr_item_property(item_counter, PROPS.cookware) and scr_item_property(item_player, PROPS.cookable)) {
+	else if(scr_lib_property(item_counter, PROPS.cookware) and scr_lib_property(item_player, PROPS.cookable)) {
 		select_inst = scr_menu_create(obj_select);
 		select_inst.parent = id
 		select_inst.x_offset = 2 * UNIT;

@@ -10,6 +10,7 @@ menu_inst.width = 3 * UNIT;
 switch(heat_type) {
 	case 0: // auto on
 		break;
+		
 	case 1: //on/off
 		scr_menu_add(menu_inst.menu_items, 0, "On", scr_app_cook_heat_set, 2)
 		scr_menu_add(menu_inst.menu_items, 0, "Off", scr_app_cook_heat_set, 0)

@@ -31,11 +31,9 @@ if(size + size_add <= scr_pot_get_capacity(container)) {
 	}
 }
 else {
-	var item_type = ds_map_find_value(container, "type");	
-	var library = ds_map_find_value(global.item_library, item_type)
-	if(not is_undefined(library)) {
-		var library_name = ds_map_find_value(library, "name");
-		scr_alert(library_name + " is full!");
+	var item_name = scr_lib_name(container);
+	if(not is_undefined(item_name)) {
+		scr_alert(item_name + " is full!");
 	}
 	else {
 		scr_alert("Container is full!")	

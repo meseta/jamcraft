@@ -1,8 +1,8 @@
 {
-    "id": "00b88008-bec3-4bff-a476-b8861294c2f3",
+    "id": "50d16fcd-d57e-4471-918e-f62869dec2a8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_item_property",
+    "name": "scr_inv_calculate_color",
     "IsCompatibility": false,
     "IsDnD": false
 }

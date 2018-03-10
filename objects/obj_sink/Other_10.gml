@@ -8,7 +8,7 @@ if(not is_undefined(obj_player.holding) and is_undefined(holding)) {
 	// player has item, counter empty
 	
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, obj_player.holding)
-	if(scr_item_property(item, PROPS.container)) { // check if pot
+	if(scr_lib_property(item, PROPS.container)) { // check if container
 		// create confirmation menu instance (create it offscreen)
 		select_inst = scr_menu_create(obj_select);
 		select_inst.x_offset = 2 * UNIT;

@@ -2,11 +2,8 @@ GAMEDATA = ds_map_create();
 ds_map_add(GAMEDATA, "current_room", rm_home_kitchen);
 ds_map_add(GAMEDATA, "inventory", ds_list_create());
 
-scr_inv_add_item(scr_inv_new_item(ITEM.pot_tiny, SUBTYPE.equipment, 1, 20, 100));
-scr_inv_add_item(scr_inv_new_item(ITEM.pot_small, SUBTYPE.equipment, 1, 20, 100));
-scr_inv_add_item(scr_inv_new_item(ITEM.pot_medium, SUBTYPE.equipment, 1, 20, 100));
-scr_inv_add_item(scr_inv_new_item(ITEM.pot_large, SUBTYPE.equipment, 1, 20, 100));
-scr_inv_add_item(scr_inv_new_item(ITEM.jar, SUBTYPE.equipment, 4, 20, 100));
+scr_inv_add_item(scr_inv_new_item(ITEM.pot_tiny, SUBTYPE.equipment, 2, 20, 100));
+scr_inv_add_item(scr_inv_new_item(ITEM.jar_tiny, SUBTYPE.equipment, 4, 20, 100));
 scr_inv_add_item(scr_inv_new_item(ITEM.strawberry, SUBTYPE.whole, 3, 20, 60));
 scr_inv_add_item(scr_inv_new_item(ITEM.strawberry, SUBTYPE.chopped, 3, 20, 60));
 scr_inv_add_item(scr_inv_new_item(ITEM.lemon, SUBTYPE.whole, 3, 20, 12));

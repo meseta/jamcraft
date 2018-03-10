@@ -2,7 +2,7 @@
 
 if(not is_undefined(holding)) {
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding)
-	if(scr_item_property(item, PROPS.cookware)) {
+	if(scr_lib_property(item, PROPS.cookware)) {
 		
 		// set auto-heat
 		if(heat_type == 0) {
@@ -33,6 +33,8 @@ if(not is_undefined(holding)) {
 		for(var i=0; i<ds_list_size(contents); i++) {
 			var content = ds_list_find_value(contents, i);
 			var item_type = ds_map_find_value(content, "type");	
+			var item_name = scr_lib_name(content)
+
 			if(item_type == ITEM.mush) continue;
 				
 			var doneness = ds_map_find_value(content, "doneness");
@@ -49,15 +51,17 @@ if(not is_undefined(holding)) {
 			if(is_undefined(max_done) or doneness > max_done) max_done = doneness;
 			
 			if(doneness > 133) {
-				var library = ds_map_find_value(global.item_library, item_type)
-				if(not is_undefined(library)) {
-					var library_name = ds_map_find_value(library, "name");
-					scr_alert(library_name + " overcooked!");
+				if(not is_undefined(item_name)) {
+					scr_alert(item_name + " overcooked!");
 				}
 				
 				ds_map_set(content, "type", ITEM.mush)
 				ds_map_set(content, "subtype", SUBTYPE.trash);
 				ds_map_set(content, "doneness", 100);
+				
+				// recalculate pot color
+				var new_color = scr_inv_calculate_color(contents);
+				ds_map_set(item, "content_color", new_color);
 			}
 			
 			
@@ -67,19 +71,19 @@ if(not is_undefined(holding)) {
 				condition = clamp(condition-heat_level/30, 0, 100);
 				ds_map_set(content, "condition", condition);
 				
-				
+
 				if(condition <= 0) {
-					var item_type = ds_map_find_value(content, "type");	
-					var library = ds_map_find_value(global.item_library, item_type)
-					if(not is_undefined(library)) {
-						var library_name = ds_map_find_value(library, "name");
-						scr_alert(library_name + " burned!");
+					if(not is_undefined(item_name)) {
+						scr_alert(item_name + " burned!");
 					}
 					
 					ds_map_set(content, "type", ITEM.mush)
 					ds_map_set(content, "subtype", SUBTYPE.trash);
 					ds_map_set(content, "doneness", 100);
-									
+					
+					// recalculate pot color
+					var new_color = scr_inv_calculate_color(contents);
+					ds_map_set(item, "content_color", new_color);
 				}
 			}
 		}

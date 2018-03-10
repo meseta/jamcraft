@@ -31,7 +31,10 @@ enum ITEM {
 	pot_small,
 	pot_medium,
 	pot_large,
-	jar,
+	jar_tiny,
+	jar_small,
+	jar_medium,
+	jar_large,
 	
 	// ingredients
 	sugar,
@@ -83,6 +86,7 @@ enum ITEM {
 enum SUBTYPE {
 	undef,
 	equipment,
+	equipment_overlay,
 	ingredient,
 	jam,
 	whole,
@@ -112,36 +116,49 @@ enum PROPS {
 	cookware = 16,
 	capacity_A = 32,
 	capacity_B = 64,
+	jar = 128,
+	colorant = 256,
 }
 
 
 
-var item = scr_inv_create_item("Tiny Pan", ITEM.pot_tiny, c_gray);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.cookware | PROPS.container);
-
-var item = scr_inv_create_item("Saucepan", ITEM.pot_small, c_gray);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 1, PROPS.cookware | PROPS.container | PROPS.capacity_A);
-
-var item = scr_inv_create_item("Jam Pan", ITEM.pot_medium, c_gray);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 2, PROPS.cookware | PROPS.container | PROPS.capacity_B);
-
-var item = scr_inv_create_item("Stockpot", ITEM.pot_large, c_gray);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_pot, 3, PROPS.cookware | PROPS.container | PROPS.capacity_A | PROPS.capacity_B);
+var item = scr_lib_create_item("Tiny Pan", ITEM.pot_tiny, c_gray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.cookware | PROPS.container);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_pot_overlay, 0, PROPS.none);
+var item = scr_lib_create_item("Saucepan", ITEM.pot_small, c_gray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_pot, 1, PROPS.cookware | PROPS.container | PROPS.capacity_A);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_pot_overlay, 1, PROPS.none);
+var item = scr_lib_create_item("Jam Pan", ITEM.pot_medium, c_gray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_pot, 2, PROPS.cookware | PROPS.container | PROPS.capacity_B);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_pot_overlay, 2, PROPS.none);
+var item = scr_lib_create_item("Stockpot", ITEM.pot_large, c_gray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_pot, 3, PROPS.cookware | PROPS.container | PROPS.capacity_A | PROPS.capacity_B);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_pot_overlay, 3, PROPS.none);
 	
-var item = scr_inv_create_item("Empty Jar", ITEM.jar, c_ltgray);
-scr_inv_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.container);
+var item = scr_lib_create_item("Tiny Jar", ITEM.jar_tiny, c_ltgray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.jar | PROPS.container);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROPS.none);
+var item = scr_lib_create_item("Small Jar", ITEM.jar_small, c_ltgray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_jar, 1, PROPS.jar | PROPS.container | PROPS.capacity_A);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROPS.none);
+var item = scr_lib_create_item("Jar", ITEM.jar_medium, c_ltgray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_jar, 2, PROPS.jar | PROPS.container | PROPS.capacity_B);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROPS.none);
+var item = scr_lib_create_item("Big Jar", ITEM.jar_large, c_ltgray);
+scr_lib_create_subtype(item, SUBTYPE.equipment, spr_jar, 3, PROPS.jar | PROPS.container | PROPS.capacity_A | PROPS.capacity_B);
+scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROPS.none);
 
-var item = scr_inv_create_item("Sugar", ITEM.sugar, c_ltgray);
-scr_inv_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.cookable);
+var item = scr_lib_create_item("Sugar", ITEM.sugar, c_ltgray);
+scr_lib_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.cookable);
 
-var item = scr_inv_create_item("Strawberry", ITEM.strawberry, c_red);
-scr_inv_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
-scr_inv_create_subtype(item, SUBTYPE.chopped, spr_strawberry, 1, PROPS.cookable);
+var item = scr_lib_create_item("Strawberry", ITEM.strawberry, c_red);
+scr_lib_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
+scr_lib_create_subtype(item, SUBTYPE.chopped, spr_strawberry, 1, PROPS.cookable | PROPS.colorant);
 
-var item = scr_inv_create_item("Lemon", ITEM.lemon, c_yellow);
-scr_inv_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.choppable | PROPS.peelable);
-scr_inv_create_subtype(item, SUBTYPE.peel, spr_lemon, 1, PROPS.cookable);
-scr_inv_create_subtype(item, SUBTYPE.chopped, spr_lemon, 2, PROPS.cookable);
+var item = scr_lib_create_item("Lemon", ITEM.lemon, c_yellow);
+scr_lib_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.choppable | PROPS.peelable);
+scr_lib_create_subtype(item, SUBTYPE.peel, spr_lemon, 1, PROPS.cookable);
+scr_lib_create_subtype(item, SUBTYPE.chopped, spr_lemon, 2, PROPS.cookable | PROPS.colorant);
 
-var item = scr_inv_create_item("Mush", ITEM.mush, c_olive);
-scr_inv_create_subtype(item, SUBTYPE.trash, spr_mush, 0, PROPS.none);
+var item = scr_lib_create_item("Mush", ITEM.mush, c_olive);
+scr_lib_create_subtype(item, SUBTYPE.trash, spr_mush, 0, PROPS.colorant);

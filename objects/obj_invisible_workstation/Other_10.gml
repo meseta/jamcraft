@@ -1,7 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
 
-// Inherit the parent event
 scr_debug("Interact with ", object_get_name(object_index))
 
 if(not is_undefined(obj_player.holding) and is_undefined(holding)) {

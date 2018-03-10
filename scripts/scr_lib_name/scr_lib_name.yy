@@ -1,8 +1,8 @@
 {
-    "id": "1d042395-2549-46c2-8209-986b8b93d3e9",
+    "id": "4961769f-8e63-4817-a6d9-b87439ae9085",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_inv_create_item",
+    "name": "scr_lib_name",
     "IsCompatibility": false,
     "IsDnD": false
 }

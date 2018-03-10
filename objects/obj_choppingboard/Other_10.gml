@@ -11,7 +11,7 @@ if(not is_undefined(obj_player.holding) and is_undefined(holding)) {
 else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 	// counter has item, player empty
 	var item = ds_list_find_value(obj_control_room_inventory.inventory, holding)
-	if(scr_item_property(item, PROPS.choppable)) { // check if choppable
+	if(scr_lib_property(item, PROPS.choppable)) { // check if choppable
 		// create confirmation menu instance (create it offscreen)
 	
 		select_inst = scr_menu_create(obj_select);
