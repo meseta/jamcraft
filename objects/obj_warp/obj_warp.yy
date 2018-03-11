@@ -45,6 +45,20 @@
             "value": "noone",
             "varName": "link_room",
             "varType": 5
+        },
+        {
+            "id": "061dc964-6e72-403b-b933-f83429747bc1",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "3",
+            "varName": "exit_dir",
+            "varType": 1
         }
     ],
     "solid": false,

@@ -16,3 +16,4 @@ image_speed = 0;
 mask_index = spr_solid; // object mask is in fact the full tile
 
 holding = undefined;
+pause = false;

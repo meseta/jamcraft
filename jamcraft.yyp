@@ -223,6 +223,14 @@
             }
         },
         {
+            "Key": "2439208c-c59f-485f-88d2-9c44ee91b299",
+            "Value": {
+                "id": "c481f7e7-5154-4ce6-9911-0333a674e4b4",
+                "resourcePath": "tilesets\\tl_home_clutter\\tl_home_clutter.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "257f9f9e-40b9-42e7-8e1d-06690da82852",
             "Value": {
                 "id": "b22677dd-2947-43d4-9ce7-b4b0038b1fb1",
@@ -258,7 +266,7 @@
             "Key": "2d26b7d0-4f4f-4090-bbc6-9cc8c4c65ba8",
             "Value": {
                 "id": "726f7be8-acbe-4985-b9e9-e9c69fd866ce",
-                "resourcePath": "objects\\obj_spawner\\obj_spawner.yy",
+                "resourcePath": "objects\\obj_warper\\obj_warper.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -387,6 +395,14 @@
             "Value": {
                 "id": "6ec8c289-fb6c-40ca-8a53-9df0a2e7c5b5",
                 "resourcePath": "objects\\obj_control_input\\obj_control_input.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4e24ebb0-5db3-4649-8d79-5dd1552524d3",
+            "Value": {
+                "id": "4e177327-13d4-4b5a-8d18-2fa625da7cb2",
+                "resourcePath": "objects\\obj_door_down\\obj_door_down.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -655,6 +671,14 @@
             }
         },
         {
+            "Key": "84a34a62-bf5a-4d4d-a109-9fec5d220660",
+            "Value": {
+                "id": "5ba6a4e5-df1f-4f55-a2c3-89b60f59d9b8",
+                "resourcePath": "objects\\obj_door_up\\obj_door_up.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "85f90df4-4a2e-49b9-8803-e57cace5801b",
             "Value": {
                 "id": "dcb477e1-d0ad-41b2-810a-e6294c1f4220",
@@ -783,11 +807,11 @@
             }
         },
         {
-            "Key": "948c8571-f5a9-4364-9c0d-5fd1895d9439",
+            "Key": "942710dc-bbc7-450d-b6be-abd3d1824297",
             "Value": {
-                "id": "53ac422e-2be7-4ba4-8f7a-ae6f534e83d9",
-                "resourcePath": "objects\\obj_carpet\\obj_carpet.yy",
-                "resourceType": "GMObject"
+                "id": "18fff880-3eb6-45e3-9498-a82c3b956ded",
+                "resourcePath": "sprites\\spr_door_up\\spr_door_up.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -836,6 +860,14 @@
                 "id": "77e5ed59-a3ac-415d-914f-2890d92a6444",
                 "resourcePath": "objects\\obj_app_chop\\obj_app_chop.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a3786f68-fab4-4828-b9ae-8a77bda8c0c3",
+            "Value": {
+                "id": "d80b8a43-47f3-433b-9509-f6d74396b8b1",
+                "resourcePath": "rooms\\rm_home_bedroom\\rm_home_bedroom.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -1007,6 +1039,14 @@
             }
         },
         {
+            "Key": "c398e13c-c377-413a-9cc8-cc710deaae77",
+            "Value": {
+                "id": "886e50e9-5ecd-4ede-9ce6-1ec93e175579",
+                "resourcePath": "sprites\\spr_door_down\\spr_door_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c43ad6f6-c178-44ed-bb5b-a124a3b4b839",
             "Value": {
                 "id": "c6f63d9f-f0eb-4700-b477-7384ad9af257",
@@ -1135,19 +1175,19 @@
             }
         },
         {
+            "Key": "d5274abf-1964-4c1b-9feb-5be87ceb4f8f",
+            "Value": {
+                "id": "d910613a-038a-44c2-ac8e-93350cc3400a",
+                "resourcePath": "sprites\\spr_home_clutter\\spr_home_clutter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d54c53ce-49c4-49b4-81f7-45ae24f6e387",
             "Value": {
                 "id": "84383d53-b5bc-4656-83d2-a5fe4386e1b8",
                 "resourcePath": "scripts\\scr_app_cook_heat\\scr_app_cook_heat.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "d81de3b8-e340-4391-b932-3b7b80140b07",
-            "Value": {
-                "id": "6b29d6bd-d609-4eeb-af5c-9b25dfdbc0a3",
-                "resourcePath": "sprites\\spr_carpet_door\\spr_carpet_door.yy",
-                "resourceType": "GMSprite"
             }
         },
         {

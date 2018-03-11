@@ -1,22 +1,22 @@
 {
-    "id": "948c8571-f5a9-4364-9c0d-5fd1895d9439",
+    "id": "4e24ebb0-5db3-4649-8d79-5dd1552524d3",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_carpet",
+    "name": "obj_door_down",
     "eventList": [
-        {
-            "id": "67170383-10d4-4155-936e-621c028577ea",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "948c8571-f5a9-4364-9c0d-5fd1895d9439"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "overriddenProperties": null,
+    "overriddenProperties": [
+        {
+            "id": "06fd802a-9f31-4320-8304-378fc7c9134b",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "c43ad6f6-c178-44ed-bb5b-a124a3b4b839",
+            "propertyId": "061dc964-6e72-403b-b933-f83429747bc1",
+            "value": "1"
+        }
+    ],
     "parentObjectId": "c43ad6f6-c178-44ed-bb5b-a124a3b4b839",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -33,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "d81de3b8-e340-4391-b932-3b7b80140b07",
-    "visible": true
+    "spriteId": "c398e13c-c377-413a-9cc8-cc710deaae77",
+    "visible": false
 }
