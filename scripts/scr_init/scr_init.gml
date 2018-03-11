@@ -10,6 +10,14 @@ global.small_digits = font_add_sprite_ext(spr_small_digits, "0123456789", true, 
 
 scr_newgame();
 
+instance_create_layer(0, 0, "UI", obj_control_camera);
+instance_create_layer(0, 0, "UI", obj_control_input);
+instance_create_layer(0, 0, "UI", obj_control_room_inventory);
+instance_create_layer(0, 0, "UI", obj_spawner);
+instance_create_layer(0, 0, "Instances", obj_player);
+
+
+
 enum CONTROLMODE {
 	move,
 	menu
