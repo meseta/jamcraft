@@ -39,36 +39,40 @@ enum ITEM {
 	// ingredients
 	sugar,
 	
-	// fruit
+	
 	strawberry,
 	grape,
-	blackcurrent,
+	apple,
+	apricot,
+	plum,
+	cherry,
+	pear,
+	
+	// forest
 	raspberry,
+	blackcurrent,
 	blackberry,
 	boysenberry,
-	apple,
+	cranberry,
+	gooseberry,
+	blueberry,
+	
+	// citrus 
 	lemon,
 	lime,
 	orange,
 	mandarin,
 	bergamot,
 	kumquat,
-	apricot,
-	plum,
-	cherry,
-	blueberry,
 	
-	// unusual
-	cranberry,
-	gooseberry,
-	olive,
+	// tropical
 	pineapple,
-	pear,
 	mango,
-	rhubarb,
-	cucumber,
+	coconut,
+	kiwi,
+	pomegranate,
 	
-	// chutneys
+	// chutney
 	tomato,
 	onion,
 	redonion,
@@ -76,7 +80,6 @@ enum ITEM {
 	chilli,
 	beetroot,
 	garlic,
-	coconut,
 	fig,
 	
 	// misc.
@@ -109,15 +112,22 @@ global.subtype_name[SUBTYPE.trash] = "Trash"
 
 enum PROPS {
 	none = 0,
-	choppable = 1,
-	peelable = 2,
-	cookable = 4,
-	container = 8,
-	cookware = 16,
-	capacity_A = 32,
-	capacity_B = 64,
-	jar = 128,
-	colorant = 256,
+	choppable	= (1 << 0),
+	peelable	= (1 << 1),
+	cookable	= (1 << 2),
+	container	= (1 << 3),
+	cookware	= (1 << 4),
+	capacity_A	= (1 << 5),
+	capacity_B	= (1 << 6),
+	jar			= (1 << 7),
+	colorant	= (1 << 8),
+}
+
+enum EFFECTS {
+	none = 0,
+	healing		= (1 << 1),
+	acid		= (1 << 2),
+	toxic		= (1 << 3),
 }
 
 
@@ -149,16 +159,31 @@ scr_lib_create_subtype(item, SUBTYPE.equipment, spr_jar, 3, PROPS.jar | PROPS.co
 scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROPS.none);
 
 var item = scr_lib_create_item("Sugar", ITEM.sugar, c_ltgray);
-scr_lib_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.cookable);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.cookable);
+scr_lib_subtype_cooking(subtype, 1, 50, 0, 0, 0, 0, EFFECTS.none);
 
 var item = scr_lib_create_item("Strawberry", ITEM.strawberry, c_red);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
-scr_lib_create_subtype(item, SUBTYPE.chopped, spr_strawberry, 1, PROPS.cookable | PROPS.colorant);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_strawberry, 1, PROPS.cookable | PROPS.colorant);
+scr_lib_subtype_cooking(subtype, 1.2, 50, 10, 0, 0, 25, EFFECTS.healing);
 
 var item = scr_lib_create_item("Lemon", ITEM.lemon, c_yellow);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.choppable | PROPS.peelable);
-scr_lib_create_subtype(item, SUBTYPE.peel, spr_lemon, 1, PROPS.cookable);
-scr_lib_create_subtype(item, SUBTYPE.chopped, spr_lemon, 2, PROPS.cookable | PROPS.colorant);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_lemon, 1, PROPS.cookable);
+scr_lib_subtype_cooking(subtype, 0.5, 0, 30, 100, 0, 100, EFFECTS.acid);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_lemon, 2, PROPS.cookable | PROPS.colorant);
+scr_lib_subtype_cooking(subtype, 0.8, 15, 100, 0, 0, 75, EFFECTS.acid);
 
 var item = scr_lib_create_item("Mush", ITEM.mush, c_olive);
-scr_lib_create_subtype(item, SUBTYPE.trash, spr_mush, 0, PROPS.colorant);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.trash, spr_mush, 0, PROPS.colorant);
+scr_lib_subtype_cooking(subtype, 0, 0, 200, 300, 0, 0, EFFECTS.toxic);
+
+var export_str = json_encode(global.item_library);
+var file = file_text_open_write("inventory.json");
+file_text_write_string(file,export_str);
+file_text_close(file);
+
+var export_str = json_encode(GAMEDATA);
+var file = file_text_open_write("gamedata.json");
+file_text_write_string(file,export_str);
+file_text_close(file);

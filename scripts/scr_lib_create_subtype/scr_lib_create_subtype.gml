@@ -14,4 +14,5 @@ ds_map_add(subtype, "sprite", sprite);
 ds_map_add(subtype, "subimage", subimage);
 ds_map_add(subtype, "properties", properties);
 
-ds_map_add(subtypes, subtype_value, subtype)
+ds_map_add_map(subtypes, subtype_value, subtype)
+return subtype;

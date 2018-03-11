@@ -26,14 +26,14 @@ if(not is_undefined(holding)) {
 		
 		var contents = ds_map_find_value(item, "contents");
 		if(is_undefined(contents)) {	
-			ds_map_add(item, "contents", ds_list_create());
+			ds_map_add_list(item, "contents", ds_list_create());
 			contents = ds_map_find_value(item, "contents");
 		}
 		
 		for(var i=0; i<ds_list_size(contents); i++) {
 			var content = ds_list_find_value(contents, i);
 			var item_type = ds_map_find_value(content, "type");	
-			var item_name = scr_lib_name(content)
+			var item_name = scr_lib_lookup(content, "name")
 
 			if(item_type == ITEM.mush) continue;
 				
@@ -43,8 +43,10 @@ if(not is_undefined(holding)) {
 				doneness = 0;
 			}
 			
-			var cook_rate = (heat_level/30) * (max(stir_level, 50)-50)/50;
-			doneness = doneness+cook_rate;
+			var cook_rate = scr_lib_cook_rate(content);
+			var cook_input = (heat_level/30) * (max(stir_level, 35)-35)/65;
+			
+			doneness += cook_input * cook_rate;
 			ds_map_set(content, "doneness", doneness);
 			
 			if(is_undefined(min_done) or doneness < min_done) min_done = doneness;

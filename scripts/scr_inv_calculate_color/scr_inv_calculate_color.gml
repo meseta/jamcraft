@@ -8,7 +8,7 @@ var count = 0;
 for(var i=0; i< ds_list_size(contents); i++) {
 	var item = ds_list_find_value(contents, i);
 	if(scr_lib_property(item, PROPS.colorant)) {
-		var color = scr_lib_color(item);
+		var color = scr_lib_lookup(item, "color");
 		var red = color_get_red(color)
 		var green = color_get_green(color)
 		var blue = color_get_blue(color)
@@ -20,6 +20,13 @@ for(var i=0; i< ds_list_size(contents); i++) {
 	}
 }
 
+if(count = 0) {
+	count = 1;
+	cyan = 128;
+	magenta = 128;
+	yellow = 128;
+}
+	
 var red = 255-(cyan/count);
 var green = 255-(magenta/count);
 var blue = 255-(yellow/count);

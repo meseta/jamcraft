@@ -107,7 +107,7 @@ else if(not end_condition) {
 			}
 			
 			// get particle color
-			display.part_color = scr_lib_color(item);
+			display.part_color = scr_lib_lookup(item, "color");
 			display.shake = 5;
 			display.slash = best_type;
 		}
@@ -145,7 +145,7 @@ else if(not end_condition) {
 		scr_alert(item_name + " turned to mush!");
 	}
 	else if(chop >= 100) {
-		var item_name = scr_lib_name(item);
+		var item_name = scr_lib_lookup(item, "name");
 		
 		// make player hold peel
 		if(scr_lib_property(item, PROPS.peelable)) {

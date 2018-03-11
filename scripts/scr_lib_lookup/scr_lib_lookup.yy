@@ -1,8 +1,8 @@
 {
-    "id": "19f59c45-edd9-42fc-aa9f-0cd02c40dcb9",
+    "id": "c074a937-41ab-4c1e-8d6e-c6ed2a86cb15",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_pot_get_capacity",
+    "name": "scr_lib_lookup",
     "IsCompatibility": false,
     "IsDnD": false
 }

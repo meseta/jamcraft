@@ -1,8 +1,8 @@
 {
-    "id": "ad2e58a0-ad4c-46f7-9f3b-003fb190ef55",
+    "id": "78a916f4-74a4-4bae-a8e0-92c3bb5fcb55",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_lib_color",
+    "name": "scr_app_jar",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -16,7 +16,7 @@ if(not is_undefined(item_idx)) {
 	var min_done = undefined;
 	var max_done = undefined;
 	
-	var capacity = scr_pot_get_capacity(item_pot);
+	var capacity = scr_get_capacity(item_pot);
 	var i_offset = 0;
 	if(capacity <= inventory_width) {
 		i_offset = inventory_width + floor((inventory_width-capacity)/2);
@@ -90,6 +90,6 @@ if(not is_undefined(item_idx)) {
 			case 1:
 				draw_sprite_ext(spr_swish, floor(swish_frame), x_offset+UNIT, y_offset-UNIT/4, 1, 1, 0, c_white, 1.0);
 				break;
-		}
+		}	
 	}
 }
