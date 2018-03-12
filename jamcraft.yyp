@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "17b9a46c-e49c-483b-a15d-f8f5c15e727e",
+            "Value": {
+                "id": "843cf257-5fbc-4497-bc72-80c6dce98baa",
+                "resourcePath": "sprites\\spr_shop_overlay\\spr_shop_overlay.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "19f59c45-edd9-42fc-aa9f-0cd02c40dcb9",
             "Value": {
                 "id": "4d44aa7e-1ca8-4d6d-8be2-71bed11bcb91",
@@ -300,6 +308,14 @@
                 "id": "8b61535b-2141-4fd5-a685-9d059603041a",
                 "resourcePath": "views\\33ab2c82-9311-4820-8068-14c464d5a3cf.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "383a2370-86bf-464a-866e-b0fe86ba9960",
+            "Value": {
+                "id": "98707672-ebff-4122-957e-11556d374559",
+                "resourcePath": "sprites\\spr_shop_bg\\spr_shop_bg.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -623,6 +639,14 @@
             }
         },
         {
+            "Key": "77cb4352-445d-47f1-8820-cc117057bd5e",
+            "Value": {
+                "id": "d8d68bd6-1471-4aba-928b-f6428f8c08f0",
+                "resourcePath": "rooms\\rm_home_kitchen\\rm_home_kitchen.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "784e8e0a-7e5c-4816-ae04-5cbbf17803df",
             "Value": {
                 "id": "819b16a1-dc21-4913-bc65-9d8dbe54c051",
@@ -746,7 +770,7 @@
             "Key": "89ea3cfc-6bda-42e5-a7d0-aadb5e2322a7",
             "Value": {
                 "id": "65b8451b-50a4-44ed-a40b-55d8576fc502",
-                "resourcePath": "rooms\\rm_home_kitchen\\rm_home_kitchen.yy",
+                "resourcePath": "rooms\\rm_home_house1\\rm_home_house1.yy",
                 "resourceType": "GMRoom"
             }
         },

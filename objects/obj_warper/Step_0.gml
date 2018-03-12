@@ -12,7 +12,7 @@ if(fade) {
 					scr_app_putback(holding)	
 				}
 			}
-			
+			scr_debug("Warp from ", room_get_name(room));
 			room_goto(ds_map_find_value(GAMEDATA, "current_room"));
 		}
 	}

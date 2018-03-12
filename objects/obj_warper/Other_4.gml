@@ -17,7 +17,7 @@ with(obj_warp) {
 
 // move player to it
 if(warp_inst != noone) {
-	scr_debug("Warp");
+	scr_debug("Warp to ", room_get_name(room));
 	obj_player.x = warp_inst.x;
 	obj_player.y = warp_inst.y;
 	obj_player.move_target_x = warp_inst.x;
