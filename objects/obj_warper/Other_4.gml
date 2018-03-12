@@ -9,7 +9,7 @@ if(is_undefined(previous_room)) { // no previous room set, drop at droppoint
 var warp_inst = noone;
 with(obj_warp) {
 	if((previous_room == noone and link_room == noone and object_index == obj_warp) or
-		(previous_room != noone and link_room == previous_room)) {
+		(previous_room != noone and (is_undefined(link_room) or link_room == previous_room))) {
 		warp_inst = id;
 		break;
 	}

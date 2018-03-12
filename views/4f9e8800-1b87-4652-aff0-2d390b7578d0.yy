@@ -13,7 +13,7 @@
         "fe5c55f2-1d93-423c-a296-e6670c4d9ed2"
     ],
     "filterType": "GMSprite",
-    "folderName": "interactables",
+    "folderName": "appliances",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
