@@ -135,7 +135,8 @@ else if(not end_condition) {
 	var yy = y_offset+height/2-UNIT+1
 	part_particles_create(partstars_sys, xx, yy+irandom_range(-7, 7), partstars, 1)	
 	
-	// end condition test
+	// end condition test	
+	var item_name = scr_lib_lookup(item, "name");
 	if(cond == 0) {
 		ds_map_set(item, "type", ITEM.mush)
 		ds_map_set(item, "subtype", SUBTYPE.trash);
@@ -145,7 +146,6 @@ else if(not end_condition) {
 		scr_alert(item_name + " turned to mush!");
 	}
 	else if(chop >= 100) {
-		var item_name = scr_lib_lookup(item, "name");
 		
 		// make player hold peel
 		if(scr_lib_property(item, PROPS.peelable)) {
