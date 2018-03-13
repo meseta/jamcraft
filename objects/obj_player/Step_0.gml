@@ -6,6 +6,20 @@ event_inherited();
 
 if(pause) exit
 
+if(move_arrived) {
+	move_arrived = false;
+	// check collision
+	var tree_inst = instance_place(x, y, obj_tree);
+	if(tree_inst != noone) {
+		var chance = tree_inst.chance
+		if(irandom(99) < chance) {
+			scr_debug("Encounter!")
+			instance_create_layer(x, y, "UI", obj_control_encounter)
+		}
+	}
+	
+}
+
 if(interact and not move_is_moving) {
 	var check_x = x;
 	var check_y = y;

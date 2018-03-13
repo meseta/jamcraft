@@ -9,6 +9,7 @@ if(link_room != noone) {
 		ds_map_set(GAMEDATA, "previous_room", room);
 		ds_map_set(GAMEDATA, "current_room", link_room);
 		with(obj_warper) {
+			fade_color = c_black;
 			event_user(0);		
 		}
 	}

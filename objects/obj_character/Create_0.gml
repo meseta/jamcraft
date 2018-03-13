@@ -6,6 +6,7 @@ event_inherited();
 move_is_moving = false;
 move_dir = MOVEDIR.undef;
 move_last_dir = MOVEDIR.undef;
+move_arrived = false;
 
 move_target_x = x;
 move_target_y = y;

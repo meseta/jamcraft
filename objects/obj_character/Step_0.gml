@@ -59,6 +59,7 @@ else {
 			move_target_y = floor(y/UNIT) * UNIT;
 			move_is_moving = false;
 			move_dir = MOVEDIR.undef;
+			move_arrived = true;
 		}
 	}
 }
