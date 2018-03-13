@@ -11,7 +11,9 @@
         "89ea3cfc-6bda-42e5-a7d0-aadb5e2322a7",
         "1de18632-1c32-4edb-8c63-3b69062ec3b7",
         "5c806574-01a7-47d5-82e8-3f5093fa5740",
-        "db2eb85d-950d-4e72-953b-b7393b595140"
+        "db2eb85d-950d-4e72-953b-b7393b595140",
+        "ec0e8aa4-0589-4606-a8bf-4365e7a5872e",
+        "f3808ca4-f20d-4b86-a0c5-42b5bb12f3a3"
     ],
     "filterType": "GMFolder",
     "folderName": "c6d6dbb5-0801-40dd-ad9c-c625e88d75f7",
