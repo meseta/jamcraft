@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "1738d18e-ecc6-464a-b10b-34179e2c6755",
+            "Value": {
+                "id": "00ce1ff7-49cb-4295-b4bb-a53e03fe9a82",
+                "resourcePath": "objects\\obj_control_music\\obj_control_music.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "17b9a46c-e49c-483b-a15d-f8f5c15e727e",
             "Value": {
                 "id": "843cf257-5fbc-4497-bc72-80c6dce98baa",
@@ -258,7 +266,7 @@
             "Key": "249c746c-0796-4ba7-ba28-897c3775a20e",
             "Value": {
                 "id": "9ca2cf22-fc36-4faa-832d-7b2f581f1229",
-                "resourcePath": "sounds\\sound0\\sound0.yy",
+                "resourcePath": "sounds\\snd_bgm_overworld\\snd_bgm_overworld.yy",
                 "resourceType": "GMSound"
             }
         },

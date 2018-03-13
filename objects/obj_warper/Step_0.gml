@@ -14,6 +14,10 @@ if(fade) {
 			}
 			scr_debug("Warp from ", room_get_name(room));
 			room_goto(ds_map_find_value(GAMEDATA, "current_room"));
+			
+			with(obj_control_music) {
+				audio_sound_gain(current_bgm, current_bgm_volume, 300);	
+			}
 		}
 	}
 	else {
