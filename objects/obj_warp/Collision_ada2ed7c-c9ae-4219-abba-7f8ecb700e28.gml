@@ -10,6 +10,7 @@ if(link_room != noone) {
 		ds_map_set(GAMEDATA, "current_room", link_room);
 		with(obj_warper) {
 			fade_color = c_black;
+			fade_rate_multiplier = 1;
 			event_user(0);		
 		}
 	}
