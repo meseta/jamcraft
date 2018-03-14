@@ -26,3 +26,7 @@ selected_y = 0;
 
 option_take = false
 option_rearrange = false
+
+can_take = false;
+can_use = false;
+can_throw = false;

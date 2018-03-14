@@ -1,3 +1,11 @@
+/// @function scr_lib_create_subtype(item, subtype, sprite, subimage, properties)
+/// @description Create a new library subtype
+/// @param type
+/// @param subtype
+/// @param sprite
+/// @param subimage
+/// @param properties
+
 var item = argument0
 var subtype_value = argument1
 var sprite = argument2;

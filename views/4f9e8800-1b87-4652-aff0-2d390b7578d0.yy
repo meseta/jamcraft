@@ -10,7 +10,8 @@
         "6dd51b29-8b7f-43fb-881b-c500a8452a27",
         "0feaedb9-99f6-4e7c-bf75-ce609fc8abb7",
         "9e7ab545-46e3-44ce-b538-35c7f8400b15",
-        "fe5c55f2-1d93-423c-a296-e6670c4d9ed2"
+        "fe5c55f2-1d93-423c-a296-e6670c4d9ed2",
+        "4cabf8b0-2834-429c-8206-4ae6cafa2c94"
     ],
     "filterType": "GMSprite",
     "folderName": "appliances",

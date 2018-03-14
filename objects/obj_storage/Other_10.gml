@@ -4,13 +4,10 @@
 if(is_decorative) exit;
 
 // create inventory instance (create it offscreen)
-menu_inst = instance_create_layer(x-300, y-300, "UI", obj_inventory);
-//menu_inst.option_take = true;
+menu_inst = scr_menu_create(obj_inventory);
+menu_inst.can_take = true;
 
 scr_debug("Open inventory inst ", menu_inst)
-
-// push inventory menu into interact stack
-ds_stack_push(global.interact_stack, menu_inst);
 
 // create filtered inventory
 var filtered_inventory = ds_list_create();

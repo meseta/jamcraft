@@ -8,7 +8,10 @@
         "667ce9d7-5ba6-4001-95bf-9de5d1b8b349",
         "ef63f3a3-bead-47d9-bae0-0bf6cf25eb55",
         "e77c4968-e66a-4a2e-a995-0387b5eca29a",
-        "57a688ca-3940-41b6-a28b-e98c6e4775ef"
+        "57a688ca-3940-41b6-a28b-e98c6e4775ef",
+        "01577134-6189-45e6-a00f-7d63aa85ecd0",
+        "f0c78b70-9b9a-42c3-b156-fa5924ce2e54",
+        "04067bb6-b140-4e94-9ac2-6295fb2a2cbf"
     ],
     "filterType": "GMScript",
     "folderName": "menu",

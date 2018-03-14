@@ -5,7 +5,8 @@
     "name": "7bbdd4f7-ebb5-4eb6-a84f-c0f733ce4edb",
     "children": [
         "2671d411-33d7-4ebc-839e-0d8848ba9c57",
-        "fbf1ee9a-2541-4ebb-b601-f3cffe333c10"
+        "fbf1ee9a-2541-4ebb-b601-f3cffe333c10",
+        "3df672b4-7141-4bcd-a9f6-cd034c491b5d"
     ],
     "filterType": "GMSprite",
     "folderName": "overworld",

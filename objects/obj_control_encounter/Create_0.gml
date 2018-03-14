@@ -11,3 +11,7 @@ with(obj_warper) {
 }
 
 select_inst = noone;
+player_stat_inst = noone;
+player_inst = noone;
+enemy_inst = noone;
+enemy_stat_inst = noone;

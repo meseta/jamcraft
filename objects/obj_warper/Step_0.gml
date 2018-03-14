@@ -7,6 +7,7 @@ if(fade) {
 		if(fade_amount >= 1) {
 			fade_amount = 1;
 			
+			instance_activate_object(obj_player)
 			with(obj_player) {
 				if(not is_undefined(holding)) {
 					scr_app_putback(holding)	

@@ -6,6 +6,11 @@ event_inherited();
 
 if(pause) exit
 
+if(cancel) {
+	scr_main_menu();
+	cancel = false;
+}
+
 if(move_arrived) {
 	move_arrived = false;
 	if(encounter_blankout > 0) {
@@ -15,11 +20,13 @@ if(move_arrived) {
 		// check collision
 		var tree_inst = instance_place(x, y, obj_tree);
 		if(tree_inst != noone) {
-			var chance = tree_inst.chance
-			if(irandom(99) < chance) {
-				scr_debug("Encounter!")
-				encounter_blankout = 2;
-				instance_create_depth(x, y, 10000, obj_control_encounter)
+			if(not is_undefined(tree_inst.fruit)) {
+				var chance = tree_inst.chance
+				if(irandom(99) < chance) {
+					scr_debug("Encounter!")
+					encounter_blankout = 2;
+					instance_create_depth(x, y, 10000, obj_control_encounter)
+				}
 			}
 		}
 	}

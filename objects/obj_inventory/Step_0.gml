@@ -35,15 +35,14 @@ if(selected >= inventory_offset + inventory_width * inventory_height) {
 }
 
 if(interact) {
-	// create inventory instance (create it offscreen)
-	select_inst = scr_menu_create(obj_select);
-	scr_debug("Select menu ", select_inst)
-	select_inst.x_offset = selected_x + UNIT + 4;
-	select_inst.y_offset = selected_y;
+	if(can_take or can_use or can_throw) {
+		// create inventory instance (create it offscreen)
+		select_inst = scr_menu_create(obj_select);
+		scr_debug("Select menu ", select_inst)
+		select_inst.x_offset = selected_x + UNIT + 4;
+		select_inst.y_offset = selected_y;
 	
-	// add items into menu
-	//if(option_take) {
-		// select item
+		// add items into menu
 		if(is_undefined(inventory_map)) {
 			var inv_index = selected
 		}
@@ -51,10 +50,18 @@ if(interact) {
 			var inv_index = ds_list_find_value(inventory_map, selected);
 		}
 		
-		if(is_undefined(obj_player.holding)) {
-			scr_menu_add(select_inst.menu_items, 0, "Take", scr_app_takeout, inv_index);
+		if(can_take) {
+			if(is_undefined(obj_player.holding)) {
+				scr_menu_add(select_inst.menu_items, 0, "Take", scr_app_takeout, inv_index);
+			}
 		}
-	//}
+		if(can_use) {
+			scr_menu_add(select_inst.menu_items, 0, "(Use)", noone, inv_index);
+		}
+		if(can_throw) {
+			scr_menu_add(select_inst.menu_items, 0, "(Throw)", noone, inv_index);
+		}
+	}
 	
 	interact = false;
 }

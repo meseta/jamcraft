@@ -50,21 +50,21 @@ enum ITEM {
 	
 	
 	strawberry,
-	grape,
-	apple,
-	apricot,
-	plum,
-	cherry,
-	pear,
+	grape,	// need
+	apple,	// need
+	apricot,// need
+	plum,// need
+	cherry,// need
+	pear,// need
 	
 	// forest
-	raspberry,
-	blackcurrent,
-	blackberry,
-	boysenberry,
-	cranberry,
-	gooseberry,
-	blueberry,
+	raspberry,// need
+	blackcurrent,// need
+	blackberry,// need
+	boysenberry,// need
+	cranberry,// need
+	gooseberry,// need
+	blueberry,// need
 	
 	// citrus 
 	lemon,
@@ -72,24 +72,23 @@ enum ITEM {
 	orange,
 	mandarin,
 	bergamot,
-	kumquat,
 	
 	// tropical
-	pineapple,
-	mango,
-	coconut,
-	kiwi,
-	pomegranate,
+	pineapple,// need
+	mango,// need
+	coconut,// need
+	kiwi,// need
+	pomegranate,// need
 	
 	// chutney
-	tomato,
-	onion,
-	redonion,
-	ginger,
-	chilli,
-	beetroot,
-	garlic,
-	fig,
+	tomato,// need
+	onion,// need
+	redonion,// need
+	ginger,// need
+	chilli,// need
+	beetroot,// need
+	garlic,// need
+	fig,// need
 	
 	// misc.
 	mush,
@@ -134,13 +133,28 @@ enum PROPS {
 
 enum EFFECTS {
 	none = 0,
-	healing		= (1 << 1),
-	acid		= (1 << 2),
-	toxic		= (1 << 3),
+	effect_A	= (1 << 0),
+	effect_B	= (1 << 1),
+	healing		= (1 << 2),
+	poison		= (1 << 3),
+	daze		= (1 << 4),
+	acid		= (1 << 5),
+	sticky		= (1 << 6),
+	fast		= (1 << 7),
+	repel		= (1 << 8),
+	fragrant	= (1 << 9),
 }
 
+enum STATUS {
+	none = 0,
+	poison		= (1 << 0),
+	daze		= (1 << 1),
+	acid		= (1 << 2),
+	sticky		= (1 << 3),
+	fast		= (1 << 4),
+}
 
-
+// pots
 var item = scr_lib_create_item("Tiny Pan", ITEM.pot_tiny, c_gray);
 scr_lib_create_subtype(item, SUBTYPE.equipment, spr_pot, 0, PROPS.cookware | PROPS.container);
 scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_pot_overlay, 0, PROPS.none);
@@ -153,7 +167,8 @@ scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_pot_overlay, 2, PROP
 var item = scr_lib_create_item("Stockpot", ITEM.pot_large, c_gray);
 scr_lib_create_subtype(item, SUBTYPE.equipment, spr_pot, 3, PROPS.cookware | PROPS.container | PROPS.capacity_A | PROPS.capacity_B);
 scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_pot_overlay, 3, PROPS.none);
-	
+
+// jars
 var item = scr_lib_create_item("Tiny Jar", ITEM.jar_tiny, c_ltgray);
 scr_lib_create_subtype(item, SUBTYPE.equipment, spr_jar, 0, PROPS.jar | PROPS.container);
 scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROPS.none);
@@ -167,25 +182,93 @@ var item = scr_lib_create_item("Big Jar", ITEM.jar_large, c_ltgray);
 scr_lib_create_subtype(item, SUBTYPE.equipment, spr_jar, 3, PROPS.jar | PROPS.container | PROPS.capacity_A | PROPS.capacity_B);
 scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROPS.none);
 
+// sugar
 var item = scr_lib_create_item("Sugar", ITEM.sugar, c_ltgray);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.cookable);
 scr_lib_subtype_cooking(subtype, 1, 50, 0, 0, 0, 0, EFFECTS.none);
 
+// strawberry
 var item = scr_lib_create_item("Strawberry", ITEM.strawberry, c_red);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_strawberry, 1, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 1.2, 50, 10, 0, 0, 25, EFFECTS.healing);
+scr_lib_subtype_cooking(subtype, 1.2, 50, 10, 0, 0, 25, EFFECTS.healing | EFFECTS.effect_A);
 
+/*	grape,	// need
+	apple,	// need
+	apricot,// need
+	plum,// need
+	cherry,// need
+	pear,// need
+	
+	// forest
+	raspberry,// need
+	blackcurrent,// need
+	blackberry,// need
+	boysenberry,// need
+	cranberry,// need
+	gooseberry,// need
+	blueberry,// need
+	
+	// citrus */
+	
+// lemon
 var item = scr_lib_create_item("Lemon", ITEM.lemon, c_yellow);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.choppable | PROPS.peelable);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_lemon, 1, PROPS.cookable);
-scr_lib_subtype_cooking(subtype, 0.5, 0, 30, 100, 0, 100, EFFECTS.acid);
+scr_lib_subtype_cooking(subtype, 0.5, 0, 30, 100, 0, 100, EFFECTS.daze);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_lemon, 2, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0.8, 15, 100, 0, 0, 75, EFFECTS.acid);
+scr_lib_subtype_cooking(subtype, 0.8, 15, 100, 0, 0, 75, EFFECTS.acid | EFFECTS.effect_A);
 
+var item = scr_lib_create_item("Lime", ITEM.lime, c_green);
+scr_lib_create_subtype(item, SUBTYPE.whole, spr_lime, 0, PROPS.choppable | PROPS.peelable);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_lime, 1, PROPS.cookable);
+scr_lib_subtype_cooking(subtype, 0.5, 0, 30, 100, 0, 100, EFFECTS.daze);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_lime, 2, PROPS.cookable | PROPS.colorant);
+scr_lib_subtype_cooking(subtype, 0.8, 25, 30, 75, 0, 75, EFFECTS.daze);
+
+var item = scr_lib_create_item("Orange", ITEM.orange, c_orange);
+scr_lib_create_subtype(item, SUBTYPE.whole, spr_orange, 0, PROPS.choppable | PROPS.peelable);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_orange, 1, PROPS.cookable);
+scr_lib_subtype_cooking(subtype, 0.5, 0, 0, 100, 0, 100, EFFECTS.daze);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_orange, 2, PROPS.cookable | PROPS.colorant);
+scr_lib_subtype_cooking(subtype, 0.8, 35, 50, 0, 0, 75, EFFECTS.acid);
+
+var item = scr_lib_create_item("Mandarin", ITEM.orange, c_orange);
+scr_lib_create_subtype(item, SUBTYPE.whole, spr_orange, 0, PROPS.choppable | PROPS.peelable);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_orange, 1, PROPS.cookable);
+scr_lib_subtype_cooking(subtype, 0.5, 0, 0, 100, 0, 100, EFFECTS.daze);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_orange, 2, PROPS.cookable | PROPS.colorant);
+scr_lib_subtype_cooking(subtype, 0.8, 45, 35, 0, 0, 75, EFFECTS.healing);
+
+var item = scr_lib_create_item("Bergamot", ITEM.bergamot, c_green);
+scr_lib_create_subtype(item, SUBTYPE.whole, spr_bergamot, 0, PROPS.choppable | PROPS.peelable);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_bergamot, 1, PROPS.cookable);
+scr_lib_subtype_cooking(subtype, 0.5, 25, 25, 50, 0, 100, EFFECTS.fragrant);
+var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_bergamot, 2, PROPS.cookable | PROPS.colorant);
+scr_lib_subtype_cooking(subtype, 0.8, 50, 35, 0, 0, 75, EFFECTS.healing | EFFECTS.fragrant);
+
+/*
+	// tropical
+	pineapple,// need
+	mango,// need
+	coconut,// need
+	kiwi,// need
+	pomegranate,// need
+	
+	// chutney
+	tomato,// need
+	onion,// need
+	redonion,// need
+	ginger,// need
+	chilli,// need
+	beetroot,// need
+	garlic,// need
+	fig,// need*/
+
+// mush
 var item = scr_lib_create_item("Mush", ITEM.mush, c_olive);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.trash, spr_mush, 0, PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0, 0, 200, 300, 0, 0, EFFECTS.toxic);
+scr_lib_subtype_cooking(subtype, 0, 0, 200, 300, 0, 0, EFFECTS.poison);
 
 var export_str = json_encode(global.item_library);
 var file = file_text_open_write("inventory.json");
