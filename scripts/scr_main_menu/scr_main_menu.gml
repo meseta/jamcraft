@@ -3,9 +3,7 @@ if(room != rm_battle and room != rm_sleep) {
 	select_inst.x_offset = 0.5 * UNIT - 2;
 	select_inst.y_offset = 7 * UNIT;
 	select_inst.width = 4 * UNIT;
-		
-	scr_menu_add(select_inst.menu_items, 0, "(Exit)", noone, noone)
-	scr_menu_add(select_inst.menu_items, 0, "(Help)", noone, noone)
+
 	scr_menu_add(select_inst.menu_items, 0, "Items", scr_inventory_use, noone)
 	scr_menu_add(select_inst.menu_items, 0, "Save", scr_save, noone)
 	

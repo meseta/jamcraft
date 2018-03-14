@@ -15,4 +15,9 @@ scr_inv_add_item(scr_inv_new_item(ITEM.sugar, SUBTYPE.ingredient, 100, 20, 100))
 
 scr_player_reset();
 
+scr_menu_clear();
+
+instance_create_layer(0, 0, "Instances", obj_player);
+instance_create_layer(0, 0, "UI", obj_control_room_inventory);
+instance_create_layer(0, 0, "UI", obj_warper);
 room_goto(GAMEDATA[? "current_room"]);

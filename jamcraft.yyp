@@ -151,6 +151,22 @@
             }
         },
         {
+            "Key": "15551c9f-3847-47b6-bbc8-a8a66759ce12",
+            "Value": {
+                "id": "ae54d88d-b5a7-4f6e-9a84-f8b5a7ff6ab6",
+                "resourcePath": "scripts\\scr_exit\\scr_exit.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "16d3204f-f347-465f-aa9d-4e739b9606ad",
+            "Value": {
+                "id": "0be5490f-43e8-42f6-a03a-e5fe84951bd2",
+                "resourcePath": "objects\\obj_control_start_menu\\obj_control_start_menu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "16f3e253-f55f-4b66-8aac-6d53c63428f5",
             "Value": {
                 "id": "8e6734ac-b700-4d86-8f6a-14d605280afa",
@@ -983,14 +999,6 @@
             }
         },
         {
-            "Key": "8a0d5557-d2cd-40d8-899b-4157933ae759",
-            "Value": {
-                "id": "88b525ab-87a1-4e58-974e-3fcf6e98f068",
-                "resourcePath": "rooms\\rm_load\\rm_load.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "8e3e091a-1ef5-480c-89a3-a7883b89bb82",
             "Value": {
                 "id": "46f2b625-2cfd-4285-9abc-079baaf48228",
@@ -1335,14 +1343,6 @@
             }
         },
         {
-            "Key": "c1347b0c-af04-48d1-b2d5-b6e02dceb7b2",
-            "Value": {
-                "id": "ee9d63be-d723-4410-b31b-4fb88e40e21e",
-                "resourcePath": "rooms\\rm_load1\\rm_load1.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "c20396c8-dbb5-4202-bfbd-2d220e794a1d",
             "Value": {
                 "id": "3506079e-1378-419c-be62-f767e3c33754",
@@ -1468,6 +1468,14 @@
                 "id": "ae40cabd-9774-4953-8b8f-5ff7001b13d2",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "cc9d5e24-41b4-4efe-9abf-4faf0598e79c",
+            "Value": {
+                "id": "0f50d85a-779f-4a57-bbe5-087453035778",
+                "resourcePath": "rooms\\rm_menu\\rm_menu.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -1782,6 +1790,7 @@
         "c89e55d2-2d5a-4842-a8b7-3058abb9e22c",
         "35e2d719-e232-40ec-851b-501364bab946",
         "9f9ff7bc-9318-4991-b289-cb9577484a9b",
+        "15551c9f-3847-47b6-bbc8-a8a66759ce12",
         "00b88008-bec3-4bff-a476-b8861294c2f3",
         "c074a937-41ab-4c1e-8d6e-c6ed2a86cb15",
         "6643e828-d289-4354-ad12-84eb6cb352cb",
