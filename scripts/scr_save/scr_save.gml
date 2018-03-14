@@ -21,6 +21,8 @@ var file=file_text_open_write("save.json");
 file_text_write_string(file,j);
 file_text_close(file);
 
-scr_app_takeout(player_holding);
+if(not is_undefined(player_holding)) {
+	scr_app_takeout(player_holding);
+}
 
 scr_alert("Game Saved!");

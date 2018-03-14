@@ -44,28 +44,34 @@ if(not is_undefined(item_idx)) {
 	}
 	else {
 		draw_set_color(c_gray);
-		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+23, "SWT:")
-		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+33, "SOUR:")
-		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+43, "BTTR:")
-		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+53, "SET:")
-		
-		draw_text(x_offset, y_offset-UNIT+63, "EFFECTS:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+28, "SWT:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+38, "SOUR:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+48, "BTTR:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+58, "SET:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+68, "EFCT:")
 		
 		
 		if(not is_undefined(contents) and ds_list_size(contents) >= 0) {
 			
-			draw_text(x_offset+3.5*UNIT, y_offset-UNIT+23, string_format(ds_map_find_value(item_pot, "sweetness"), 3, 0))
-			draw_text(x_offset+3.5*UNIT, y_offset-UNIT+33, string_format(ds_map_find_value(item_pot, "sourness"), 3, 0))
-			draw_text(x_offset+3.5*UNIT, y_offset-UNIT+43, string_format(ds_map_find_value(item_pot, "bitterness"), 3, 0))
+			draw_text(x_offset+5*UNIT, y_offset-UNIT+28, string_format(ds_map_find_value(item_pot, "sweetness"), 3, 0))
+			draw_text(x_offset+5*UNIT, y_offset-UNIT+38, string_format(ds_map_find_value(item_pot, "sourness"), 3, 0))
+			draw_text(x_offset+5*UNIT, y_offset-UNIT+48, string_format(ds_map_find_value(item_pot, "bitterness"), 3, 0))
 			switch(ds_map_find_value(item_pot, "set")) {
 				default:
 				case SET.runny: var set_text = "RUNNY"; break;
-				case SET.good: var set_text = "GOOD"; break;
-				case SET.firm: var set_text = "FIRM"; break;
+				case SET.good: var set_text = " GOOD"; break;
+				case SET.firm: var set_text = " FIRM"; break;
 			}
-			draw_text(x_offset+0.5*UNIT+30, y_offset-UNIT+53, set_text)
-		
-			//draw_text(x_offset, y_offset-UNIT+63, "EFFECTS:")
+			draw_text(x_offset+4*UNIT, y_offset-UNIT+58, set_text)
+			
+			var effects = ds_map_find_value(item_pot, "effects");
+			var xpos = 0;
+			for(var i=0; i<9; i++) {
+				if(effects & (1 << i)) {
+					draw_sprite(spr_effects, i, x_offset+6*UNIT+xpos, y_offset-UNIT+74);
+					xpos -= 12;	
+				}
+			}
 		}
 		
 	}

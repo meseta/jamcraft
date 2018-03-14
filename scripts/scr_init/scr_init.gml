@@ -126,14 +126,14 @@ enum PROPS {
 enum EFFECTS {
 	none = 0,
 	multiplier	= (1 << 0),
-	healing		= (1 << 2),
-	poison		= (1 << 3),
-	daze		= (1 << 4),
-	acid		= (1 << 5),
-	sticky		= (1 << 6),
-	fast		= (1 << 7),
-	repel		= (1 << 8),
-	fragrant	= (1 << 9),
+	healing		= (1 << 1),
+	poison		= (1 << 2),
+	daze		= (1 << 3),
+	acid		= (1 << 4),
+	sticky		= (1 << 5),
+	fast		= (1 << 6),
+	repel		= (1 << 7),
+	fragrant	= (1 << 8),
 }
 
 enum STATUS {
