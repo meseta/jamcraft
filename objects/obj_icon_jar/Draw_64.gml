@@ -10,35 +10,64 @@ if(not is_undefined(item_idx)) {
 	draw_set_valign(fa_top);
 	
 	var item_pot = ds_list_find_value(obj_control_room_inventory.inventory, item_idx);
-
-	// draw pot contents
 	var contents = ds_map_find_value(item_pot, "contents") 
-	var capacity = scr_get_capacity(item_pot);
-	var i_offset = 0;
-	if(capacity <= inventory_width) {
-		i_offset = inventory_width + floor((inventory_width-capacity)/2);
-	}
+		
+	if(display_mode == 0) {
+		// draw pot contents
+		var capacity = scr_get_capacity(item_pot);
+		var i_offset = 0;
+		if(capacity <= inventory_width) {
+			i_offset = inventory_width + floor((inventory_width-capacity)/2);
+		}
 	
-	// inventory contents
-	for(var i=0; i<i_offset+inventory_width*inventory_height and i<capacity; i++) {
-		draw_set_color(c_white)
+		// inventory contents
+		for(var i=0; i<i_offset+inventory_width*inventory_height and i<capacity; i++) {
+			draw_set_color(c_white)
 	
-		// calculate position
-		var row = (i+i_offset) div inventory_width;
-		var col = (i+i_offset) mod inventory_width;
-		var xx = col * UNIT + x_offset;
-		var yy = row * (UNIT + 4) + y_offset + UNIT + 6;
+			// calculate position
+			var row = (i+i_offset) div inventory_width;
+			var col = (i+i_offset) mod inventory_width;
+			var xx = col * UNIT + x_offset;
+			var yy = row * (UNIT + 4) + y_offset + UNIT + 6;
 	
-		// draw inventory slot
-		draw_sprite(spr_inventory_slot, 0, xx, yy);
+			// draw inventory slot
+			draw_sprite(spr_inventory_slot, 0, xx, yy);
 	
-		// select item
-		if(not is_undefined(contents)) {
-			var item = ds_list_find_value(contents, i);
-			if(not is_undefined(item)) {
-				scr_item_draw(item, xx, yy);
+			// select item
+			if(not is_undefined(contents)) {
+				var item = ds_list_find_value(contents, i);
+				if(not is_undefined(item)) {
+					scr_item_draw(item, xx, yy);
+				}
 			}
 		}
+	}
+	else {
+		draw_set_color(c_gray);
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+23, "SWT:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+33, "SOUR:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+43, "BTTR:")
+		draw_text(x_offset+0.5*UNIT, y_offset-UNIT+53, "SET:")
+		
+		draw_text(x_offset, y_offset-UNIT+63, "EFFECTS:")
+		
+		
+		if(not is_undefined(contents) and ds_list_size(contents) >= 0) {
+			
+			draw_text(x_offset+3.5*UNIT, y_offset-UNIT+23, string_format(ds_map_find_value(item_pot, "sweetness"), 3, 0))
+			draw_text(x_offset+3.5*UNIT, y_offset-UNIT+33, string_format(ds_map_find_value(item_pot, "sourness"), 3, 0))
+			draw_text(x_offset+3.5*UNIT, y_offset-UNIT+43, string_format(ds_map_find_value(item_pot, "bitterness"), 3, 0))
+			switch(ds_map_find_value(item_pot, "set")) {
+				default:
+				case SET.runny: var set_text = "RUNNY"; break;
+				case SET.good: var set_text = "GOOD"; break;
+				case SET.firm: var set_text = "FIRM"; break;
+			}
+			draw_text(x_offset+0.5*UNIT+30, y_offset-UNIT+53, set_text)
+		
+			//draw_text(x_offset, y_offset-UNIT+63, "EFFECTS:")
+		}
+		
 	}
 	
 	// draw jar

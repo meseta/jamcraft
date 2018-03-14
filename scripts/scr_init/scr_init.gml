@@ -8,16 +8,12 @@ global.item_library = ds_map_create();
 
 global.small_digits = font_add_sprite_ext(spr_small_digits, "0123456789", true, 1);
 
-scr_newgame();
-
 instance_create_layer(0, 0, "UI", obj_control_camera);
 instance_create_layer(0, 0, "UI", obj_control_input);
 instance_create_layer(0, 0, "UI", obj_control_room_inventory);
 instance_create_layer(0, 0, "UI", obj_warper);
 instance_create_layer(0, 0, "UI", obj_control_music);
 instance_create_layer(0, 0, "Instances", obj_player);
-
-
 
 enum CONTROLMODE {
 	move,
@@ -133,8 +129,7 @@ enum PROPS {
 
 enum EFFECTS {
 	none = 0,
-	effect_A	= (1 << 0),
-	effect_B	= (1 << 1),
+	multiplier	= (1 << 0),
 	healing		= (1 << 2),
 	poison		= (1 << 3),
 	daze		= (1 << 4),
@@ -152,6 +147,12 @@ enum STATUS {
 	acid		= (1 << 2),
 	sticky		= (1 << 3),
 	fast		= (1 << 4),
+}
+
+enum SET {
+	runny,
+	good,
+	firm
 }
 
 // pots
@@ -191,7 +192,7 @@ scr_lib_subtype_cooking(subtype, 1, 50, 0, 0, 0, 0, EFFECTS.none);
 var item = scr_lib_create_item("Strawberry", ITEM.strawberry, c_red);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_strawberry, 0, PROPS.choppable);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_strawberry, 1, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 1.2, 50, 10, 0, 0, 25, EFFECTS.healing | EFFECTS.effect_A);
+scr_lib_subtype_cooking(subtype, 1.2, 50, 10, 0, 0, 25, EFFECTS.healing);
 
 /*	grape,	// need
 	apple,	// need
@@ -217,14 +218,14 @@ scr_lib_create_subtype(item, SUBTYPE.whole, spr_lemon, 0, PROPS.choppable | PROP
 var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_lemon, 1, PROPS.cookable);
 scr_lib_subtype_cooking(subtype, 0.5, 0, 30, 100, 0, 100, EFFECTS.daze);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_lemon, 2, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0.8, 15, 100, 0, 0, 75, EFFECTS.acid | EFFECTS.effect_A);
+scr_lib_subtype_cooking(subtype, 0.8, 15, 100, 0, 0, 75, EFFECTS.acid);
 
 var item = scr_lib_create_item("Lime", ITEM.lime, c_green);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_lime, 0, PROPS.choppable | PROPS.peelable);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_lime, 1, PROPS.cookable);
 scr_lib_subtype_cooking(subtype, 0.5, 0, 30, 100, 0, 100, EFFECTS.daze);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_lime, 2, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0.8, 25, 30, 75, 0, 75, EFFECTS.daze);
+scr_lib_subtype_cooking(subtype, 0.8, 25, 30, 75, 0, 75, EFFECTS.daze | EFFECTS.multiplier);
 
 var item = scr_lib_create_item("Orange", ITEM.orange, c_orange);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_orange, 0, PROPS.choppable | PROPS.peelable);
@@ -245,7 +246,7 @@ scr_lib_create_subtype(item, SUBTYPE.whole, spr_bergamot, 0, PROPS.choppable | P
 var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_bergamot, 1, PROPS.cookable);
 scr_lib_subtype_cooking(subtype, 0.5, 25, 25, 50, 0, 100, EFFECTS.fragrant);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_bergamot, 2, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0.8, 50, 35, 0, 0, 75, EFFECTS.healing | EFFECTS.fragrant);
+scr_lib_subtype_cooking(subtype, 0.8, 50, 35, 0, 0, 75, EFFECTS.healing | EFFECTS.fragrant | EFFECTS.multiplier);
 
 /*
 	// tropical
@@ -270,12 +271,4 @@ var item = scr_lib_create_item("Mush", ITEM.mush, c_olive);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.trash, spr_mush, 0, PROPS.colorant);
 scr_lib_subtype_cooking(subtype, 0, 0, 200, 300, 0, 0, EFFECTS.poison);
 
-var export_str = json_encode(global.item_library);
-var file = file_text_open_write("inventory.json");
-file_text_write_string(file,export_str);
-file_text_close(file);
-
-var export_str = json_encode(GAMEDATA);
-var file = file_text_open_write("gamedata.json");
-file_text_write_string(file,export_str);
-file_text_close(file);
+room_goto(rm_menu);

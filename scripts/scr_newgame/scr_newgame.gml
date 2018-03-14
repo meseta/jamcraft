@@ -1,6 +1,6 @@
 GAMEDATA = ds_map_create();
 ds_map_add(GAMEDATA, "previous_room", noone);
-ds_map_add(GAMEDATA, "current_room", rm_home_town);
+ds_map_add(GAMEDATA, "current_room", rm_home_kitchen);
 ds_map_add_list(GAMEDATA, "inventory", ds_list_create());
 ds_map_add_map(GAMEDATA, "room_inventory", ds_map_create());
 

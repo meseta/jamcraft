@@ -18,13 +18,14 @@ else if(is_undefined(obj_player.holding) and not is_undefined(holding)) {
 		select_inst.y_offset = 7 * UNIT+2;
 		select_inst.width = 6 * UNIT;
 		
-		scr_menu_add(select_inst.menu_items, 0, "Take", scr_room_inv_take, id)
-		
 		// creat icon
 		icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_jar);
 		icon_inst.item_idx = holding;
-	
 		select_inst.additional_display = icon_inst;
+		
+		scr_menu_add(select_inst.menu_items, 0, "Take", scr_room_inv_take, id)
+		scr_menu_add(select_inst.menu_items, 0, "More Info", scr_menu_more, icon_inst)
+		
 	}
 	else {
 		obj_player.holding = holding;

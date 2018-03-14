@@ -26,14 +26,19 @@ if(is_undefined(contents) or ds_list_size(contents) == 0) { // is not a containe
 }
 
 if(is_undefined(item)) { // new item, create new
-	item = ds_map_create();
-	ds_map_copy(item, room_item);
-	ds_list_add(inventory, item);
+	//item = ds_map_create();
+	//ds_map_copy(item, room_item);
+	//ds_list_add(inventory, item);
+	
+	ds_list_add(inventory, room_item);
 	ds_list_mark_as_map(inventory, ds_list_size(inventory)-1);
 }
 else { // existing item, increment quantity
 	var qty = ds_map_find_value(item, "quantity");
 	ds_map_set(item, "quantity", qty+1);
+	
+	// remove from inventory
+	ds_map_destroy(room_item);
 }
 
 // remove from player
@@ -41,9 +46,7 @@ with(obj_player) {
 	holding = undefined
 }
 
-// remove from inventory
-ds_map_destroy(room_item);
-//ds_list_delete(room_inventory, take_item_idx)
+// zero inventory
 ds_list_set(room_inventory, take_item_idx, undefined);
 
 scr_menu_clear();

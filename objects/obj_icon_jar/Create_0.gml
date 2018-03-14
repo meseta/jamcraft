@@ -12,3 +12,5 @@ y_offset = 1.5 * UNIT;
 
 inventory_width = 7;
 inventory_height = 3;
+
+display_mode = 0;

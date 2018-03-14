@@ -7,7 +7,7 @@ if(room != rm_battle and room != rm_sleep) {
 	scr_menu_add(select_inst.menu_items, 0, "(Exit)", noone, noone)
 	scr_menu_add(select_inst.menu_items, 0, "(Help)", noone, noone)
 	scr_menu_add(select_inst.menu_items, 0, "Items", scr_inventory_use, noone)
-	scr_menu_add(select_inst.menu_items, 0, "(Save)", noone, noone)
+	scr_menu_add(select_inst.menu_items, 0, "Save", scr_save, noone)
 	
 	// creat icon
 	var icon_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_playerstats);
