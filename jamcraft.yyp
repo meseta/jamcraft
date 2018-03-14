@@ -154,7 +154,7 @@
             "Key": "15551c9f-3847-47b6-bbc8-a8a66759ce12",
             "Value": {
                 "id": "ae54d88d-b5a7-4f6e-9a84-f8b5a7ff6ab6",
-                "resourcePath": "scripts\\scr_exit\\scr_exit.yy",
+                "resourcePath": "scripts\\scr_exit_game\\scr_exit_game.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1439,6 +1439,14 @@
             }
         },
         {
+            "Key": "c8361bbe-241e-47f5-850d-454a00fb4df3",
+            "Value": {
+                "id": "8807c53b-9ade-4bbc-b0b2-b94fddba78d0",
+                "resourcePath": "scripts\\scr_exit_menu\\scr_exit_menu.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c89e55d2-2d5a-4842-a8b7-3058abb9e22c",
             "Value": {
                 "id": "72f68766-62ca-4d83-97a5-51d1bbdff341",
@@ -1791,6 +1799,7 @@
         "35e2d719-e232-40ec-851b-501364bab946",
         "9f9ff7bc-9318-4991-b289-cb9577484a9b",
         "15551c9f-3847-47b6-bbc8-a8a66759ce12",
+        "c8361bbe-241e-47f5-850d-454a00fb4df3",
         "00b88008-bec3-4bff-a476-b8861294c2f3",
         "c074a937-41ab-4c1e-8d6e-c6ed2a86cb15",
         "6643e828-d289-4354-ad12-84eb6cb352cb",

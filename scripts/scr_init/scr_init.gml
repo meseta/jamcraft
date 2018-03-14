@@ -3,6 +3,8 @@ randomize();
 #macro GAMEDATA global.game_data
 #macro UNIT 16
 
+GAMEDATA = undefined;
+
 global.interact_stack = ds_stack_create();
 global.item_library = ds_map_create();
 

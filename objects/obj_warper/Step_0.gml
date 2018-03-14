@@ -8,11 +8,6 @@ if(fade) {
 			fade_amount = 1;
 			
 			instance_activate_object(obj_player)
-			with(obj_player) {
-				if(not is_undefined(holding)) {
-					scr_app_putback(holding)	
-				}
-			}
 			scr_debug("Warp from ", room_get_name(room));
 			room_goto(ds_map_find_value(GAMEDATA, "current_room"));
 			

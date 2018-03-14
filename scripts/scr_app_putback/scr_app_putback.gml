@@ -10,6 +10,7 @@ var inventory = ds_map_find_value(GAMEDATA, "inventory")
 
 // scan for existing item in inventory
 var item = undefined;
+var inv_index = undefined;
 
 var contents = ds_map_find_value(room_item, "contents");
 if(is_undefined(contents) or ds_list_size(contents) == 0) { // is not a container with contents}
@@ -21,9 +22,12 @@ if(is_undefined(contents) or ds_list_size(contents) == 0) { // is not a containe
 		if(test_item[? "quality"] != room_item[? "quality"]) continue;
 		if(test_item[? "condition"] != room_item[? "condition"]) continue;
 		item = test_item;
+		inv_index = i;
 		break;
 	}
 }
+
+ds_map_delete(room_item, "workstation_holding");
 
 if(is_undefined(item)) { // new item, create new
 	//item = ds_map_create();
@@ -31,7 +35,8 @@ if(is_undefined(item)) { // new item, create new
 	//ds_list_add(inventory, item);
 	
 	ds_list_add(inventory, room_item);
-	ds_list_mark_as_map(inventory, ds_list_size(inventory)-1);
+	inv_index = ds_list_size(inventory)-1;
+	ds_list_mark_as_map(inventory, inv_index);
 }
 else { // existing item, increment quantity
 	var qty = ds_map_find_value(item, "quantity");
@@ -50,3 +55,5 @@ with(obj_player) {
 ds_list_set(room_inventory, take_item_idx, undefined);
 
 scr_menu_clear();
+
+return inv_index;

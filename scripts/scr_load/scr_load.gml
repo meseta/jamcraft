@@ -4,6 +4,9 @@ if(file_exists("save.json")) {
 	//var savemap = ds_map_secure_load(global.savename);
 	var file = file_text_open_read("save.json");
 	var j = file_text_read_string(file);
+	
+	if(not is_undefined(GAMEDATA)) ds_map_destroy(GAMEDATA);
+	
 	GAMEDATA = json_decode(j);
 	file_text_close(file);
 

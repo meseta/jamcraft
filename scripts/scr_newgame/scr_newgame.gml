@@ -1,3 +1,5 @@
+if(not is_undefined(GAMEDATA)) ds_map_destroy(GAMEDATA);
+
 GAMEDATA = ds_map_create();
 ds_map_add(GAMEDATA, "previous_room", noone);
 ds_map_add(GAMEDATA, "current_room", rm_home_kitchen);
