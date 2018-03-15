@@ -8,8 +8,18 @@ draw_set_font(fnt_default);
 draw_set_valign(fa_top);
 
 draw_set_halign(fa_center);
-draw_text(x_offset+width/2, y_offset-UNIT+2, name)
+var str_w = string_width(enemy_name);
+draw_text(x_offset+width/2-20, y_offset-UNIT+2, enemy_name)
 
+// stars
+for(var i=0; i<5; i+=1) {
+	if(stars > i) {
+		draw_sprite(spr_star, 0, x_offset+(width+str_w)/2-18+i*9, y_offset-UNIT+7);
+	}
+	else {
+		draw_sprite(spr_star, 1, x_offset+(width+str_w)/2-18+i*9, y_offset-UNIT+7);
+	}
+}
 
 draw_set_halign(fa_left);
 draw_text(x_offset, y_offset-UNIT+13, "HP: ")

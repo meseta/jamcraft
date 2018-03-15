@@ -1,0 +1,1 @@
+return ds_stack_size(global.interact_stack)

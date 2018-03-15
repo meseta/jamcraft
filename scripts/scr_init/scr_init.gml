@@ -134,16 +134,33 @@ enum EFFECTS {
 	fast		= (1 << 6),
 	repel		= (1 << 7),
 	fragrant	= (1 << 8),
+	defence		= (1 << 9),
 }
 
 enum STATUS {
-	none = 0,
-	poison		= (1 << 0),
-	daze		= (1 << 1),
-	acid		= (1 << 2),
-	sticky		= (1 << 3),
-	fast		= (1 << 4),
+	multiplier=0,
+	healing,
+	poison,
+	daze,
+	acid,
+	sticky,
+	fast,
+	repel,
+	fragrant,
+	defence
 }
+
+global.status_name = undefined;
+global.status_name[STATUS.multiplier] = "Multiplier"
+global.status_name[STATUS.healing] = "Healing"
+global.status_name[STATUS.poison] = "Poison"
+global.status_name[STATUS.daze] = "Daze"
+global.status_name[STATUS.acid] = "Acid Burn"
+global.status_name[STATUS.sticky] = "Sticky Goo"
+global.status_name[STATUS.fast] = "Hyper Speed"
+global.status_name[STATUS.repel] = "Bad Smell"
+global.status_name[STATUS.fragrant] = "Fragrance"
+global.status_name[STATUS.defence] = "Defence"
 
 enum SET {
 	runny,

@@ -13,21 +13,33 @@ if(cancel) {
 
 if(move_arrived) {
 	move_arrived = false;
+	
+	// stat effects
+	var player_stat = ds_map_find_value(GAMEDATA, "status_effects");
+	scr_stat_step(player_stat, 1);
+	
+	move_speed = 1;
+	if(scr_stat_check(player_stat, STATUS.daze)) move_speed *= 0.75;	
+	if(scr_stat_check(player_stat, STATUS.sticky)) move_speed *= 0.5;	
+	if(scr_stat_check(player_stat, STATUS.fast)) move_speed *= 2;
+
+	hp = ds_map_find_value(GAMEDATA, "hp");
+	if(scr_stat_check(player_stat, STATUS.poison) or scr_stat_check(player_stat, STATUS.acid)) {
+		hp = max(1, hp-1);
+	}
+	ds_map_replace(GAMEDATA, "hp", hp);
+	
+	// encounters
 	if(encounter_blankout > 0) {
 		encounter_blankout -= 1;
 	}
 	else {
 		// check collision
 		var tree_inst = instance_place(x, y, obj_tree);
-		if(tree_inst != noone) {
-			if(not is_undefined(tree_inst.fruit)) {
-				var chance = tree_inst.chance
-				if(irandom(99) < chance) {
-					scr_debug("Encounter!")
-					encounter_blankout = 2;
-					var inst_encounter = instance_create_depth(x, y, 10000, obj_control_encounter)
-					inst_encounter.enemy = tree_inst.fruit;
-				}
+		if(tree_inst != noone) {		
+			encounter_blankout = 2;
+			with(tree_inst) {
+				event_user(0);	
 			}
 		}
 	}

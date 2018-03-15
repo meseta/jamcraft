@@ -15,6 +15,7 @@ scr_inv_add_item(scr_inv_new_item(ITEM.orange, SUBTYPE.whole, 3, 20, 30));
 scr_inv_add_item(scr_inv_new_item(ITEM.bergamot, SUBTYPE.whole, 3, 20, 30));
 scr_inv_add_item(scr_inv_new_item(ITEM.sugar, SUBTYPE.ingredient, 100, 20, 100));
 
+ds_map_add(GAMEDATA, "status_effects", ds_list_create());
 scr_player_reset();
 
 scr_menu_clear();

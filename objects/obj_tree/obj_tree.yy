@@ -23,6 +23,16 @@
             "enumb": 0,
             "eventtype": 0,
             "m_owner": "d0e448aa-48a3-4a5d-a9c6-8f2a724eb451"
+        },
+        {
+            "id": "531c8e05-002d-4a66-8860-0aa7ca6c80b5",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 10,
+            "eventtype": 7,
+            "m_owner": "d0e448aa-48a3-4a5d-a9c6-8f2a724eb451"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -69,6 +79,20 @@
             "value": "10",
             "varName": "chance",
             "varType": 0
+        },
+        {
+            "id": "845670a8-1e59-4846-ae24-6b444289595c",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1",
+            "varName": "difficulty",
+            "varType": 1
         }
     ],
     "solid": false,

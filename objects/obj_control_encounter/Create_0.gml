@@ -16,4 +16,19 @@ player_inst = noone;
 enemy_inst = noone;
 enemy_stat_inst = noone;
 
-enemy = undefined;
+enemy_speed = 0;
+player_speed = 0;
+
+
+enemy_stat = ds_list_create();
+
+fruit = undefined;
+stars = 1;
+cond = 0;
+
+enum TURN {
+	wait,
+	player,
+	enemy,
+	system
+}
