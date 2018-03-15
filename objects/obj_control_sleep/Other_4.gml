@@ -7,6 +7,6 @@ if(room == rm_sleep) { // at the start of battle, deactivate player
 }
 else {
 	// on return to start room, reset previous room to current room
-	ds_map_set(GAMEDATA, "previous_room", room);
+	ds_map_replace(GAMEDATA, "previous_room", room);
 	instance_destroy();
 }

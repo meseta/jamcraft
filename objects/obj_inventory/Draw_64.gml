@@ -54,6 +54,7 @@ for(var i=inventory_offset; i<inventory_size and i<inv_end; i++) {
 		inventory_details.text_qual = ds_map_find_value(item, "quality");
 		inventory_details.can_use = can_use
 		inventory_details.can_throw = can_throw
+		inventory_details.text_efct = ds_map_find_value(item, "effects");
 		
 		selected_x = xx;
 		selected_y = yy;

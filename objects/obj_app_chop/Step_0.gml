@@ -32,7 +32,7 @@ else if(not end_condition) {
 			stats_buttons += 1;
 			
 			cond = clamp(cond-1, 0, 100);
-			ds_map_set(item, "condition", cond);
+			ds_map_replace(item, "condition", cond);
 		}
 		else {
 			// check goodness
@@ -43,7 +43,7 @@ else if(not end_condition) {
 				best_type = ds_map_find_value(button, "type");
 			}
 			
-			ds_map_set(button, "position", position);
+			ds_map_replace(button, "position", position);
 		}
 	}
 	
@@ -79,7 +79,7 @@ else if(not end_condition) {
 		if(miss or goodness == 0) {
 			shake = 5;
 			cond = clamp(cond-5, 0, 100);
-			ds_map_set(item, "condition", cond);
+			ds_map_replace(item, "condition", cond);
 		}
 		else if(hit and goodness > 0) {
 			stats_buttons += 1;
@@ -99,11 +99,11 @@ else if(not end_condition) {
 			part_particles_create(partexplode_sys, xx, yy, partexplode, 15*goodness)	
 			
 			chop = clamp(chop+goodness*2, 0, 100);
-			ds_map_set(item, "chop", chop);
+			ds_map_replace(item, "chop", chop);
 			
 			if(best_type == 5) {
 				cond = clamp(cond+5, 0, 100);
-				ds_map_set(item, "condition", cond);
+				ds_map_replace(item, "condition", cond);
 			}
 			
 			// get particle color
@@ -138,8 +138,8 @@ else if(not end_condition) {
 	// end condition test	
 	var item_name = scr_lib_lookup(item, "name");
 	if(cond == 0) {
-		ds_map_set(item, "type", ITEM.mush)
-		ds_map_set(item, "subtype", SUBTYPE.trash);
+		ds_map_replace(item, "type", ITEM.mush)
+		ds_map_replace(item, "subtype", SUBTYPE.trash);
 		end_condition = true;
 		display.explode = true;
 		
@@ -158,7 +158,7 @@ else if(not end_condition) {
 		}
 		
 		if(not is_undefined(item_name)) scr_alert(item_name + " was chopped!");
-		ds_map_set(item, "subtype", SUBTYPE.chopped);
+		ds_map_replace(item, "subtype", SUBTYPE.chopped);
 		end_condition = true;
 		display.explode = true;
 	}

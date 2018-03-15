@@ -18,8 +18,23 @@ draw_set_color(c_gray);
 var subtype_limit = string_copy(text_subtype, 1, text_maxlength)
 draw_text(x_offset, y_offset-UNIT+11, subtype_limit)
 draw_text(x_offset, y_offset-UNIT+21, "x" + string(text_qtty))
-draw_text(x_offset, y_offset-UNIT+31, "COND ")
-scr_draw_bar(x_offset+38, y_offset-UNIT+31, 40, text_cond*40/100, spr_cond_bar);
+
+if(can_throw or can_use and not is_undefined(text_efct)) {
+	draw_text(x_offset, y_offset-UNIT+31, "EFCT ")
+	
+	var xpos = 0;
+	for(var i=0; i<9; i++) {
+		if(text_efct & (1 << i)) {
+			draw_sprite(spr_effects, i, x_offset+71+xpos, y_offset-UNIT+37);
+			xpos -= 12;	
+		}
+	}	
+	
+}
+else {
+	draw_text(x_offset, y_offset-UNIT+31, "COND ")
+	scr_draw_bar(x_offset+38, y_offset-UNIT+31, 40, text_cond*40/100, spr_cond_bar);
+}
 
 draw_set_color(c_white);
 for(var i=0; i<5; i+=1) {

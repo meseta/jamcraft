@@ -40,7 +40,7 @@ if(is_undefined(item)) { // new item, create new
 }
 else { // existing item, increment quantity
 	var qty = ds_map_find_value(item, "quantity");
-	ds_map_set(item, "quantity", qty+1);
+	ds_map_replace(item, "quantity", qty+1);
 	
 	// remove from inventory
 	ds_map_destroy(room_item);

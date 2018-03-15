@@ -15,7 +15,7 @@ if(qty > 1) {
 	ds_map_copy(room_item, item);
 
 	// subtract 1 from inventory
-	ds_map_set(item, "quantity", qty-1);
+	ds_map_replace(item, "quantity", qty-1);
 }
 else {
 	var room_item = item
@@ -25,7 +25,7 @@ else {
 }
 
 
-ds_map_set(room_item, "quantity", 1);
+ds_map_replace(room_item, "quantity", 1);
 ds_list_add(room_inventory, room_item);
 var room_item_idx = ds_list_size(room_inventory)-1;
 ds_list_mark_as_map(room_inventory, room_item_idx);

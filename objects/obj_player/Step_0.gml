@@ -25,7 +25,8 @@ if(move_arrived) {
 				if(irandom(99) < chance) {
 					scr_debug("Encounter!")
 					encounter_blankout = 2;
-					instance_create_depth(x, y, 10000, obj_control_encounter)
+					var inst_encounter = instance_create_depth(x, y, 10000, obj_control_encounter)
+					inst_encounter.enemy = tree_inst.fruit;
 				}
 			}
 		}

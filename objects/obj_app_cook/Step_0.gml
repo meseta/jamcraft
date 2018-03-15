@@ -54,7 +54,7 @@ else if(not end_condition) {
 			var item = ds_list_find_value(obj_control_room_inventory.inventory, item_idx	);
 			var stir_level = ds_map_find_value(item, "stir")
 			stir_level = clamp(stir_level-5, 0, 100);
-			ds_map_set(item, "stir", stir_level);
+			ds_map_replace(item, "stir", stir_level);
 		}
 	}
 	if(button >= 4) button -= 4;

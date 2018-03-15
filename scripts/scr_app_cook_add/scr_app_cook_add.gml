@@ -24,7 +24,7 @@ if(ds_list_size(contents) < scr_get_capacity(container)) {
 	
 	// recalculate content color
 	var new_color = scr_inv_calculate_color(contents);
-	ds_map_set(container, "content_color", new_color);
+	ds_map_replace(container, "content_color", new_color);
 	
 	cancel = true;
 }

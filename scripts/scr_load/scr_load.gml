@@ -15,6 +15,7 @@ if(file_exists("save.json")) {
 	instance_create_layer(0, 0, "Instances", obj_player);
 	instance_create_layer(0, 0, "UI", obj_control_room_inventory);
 	instance_create_layer(0, 0, "UI", obj_warper);
+	ds_map_replace(GAMEDATA, "previous_room", noone);
 	room_goto(ds_map_find_value(GAMEDATA, "current_room"));
 
 }

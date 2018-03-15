@@ -13,3 +13,7 @@ text_maxlength = 10
 text_qtty = 0;
 text_cond = 0;
 text_qual = 20;
+text_efct = undefined;
+
+can_use = false;
+can_throw = false;

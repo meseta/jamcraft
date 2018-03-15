@@ -18,7 +18,7 @@ if(not is_undefined(holding)) {
 		
 		// add to stir depending on heat level
 		stir_level = clamp(stir_level+heat_level/50, 0, 100);
-		ds_map_set(item, "stir", stir_level);
+		ds_map_replace(item, "stir", stir_level);
 		
 		// get doneness
 		min_done = undefined;
@@ -47,7 +47,7 @@ if(not is_undefined(holding)) {
 			var cook_input = (heat_level/30) * (max(stir_level, 35)-35)/65;
 			
 			doneness += cook_input * cook_rate;
-			ds_map_set(content, "doneness", doneness);
+			ds_map_replace(content, "doneness", doneness);
 			
 			if(is_undefined(min_done) or doneness < min_done) min_done = doneness;
 			if(is_undefined(max_done) or doneness > max_done) max_done = doneness;
@@ -57,13 +57,13 @@ if(not is_undefined(holding)) {
 					scr_alert(item_name + " overcooked!");
 				}
 				
-				ds_map_set(content, "type", ITEM.mush)
-				ds_map_set(content, "subtype", SUBTYPE.trash);
-				ds_map_set(content, "doneness", 100);
+				ds_map_replace(content, "type", ITEM.mush)
+				ds_map_replace(content, "subtype", SUBTYPE.trash);
+				ds_map_replace(content, "doneness", 100);
 				
 				// recalculate pot color
 				var new_color = scr_inv_calculate_color(contents);
-				ds_map_set(item, "content_color", new_color);
+				ds_map_replace(item, "content_color", new_color);
 			}
 			
 			
@@ -71,7 +71,7 @@ if(not is_undefined(holding)) {
 			
 			if(stir_level >= 99) {
 				condition = clamp(condition-heat_level/30, 0, 100);
-				ds_map_set(content, "condition", condition);
+				ds_map_replace(content, "condition", condition);
 				
 
 				if(condition <= 0) {
@@ -79,13 +79,13 @@ if(not is_undefined(holding)) {
 						scr_alert(item_name + " burned!");
 					}
 					
-					ds_map_set(content, "type", ITEM.mush)
-					ds_map_set(content, "subtype", SUBTYPE.trash);
-					ds_map_set(content, "doneness", 100);
+					ds_map_replace(content, "type", ITEM.mush)
+					ds_map_replace(content, "subtype", SUBTYPE.trash);
+					ds_map_replace(content, "doneness", 100);
 					
 					// recalculate pot color
 					var new_color = scr_inv_calculate_color(contents);
-					ds_map_set(item, "content_color", new_color);
+					ds_map_replace(item, "content_color", new_color);
 				}
 			}
 		}

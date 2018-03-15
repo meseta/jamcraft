@@ -39,14 +39,14 @@ else {
 	
 		// recalculate colors
 		var new_color = scr_inv_calculate_color(contents);
-		ds_map_set(container, "content_color", new_color);
+		ds_map_replace(container, "content_color", new_color);
 	
 		repeat(size_add) { // zero out old container
 			ds_list_delete(contents_add, 0);	
 		}
 	
 		// clear color of old container
-		ds_map_set(container_add, "content_color", undefined);
+		ds_map_replace(container_add, "content_color", undefined);
 	
 		return true;
 	}

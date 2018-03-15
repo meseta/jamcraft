@@ -3,7 +3,7 @@
 if(room == rm_battle) {
 	if(keyboard_check_released(vk_escape)) {
 		var return_room = ds_map_find_value(GAMEDATA, "previous_room");
-		ds_map_set(GAMEDATA, "current_room", return_room);
+		ds_map_replace(GAMEDATA, "current_room", return_room);
 		
 		with(obj_warper) {
 			fade_color = c_black;

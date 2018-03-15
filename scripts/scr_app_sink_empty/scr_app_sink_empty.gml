@@ -17,14 +17,14 @@ if(not is_undefined(contents)) {
 
 var stir = ds_map_find_value(room_item, "stir");
 if(not is_undefined(stir)) {
-	ds_map_set(room_item, "stir", 0);
+	ds_map_replace(room_item, "stir", 0);
 }
 
 var disp_inst = instance_create_depth(x-200, y-200, depth-1, obj_icon_trash);
 disp_inst.item_idx = take_item_idx;
 disp_inst.delete_animate = true;
 
-ds_map_set(room_item, "content_color", undefined);
+ds_map_replace(room_item, "content_color", undefined);
 
 scr_menu_clear();
 

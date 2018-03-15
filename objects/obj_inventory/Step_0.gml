@@ -56,7 +56,7 @@ if(interact) {
 			}
 		}
 		if(can_use) {
-			scr_menu_add(select_inst.menu_items, 0, "(Use)", noone, inv_index);
+			scr_menu_add(select_inst.menu_items, 0, "Use", scr_item_use, inv_index);
 		}
 		if(can_throw) {
 			scr_menu_add(select_inst.menu_items, 0, "(Throw)", noone, inv_index);
