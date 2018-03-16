@@ -455,6 +455,14 @@
             }
         },
         {
+            "Key": "3203c37b-4b8e-4317-a5cd-794dc8d31302",
+            "Value": {
+                "id": "43d3dfae-f645-4d5f-a616-4928b6e0e7e1",
+                "resourcePath": "datafiles_yy\\readme.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "324916c6-8eff-451f-937a-890d9a61031e",
             "Value": {
                 "id": "685fcfce-09bd-4d3c-88c3-d21a03f93809",
