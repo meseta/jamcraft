@@ -19,7 +19,15 @@ if(irandom(100) < run_chance) {
 		scr_alert(enemy_name + " ran away!");
 		escaped = true;
 		
-		// TODO: escaped
+		var return_room = ds_map_find_value(GAMEDATA, "previous_room");
+		ds_map_replace(GAMEDATA, "current_room", return_room);
+		
+		with(obj_warper) {
+			fade_color = c_black;
+			event_user(0);
+		}
+		
+		turn = TURN.system;
 	}
 	else {
 		scr_alert(enemy_name + " couldn't get away!");;	
@@ -57,7 +65,7 @@ if(not escaped) {
 				}
 			}
 				
-			player_hp_damage = attack*2;
+			player_hp_damage = attack*4;
 			
 			scr_debug("Enemy Attack: ", player_hp_damage);
 			

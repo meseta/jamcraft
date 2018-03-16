@@ -19,7 +19,6 @@ enemy_stat_inst = noone;
 enemy_speed = 0;
 player_speed = 0;
 
-
 enemy_stat = ds_list_create();
 
 enemy_fruit = undefined;

@@ -59,7 +59,7 @@ if(interact) {
 			scr_menu_add(select_inst.menu_items, 0, "Use", scr_item_use, inv_index);
 		}
 		if(can_throw) {
-			scr_menu_add(select_inst.menu_items, 0, "(Throw)", noone, inv_index);
+			scr_menu_add(select_inst.menu_items, 0, "Throw", scr_battle_throw, inv_index);
 		}
 	}
 	

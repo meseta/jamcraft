@@ -27,11 +27,11 @@ else {
 				attack *= 2
 			}
 			
-			enemy_hp_damage = attack*2;
+			enemy_hp_damage = attack*4;
 			
 			scr_debug("Attack: ", enemy_hp_damage);
 			
-			enemy_cond_damage = attack*attack/3;
+			enemy_cond_damage = attack*attack/2;
 			player_ep_damage = attack;
 			
 			player_inst.animate_attack = true;

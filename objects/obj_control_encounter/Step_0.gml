@@ -107,11 +107,27 @@ if(room == rm_battle) {
 	
 	
 	if(enemy_hp <= 0 or enemy_cond <= 0) {
-		// TODO: win state
+		scr_alert("You defeated " + enemy_name + "!")
+		
+		var return_room = ds_map_find_value(GAMEDATA, "previous_room");
+		ds_map_replace(GAMEDATA, "current_room", return_room);
+		
+		with(obj_warper) {
+			fade_color = c_black;
+			event_user(0);
+		}
+		
+		turn = TURN.system;
 	}
 	var hp = ds_map_find_value(GAMEDATA, "hp");
 	if(hp <= 0) {
-		// loose state	
+		ds_map_replace(GAMEDATA, "current_room", rm_gameover);
+		
+		with(obj_warper) {
+			fade_color = c_red;
+			event_user(0);
+		}
+		turn = TURN.system;
 	}
 	
 

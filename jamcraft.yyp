@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "16bfabaf-778d-4b89-a09c-897bb52f198a",
+            "Value": {
+                "id": "bef585f5-651e-4023-a23f-afcc187e6009",
+                "resourcePath": "rooms\\rm_gameover\\rm_gameover.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "16d3204f-f347-465f-aa9d-4e739b9606ad",
             "Value": {
                 "id": "0be5490f-43e8-42f6-a03a-e5fe84951bd2",
@@ -867,6 +875,14 @@
             "Value": {
                 "id": "dcdaaffa-a519-42df-b1fc-3e0f76d6e099",
                 "resourcePath": "sprites\\spr_player_down_holding\\spr_player_down_holding.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6e851e3e-89d8-4c9f-9be1-be1edf3bbd35",
+            "Value": {
+                "id": "d30d0b18-c205-4d33-8ed5-18213280a0e5",
+                "resourcePath": "sprites\\sprite67\\sprite67.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1652,6 +1668,14 @@
                 "id": "84383d53-b5bc-4656-83d2-a5fe4386e1b8",
                 "resourcePath": "scripts\\scr_app_cook_heat\\scr_app_cook_heat.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d65e01fc-c348-41e5-bb32-6013465d116c",
+            "Value": {
+                "id": "8fd0500e-2957-45b3-9241-a33c0f4cbab5",
+                "resourcePath": "sprites\\spr_battle\\spr_battle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
