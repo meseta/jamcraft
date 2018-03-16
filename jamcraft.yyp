@@ -1399,6 +1399,14 @@
             }
         },
         {
+            "Key": "b94cf4c2-bfb9-4101-b48a-4db694e8cbf5",
+            "Value": {
+                "id": "0a94d87e-9210-4cb9-9395-ef3e17154d5e",
+                "resourcePath": "scripts\\scr_battle_throw\\scr_battle_throw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bc037bf8-bcb9-4dcf-82c9-93f531fedae9",
             "Value": {
                 "id": "e96c3c60-66cb-4f26-85fa-c3d797b23ed8",
@@ -1967,7 +1975,8 @@
         "50b109ac-e54b-4ffb-8478-e41a0fad710c",
         "fbbd730e-8bb2-4e8a-a880-2c60f5953222",
         "516af417-1609-4df3-bacf-626ab3c5c8d2",
-        "677cd7b8-52f7-4a34-ad4d-2a66262caf37"
+        "677cd7b8-52f7-4a34-ad4d-2a66262caf37",
+        "b94cf4c2-bfb9-4101-b48a-4db694e8cbf5"
     ],
     "tutorial": ""
 }

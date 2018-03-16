@@ -22,9 +22,11 @@ player_speed = 0;
 
 enemy_stat = ds_list_create();
 
-fruit = undefined;
-stars = 1;
-cond = 0;
+enemy_fruit = undefined;
+enemy_stars = 1;
+enemy_cond = 0;
+
+alarm_close_inst = noone;
 
 enum TURN {
 	wait,

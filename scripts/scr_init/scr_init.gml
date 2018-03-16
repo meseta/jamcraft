@@ -135,6 +135,7 @@ enum EFFECTS {
 	repel		= (1 << 7),
 	fragrant	= (1 << 8),
 	defence		= (1 << 9),
+	energy		= (1 << 10),
 }
 
 enum STATUS {
@@ -157,7 +158,7 @@ global.status_name[STATUS.poison] = "Poison"
 global.status_name[STATUS.daze] = "Daze"
 global.status_name[STATUS.acid] = "Acid Burn"
 global.status_name[STATUS.sticky] = "Sticky Goo"
-global.status_name[STATUS.fast] = "Hyper Speed"
+global.status_name[STATUS.fast] = "Speedup"
 global.status_name[STATUS.repel] = "Bad Smell"
 global.status_name[STATUS.fragrant] = "Fragrance"
 global.status_name[STATUS.defence] = "Defence"
@@ -199,7 +200,7 @@ scr_lib_create_subtype(item, SUBTYPE.equipment_overlay, spr_jar_overlay, 0, PROP
 // sugar
 var item = scr_lib_create_item("Sugar", ITEM.sugar, c_ltgray);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.ingredient, spr_sugar, 0, PROPS.cookable);
-scr_lib_subtype_cooking(subtype, 1, 50, 0, 0, 0, 0, EFFECTS.none);
+scr_lib_subtype_cooking(subtype, 1, 50, 0, 0, 0, 0, EFFECTS.energy);
 
 // strawberry
 var item = scr_lib_create_item("Strawberry", ITEM.strawberry, c_red);
