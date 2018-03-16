@@ -88,13 +88,13 @@ else {
 			}
 			switch(rand) {
 				case 0:
-					added = scr_inv_add_item(scr_inv_new_item(choose(ITEM.pot_tiny, ITEM.pot_small, ITEM.pot_medium, ITEM.pot_large), SUBTYPE.equipment, 1, irandom_range(20, 100), 100));
+					added = scr_inv_add_item(scr_inv_new_item(choose(ITEM.pot_tiny, ITEM.pot_small, ITEM.pot_medium, ITEM.pot_large), SUBTYPE.equipment, 1, enemy_stars*20, 100));
 					break;
 				case 1:
-					added = scr_inv_add_item(scr_inv_new_item(choose(ITEM.jar_tiny, ITEM.jar_small, ITEM.jar_medium, ITEM.jar_large), SUBTYPE.equipment, 1, irandom_range(20, 100), 100));
+					added = scr_inv_add_item(scr_inv_new_item(choose(ITEM.jar_tiny, ITEM.jar_small, ITEM.jar_medium, ITEM.jar_large), SUBTYPE.equipment, 1, enemy_stars*20, 100));
 					break;
 				case 2:
-					added = scr_inv_add_item(scr_inv_new_item(ITEM.sugar, SUBTYPE.ingredient, 5, irandom_range(20, 100), 100));
+					added = scr_inv_add_item(scr_inv_new_item(ITEM.sugar, SUBTYPE.ingredient, 5, enemy_stars*20, 100));
 					break;
 				case 3:
 				case 4:
@@ -103,7 +103,7 @@ else {
 					break;
 				default:
 					var choose_fruit = choose(ITEM.strawberry, ITEM.lemon, ITEM.lime, ITEM.orange, ITEM.mandarin, ITEM.bergamot)
-					added = scr_inv_add_item(scr_inv_new_item(choose_fruit, SUBTYPE.whole, 1, irandom_range(20, 100), enemy_cond));
+					added = scr_inv_add_item(scr_inv_new_item(choose_fruit, SUBTYPE.whole, 1, enemy_stars*20, enemy_cond));
 			}
 			if(not is_undefined(added)) {
 			

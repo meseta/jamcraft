@@ -65,7 +65,7 @@ if(interact and not move_is_moving) {
 	
 	var int_inst = instance_place(check_x, check_y, obj_interactable);
 	with(int_inst) {
-		
+		audio_play_sound(snd_menu_interact, 20, false);
 		if(object_is_ancestor(object_index, obj_storage) and not is_undefined(other.holding)) { // putting objects back into inventory
 			var item = ds_list_find_value(obj_control_room_inventory.inventory, other.holding);
 			var item_subtype = ds_map_find_value(item, "subtype");

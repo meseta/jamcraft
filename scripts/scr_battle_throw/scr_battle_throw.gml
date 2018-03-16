@@ -31,8 +31,11 @@ if(not is_undefined(effects) and effects & filter > 0) {
 			battle_alert = scr_alert("Threw " + global.status_name[STATUS.sticky] + " at " + enemy_name);
 			scr_stat_set(enemy_stat, EFFECTS.sticky, 200);
 		}
+		
+		enemy_inst.animate_hit_type = 6
+		enemy_inst.animate_hit = true;
+		audio_play_sound(snd_fx_jarbreak, 20, false);
 	}
-	// TODO: throw jar animation
 	
 	// remove from inventory
 	var qty = ds_map_find_value(item, "quantity");

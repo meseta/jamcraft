@@ -66,7 +66,7 @@ if(not is_undefined(item_idx)) {
 			
 			var effects = ds_map_find_value(item_pot, "effects");
 			var xpos = 0;
-			for(var i=0; i<9; i++) {
+			for(var i=0; i<=10; i++) {
 				if(effects & (1 << i)) {
 					draw_sprite(spr_effects, i, x_offset+6*UNIT+xpos, y_offset-UNIT+74);
 					xpos -= 12;	

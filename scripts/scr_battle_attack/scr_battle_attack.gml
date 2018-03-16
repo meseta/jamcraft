@@ -25,6 +25,11 @@ else {
 			if(irandom(100) < 10) {
 				alarm_close_inst = scr_alert("You scored a critical hit!")	
 				attack *= 2
+				
+				enemy_inst.animate_hit_type = 5
+			}
+			else {
+				enemy_inst.animate_hit_type = choose(0, 1, 2, 3)	
 			}
 			
 			enemy_hp_damage = attack*4;
@@ -36,6 +41,7 @@ else {
 			
 			player_inst.animate_attack = true;
 			enemy_inst.animate_hit = true;
+			
 		}
 		else {
 			player_inst.animate_attack = true;

@@ -68,7 +68,7 @@ if(room == rm_battle) {
 			}
 			else if(enemy_turn_timer >= 100) { // enemy turn
 				if(scr_stat_check(enemy_stat, STATUS.poison)) {
-					enemy_hp = clamp(enemy_hp-10, 0, 100)
+					enemy_hp = clamp(enemy_hp-20, 0, 100)
 					alarm_close_inst = scr_alert(enemy_name + " took poison damage");
 					alarm[1] = 120;
 				}

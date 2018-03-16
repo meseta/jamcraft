@@ -53,7 +53,8 @@ if(not escaped) {
 		
 		if(hit < hit_chance) {
 			var attack = irandom_range(3, 7);
-				
+			
+			player_inst.animate_hit_type = choose(0,1,2,3);
 			if(scr_stat_check(player_stat, STATUS.defence)) {
 				attack *= enemy_base_attack/(player_base_defence * 3);
 			}
@@ -61,7 +62,8 @@ if(not escaped) {
 				attack *= enemy_base_attack/player_base_defence;
 				if(irandom(100) < 10) {
 					scr_alert("Critical Hit!")	
-					attack *= 2;
+					attack *= 2;			
+					player_inst.animate_hit_type = 4;
 				}
 			}
 				
@@ -74,7 +76,7 @@ if(not escaped) {
 			alarm_close_inst = scr_alert(enemy_name + " attacks!");
 		}
 		else {
-			player_inst.animate_attack = true;
+			enemy_inst.animate_attack = true;
 			alarm_close_inst = scr_alert(enemy_name + " missed!")	
 		}
 			
@@ -89,28 +91,33 @@ if(not escaped) {
 				enemy_hp_damage = -heal;
 				alarm_close_inst = scr_alert(enemy_name + " healed itself!");
 				enemy_inst.animate_attack = true;
+				player_inst.animate_hit_type = 6;
+				audio_play_sound(snd_fx_heal, 20, false);	
 				break;
 				
 			case STATUS.fast:
 				enemy_base_speed += irandom_range(1, 5);
 				alarm_close_inst = scr_alert(enemy_name + " got faster!");
 				enemy_inst.animate_attack = true;
+				player_inst.animate_hit_type = 6;
 				break;
 				
 			case STATUS.defence:
 				enemy_base_defence += irandom_range(1, 5);
 				alarm_close_inst = scr_alert(enemy_name + " got tougher!");
 				enemy_inst.animate_attack = true;
+				player_inst.animate_hit_type = 6;
 				break;
 			
 			case STATUS.poison:
 			case STATUS.daze:
 			case STATUS.acid:
 			case STATUS.sticky:
-				scr_stat_set(player_stat, random_status, 200);
+				scr_stat_set(player_stat, random_status, 50);
 				alarm_close_inst = scr_alert(enemy_name + " shot " + global.status_name[random_status] + "!")
 				enemy_inst.animate_attack = true;
 				player_inst.animate_hit = true;
+				player_inst.animate_hit_type = 6;
 				break;
 		}
 

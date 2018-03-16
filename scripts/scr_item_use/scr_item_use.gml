@@ -31,6 +31,7 @@ if(not is_undefined(effects) and effects & filter > 0) {
 			ds_map_replace(GAMEDATA, "hp", newhp);
 		}
 		
+		audio_play_sound(snd_fx_heal, 20, false);
 		battle_alert = scr_alert("Healed " + string(healed_amount) + " HP");
 	}
 	
@@ -49,7 +50,7 @@ if(not is_undefined(effects) and effects & filter > 0) {
 		else {
 			ds_map_replace(GAMEDATA, "energy", newenergy);
 		}
-		
+		audio_play_sound(snd_fx_heal, 20, false);
 		battle_alert = scr_alert("Energized " + string(energized_amount) + " EP");
 	}
 	

@@ -246,21 +246,21 @@ scr_lib_create_subtype(item, SUBTYPE.whole, spr_orange, 0, PROPS.choppable | PRO
 var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_orange, 1, PROPS.cookable);
 scr_lib_subtype_cooking(subtype, 0.5, 0, 0, 100, 0, 100, EFFECTS.daze);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_orange, 2, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0.8, 35, 50, 0, 0, 75, EFFECTS.acid);
+scr_lib_subtype_cooking(subtype, 0.8, 35, 50, 0, 0, 75, EFFECTS.defence);
 
 var item = scr_lib_create_item("Mandarin", ITEM.mandarin, c_orange);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_orange, 0, PROPS.choppable | PROPS.peelable);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_orange, 1, PROPS.cookable);
 scr_lib_subtype_cooking(subtype, 0.5, 0, 0, 100, 0, 100, EFFECTS.daze);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_orange, 2, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0.8, 45, 35, 0, 0, 75, EFFECTS.healing);
+scr_lib_subtype_cooking(subtype, 0.8, 45, 35, 0, 0, 75, EFFECTS.sticky);
 
 var item = scr_lib_create_item("Bergamot", ITEM.bergamot, c_green);
 scr_lib_create_subtype(item, SUBTYPE.whole, spr_bergamot, 0, PROPS.choppable | PROPS.peelable);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.peel, spr_bergamot, 1, PROPS.cookable);
 scr_lib_subtype_cooking(subtype, 0.5, 25, 25, 50, 0, 100, EFFECTS.fragrant);
 var subtype = scr_lib_create_subtype(item, SUBTYPE.chopped, spr_bergamot, 2, PROPS.cookable | PROPS.colorant);
-scr_lib_subtype_cooking(subtype, 0.8, 50, 35, 0, 0, 75, EFFECTS.healing | EFFECTS.fragrant | EFFECTS.multiplier);
+scr_lib_subtype_cooking(subtype, 0.8, 50, 35, 0, 0, 75, EFFECTS.healing | EFFECTS.fast | EFFECTS.multiplier);
 
 /*
 	// tropical

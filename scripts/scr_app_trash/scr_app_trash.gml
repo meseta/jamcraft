@@ -21,5 +21,6 @@ disp_inst.delete_animate = true;
 
 scr_menu_clear();
 
+audio_play_sound(snd_fx_trash, 20, false);
 if(is_undefined(item_name)) item_name = "Item"
 scr_alert(item_name + " was trashed!");

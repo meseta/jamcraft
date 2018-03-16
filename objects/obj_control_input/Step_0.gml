@@ -80,12 +80,25 @@ if(ds_stack_empty(global.interact_stack)) { // player move
 	}
 }
 else {
-	with(ds_stack_top(global.interact_stack)) {
+	var top_inst = ds_stack_top(global.interact_stack)
+	with(top_inst) {
 		select_right = key_right_pressed
 		select_up = key_up_pressed
 		select_left = key_left_pressed
 		select_down = key_down_pressed
 		if(key_primary) interact = true;
 		if(key_secondary) cancel = true;
+		
+		if(top_inst.object_index == obj_inventory or top_inst.object_index = obj_select) {
+			if(key_right_pressed or key_left_pressed or key_up_pressed or key_down_pressed) {
+				audio_play_sound(snd_menu_move, 20, false);	
+			}
+			if(key_secondary) {
+				audio_play_sound(snd_menu_cancel, 20, false);	
+			}
+			if(key_primary) {
+				audio_play_sound(snd_menu_select, 20, false);	
+			}
+		}
 	}
 }

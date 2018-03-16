@@ -38,6 +38,7 @@ if(interact) {
 	if(can_take or can_use or can_throw) {
 		// create inventory instance (create it offscreen)
 		select_inst = scr_menu_create(obj_select);
+
 		scr_debug("Select menu ", select_inst)
 		select_inst.x_offset = selected_x + UNIT + 4;
 		select_inst.y_offset = selected_y;

@@ -77,11 +77,14 @@ else if(not end_condition) {
 		}
 		
 		if(miss or goodness == 0) {
+			audio_play_sound(snd_minigame_miss, 20, false);
 			shake = 5;
 			cond = clamp(cond-5, 0, 100);
 			ds_map_replace(item, "condition", cond);
 		}
 		else if(hit and goodness > 0) {
+			audio_sound_pitch(snd_minigame_hit, random_range(0.8, 1.2))
+			audio_play_sound(snd_minigame_hit, 20, false);
 			stats_buttons += 1;
 			switch(goodness) {
 				case 1: stats_ok += 1; break

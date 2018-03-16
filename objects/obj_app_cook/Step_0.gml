@@ -35,6 +35,7 @@ else if(not end_condition) {
 		
 	// make miss and hit
 	if(miss) {
+		audio_play_sound(snd_minigame_miss, 20, false);
 		shake = 5;
 		stats_misses += 1;
 		button += choose(1, 2, 3);
@@ -42,6 +43,8 @@ else if(not end_condition) {
 		blackout = irandom_range(15, 45);
 	}
 	else if(hit) {
+		audio_sound_pitch(snd_minigame_hit, random_range(0.8, 1.2))
+		audio_play_sound(snd_minigame_hit, 20, false);
 		stats_hits += 1;
 		var xx = x_offset+width/2 + lengthdir_x(12, button*90);
 		var yy = y_offset-UNIT+height/2 + lengthdir_y(12, button*90);
@@ -49,6 +52,7 @@ else if(not end_condition) {
 		button += rotate_dir;
 		
 		if(stats_hits % 4 == 0) {
+			audio_play_sound(snd_fx_hit1, 20, false);
 			display.shake = 5;
 			display.swish = clamp(rotate_dir, 0, 1);
 			var item = ds_list_find_value(obj_control_room_inventory.inventory, item_idx	);

@@ -54,6 +54,7 @@ if(not is_undefined(holding)) {
 			
 			if(doneness > 133) {
 				if(not is_undefined(item_name)) {
+					audio_play_sound(snd_fx_burn, 20, false);
 					scr_alert(item_name + " overcooked!");
 				}
 				
@@ -76,6 +77,9 @@ if(not is_undefined(holding)) {
 
 				if(condition <= 0) {
 					if(not is_undefined(item_name)) {
+						
+						audio_play_sound(snd_fx_burn, 20, false);
+
 						scr_alert(item_name + " burned!");
 					}
 					
@@ -94,6 +98,11 @@ if(not is_undefined(holding)) {
 		if(is_undefined(max_done)) max_done = 0;
 		min_done = min(100, min_done);
 		max_done = min(100, max_done);
+		
+		// sounds
+		if((stir_level >= 90 or max_done >= 90) and alarm[0] == -1) {
+			alarm[0] = 60;
+		}
 	}
 	else {
 		stir_level = undefined	
