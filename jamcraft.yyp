@@ -1143,6 +1143,14 @@
             }
         },
         {
+            "Key": "88a20fb9-2380-48f0-aba3-b766fe2278f2",
+            "Value": {
+                "id": "bc52c222-6f85-418a-a301-869be4c91d88",
+                "resourcePath": "datafiles_yy\\open_font_license.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "88aaf796-ac35-472d-b94f-dfe8d8eb5262",
             "Value": {
                 "id": "435d892d-f431-4105-a7bf-c2dc9757888a",
@@ -1748,6 +1756,14 @@
                 "id": "8fd0500e-2957-45b3-9241-a33c0f4cbab5",
                 "resourcePath": "sprites\\spr_battle\\spr_battle.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "da12c8fe-2085-4343-807e-80a582fa7806",
+            "Value": {
+                "id": "bfa1b0f7-542a-4a5a-851a-a141db9ad0f6",
+                "resourcePath": "datafiles_yy\\audio_credits.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
