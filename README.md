@@ -1,13 +1,16 @@
 # Jamcraft, the game
+![Jamcraft Title Card](https://github.com/meseta/jamcraft/blob/master/title_card.png)
 
 ## About
-This is the source code for my (unfinished) entry to the 7-day [Jamcraft game jam](https://itch.io/jam/jamcraft) game jam; the theme was "Companion". The released game can be [found on itch.io](https://meseta.itch.io/jamcraft-the-game)
+This is the source code for my (unfinished) entry to the 7-day [Jamcraft game jam](https://itch.io/jam/jamcraft/results) game jam; the theme was "Companion". The released game can be [found on itch.io](https://meseta.itch.io/jamcraft-the-game)
 
 The jam was an opportunity for me to explore a few topics:
 * Complex inventory systems
 * Crafting
 
 I'm now open-sourcing the code for educational purposes.
+
+[Watch a playthrough](https://youtu.be/BqJAT122GPQ?t=292)
 
 ## Licenses
 ### Code
